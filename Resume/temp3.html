@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Resume Builder</title>
+    <style>
+        /* temp3.css */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: #0d0d0d;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 10px;
+            background: #484646e8;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            align-items: center;
+        }
+
+        .controls > div {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .controls label {
+            font-size: 0.9em;
+            margin-right: 5px;
+        }
+
+        .controls button,
+        .controls input[type="color"] {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            transition: transform 0.2s ease, background 0.3s ease;
+            font-size: 0.9em;
+            width: auto;
+            height: auto;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+
+        /* Modified Button Styles */
+        .controls button {
+            background-color: #007bff;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 1em;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            border: 2px solid #007bff;
+        }
+
+        .controls button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+            border-color: #004080;
+        }
+        /* End Modified Button Styles */
+
+        .controls input[type="color"] {
+            padding: 3px;
+            height: auto;
+            width: auto;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border: 1px solid #ccc;
+        }
+
+        .controls input[type="color"]::-webkit-color-swatch-wrapper {
+            padding: 0;
+            margin: 0;
+        }
+
+        .controls input[type="color"]::-webkit-color-swatch {
+            border: none;
+            border-radius: 0;
+            box-sizing: border-box;
+            width: 100%;
+            height: 100%;
+        }
+        .controls input[type="color"] {
+            width: 40px;  /* Adjust as necessary */
+            height: 30px; /* Adjust as necessary */
+        }
+
+        #content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            background: white;
+            padding: 20mm;
+            margin-bottom: 20px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            background-color: #5d9cec;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            gap: 20px;
+        }
+
+        .photo-container {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: white;
+            cursor: pointer;
+        }
+
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .section {
+            margin-top: 30px;
+            position: relative;
+        }
+
+        .section h2 {
+            font-size: 18px;
+            border-bottom: 3px solid #5d9cec;
+            margin-bottom: 10px;
+            padding-bottom: 4px;
+        }
+
+        .section p {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .editable[contenteditable="true"] {
+            outline: none;
+        }
+
+        .delete-btn {
+            display: none;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            color: red;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .section:hover .delete-btn {
+            display: block;
+        }
+
+        @media print {
+            .controls {
+                display: none;
+            }
+
+            .page {
+                box-shadow: none;
+                margin: 0;
+                page-break-after: auto;
+                width: auto;
+                min-height: auto;
+                display: block;
+                padding: 20mm;
+            }
+
+            .template-4 {
+                display: block;
+            }
+
+            .left-column, .right-column {
+                width: 100%;
+                float: none;
+                display: block;
+            }
+
+            .template-4 .section-title {
+                border-bottom: 1px solid #333;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <button onclick="downloadResume()">Download PDF</button>
+        <div>
+            <label for="headerColor">Header Color:</label>
+            <input type="color" id="headerColor" title="Header Color" />
+        </div>
+        <div>
+            <label for="lineColor">Line Color:</label>
+            <input type="color" id="lineColor" title="Line Color" />
+        </div>
+        <button id="addHeader">Add Header</button>
+        <button id="undoBtn">Undo</button>
+    </div>
+
+    <div id="content">
+        <div class="page">
+            <div class="header editable">
+                <div class="photo-container" onclick="triggerImageUpload(event)">
+                    <img id="profileImage" src="" alt="Profile" />
+                    <input type="file" id="imageUpload" accept="image/*" hidden />
+                </div>
+                <div>
+                    <h1 contenteditable="true">Your Name</h1>
+                    <p contenteditable="true">Full Stack Developer</p>
+                </div>
+            </div>
+
+            <div class="section editable">
+                <h2 contenteditable="true">Contact</h2>
+                <p contenteditable="true">📞 123-456-7890</p>
+                <p contenteditable="true">📧 email@example.com</p>
+                <p contenteditable="true">📍 Your City, Country</p>
+                <span class="delete-btn" onclick="removeLine(this)">✖</span>
+            </div>
+
+            <div class="section editable">
+                <h2 contenteditable="true">Professional Summary</h2>
+                <p contenteditable="true">Results-driven developer with 3+ years of experience building scalable web applications. Strong background in full stack technologies and UI/UX principles.</p>
+                <span class="delete-btn" onclick="removeLine(this)">✖</span>
+            </div>
+
+            <div class="section editable">
+                <h2 contenteditable="true">Skills</h2>
+                <p contenteditable="true">✅ JavaScript, React, Node.js, Python</p>
+                <p contenteditable="true">✅ HTML, CSS, Bootstrap, Tailwind</p>
+                <p contenteditable="true">✅ MongoDB, MySQL, Firebase</p>
+                <span class="delete-btn" onclick="removeLine(this)">✖</span>
+            </div>
+
+            <div class="section editable">
+                <h2 contenteditable="true">Education</h2>
+                <p contenteditable="true"><strong>B.Tech in Computer Science</strong> - XYZ University (2018–2022)</p>
+                <p contenteditable="true">CGPA: 8.5/10</p>
+                <span class="delete-btn" onclick="removeLine(this)">✖</span>
+            </div>
+
+            <div class="section editable">
+                <h2 contenteditable="true">Experience</h2>
+                <p contenteditable="true"><strong>Web Developer</strong> - ABC Tech (2022–Present)</p>
+                <p contenteditable="true">• Built full-stack web apps using MERN stack.</p>
+                <p contenteditable="true">• Collaborated with designers and QA to improve performance and UI.</p>
+                <span class="delete-btn" onclick="removeLine(this)">✖</span>
+            </div>
+
+            <div class="section editable">
+                <h2 contenteditable="true">Projects</h2>
+                <p contenteditable="true"><strong>Resume Builder App</strong> - Built using HTML, CSS, JS. Allows live editing and PDF export.</p>
+                <p contenteditable="true"><strong>Task Manager</strong> - Full-stack app for team task management and tracking.</p>
+                <span class="delete-btn" onclick="removeLine(this)">✖</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /* temp3.js */
+        let undoStack = [];
+
+        function saveState() {
+            const contentClone = document.getElementById("content").cloneNode(true);
+            undoStack.push(contentClone);
+            if (undoStack.length > 10) undoStack.shift();
+        }
+
+        function undo() {
+            if (undoStack.length > 0) {
+                const previous = undoStack.pop();
+                document.getElementById("content").replaceWith(previous);
+                initializeEventListeners();
+            }
+        }
+
+        document.getElementById("undoBtn").addEventListener("click", undo);
+
+        document.getElementById("headerColor").addEventListener("input", function (e) {
+            document.querySelectorAll(".header").forEach(header => {
+                header.style.backgroundColor = e.target.value;
+            });
+            saveState();
+        });
+
+        document.getElementById("lineColor").addEventListener("input", function (e) {
+            document.querySelectorAll(".section h2").forEach(h2 => {
+                h2.style.borderBottom = `3px solid ${e.target.value}`;
+            });
+            saveState();
+        });
+
+        function triggerImageUpload() {
+            document.getElementById("imageUpload").click();
+        }
+
+        document.getElementById("imageUpload").addEventListener("change", function () {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById("profileImage").src = e.target.result;
+                    saveState();
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        function createNewSection(title = 'New Section', content = 'Enter new content here.') {
+            const newSection = document.createElement("div");
+            newSection.className = "section editable";
+            newSection.innerHTML = `
+                <h2 contenteditable="true">${title}</h2>
+                <p contenteditable="true">${content}</p>
+                <span class="delete-btn" onclick="removeLine(this)">✖</span>
+            `;
+            return newSection;
+        }
+
+        document.getElementById("addHeader").addEventListener("click", () => {
+            saveState();
+            const newSection = createNewSection('New Header Section');
+            const lastPage = document.querySelector(".page:last-child");
+             if (isPageOverflowing(lastPage)) {
+                 addNewPage();
+                 document.querySelector(".page:last-child").appendChild(newSection);
+             } else {
+                 lastPage.appendChild(newSection);
+                 }
+            initializeEventListeners();
+        });
+
+        function isPageOverflowing(page) {
+             const pageStyles = window.getComputedStyle(page);
+             const pageHeight = parseFloat(pageStyles.height);
+             const scrollHeight = page.scrollHeight;
+             const paddingBottom = parseFloat(pageStyles.paddingBottom);
+             const paddingTop = parseFloat(pageStyles.paddingTop);
+             return scrollHeight > pageHeight - paddingTop - paddingBottom + 5;
+        }
+
+
+        function addNewPage() {
+            saveState();
+            const page = document.createElement("div");
+            page.className = "page template-4";
+            const leftColumn = document.createElement("div");
+            leftColumn.className = "left-column";
+            const rightColumn = document.createElement("div");
+            rightColumn.className = "right-column";
+            page.appendChild(leftColumn);
+            page.appendChild(rightColumn);
+            document.getElementById("content").appendChild(page);
+            initializeEventListeners();
+        }
+
+
+
+        function removeLine(btn) {
+            saveState();
+            const section = btn.closest(".section");
+            if (section) section.remove();
+            initializeEventListeners();
+        }
+
+        function downloadResume() {
+            window.print();
+        }
+
+        function initializeEventListeners() {
+            document.querySelectorAll('.delete-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    removeLine(this);
+                });
+            });
+            document.querySelectorAll('#imageUpload').forEach(input => {
+                input.addEventListener('change', function() {
+                    handleImageUpload(this);
+                });
+            });
+             document.getElementById('undoBtn').addEventListener('click', undo);
+             document.getElementById('headerColor').addEventListener('input', function(e) {
+                document.querySelectorAll(".header").forEach(header => {
+                    header.style.backgroundColor = e.target.value;
+                });
+                saveState();
+            });
+
+            document.getElementById('lineColor').addEventListener('input', function(e) {
+                document.querySelectorAll(".section h2").forEach(h2 => {
+                    h2.style.borderBottom = `3px solid ${e.target.value}`;
+                });
+                saveState();
+            });
+            document.getElementById('addHeader').addEventListener('click', () => {
+                saveState();
+                const newSection = createNewSection('New Header Section');
+                const lastPage = document.querySelector(".page:last-child");
+                 if (isPageOverflowing(lastPage)) {
+                     addNewPage();
+                     document.querySelector(".page:last-child").appendChild(newSection);
+                 } else {
+                     lastPage.appendChild(newSection);
+                 }
+                initializeEventListeners();
+            });
+            document.getElementById('downloadBtn').addEventListener('click', downloadResume);
+        }
+
+        function handleImageUpload(inputElement) {
+            const file = inputElement.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const img = inputElement.previousElementSibling;
+                    img.src = e.target.result;
+                    saveState();
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        initializeEventListeners();
+    </script>
+</body>
+</html>

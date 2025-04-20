@@ -1,0 +1,274 @@
+/* Base styles */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #0e0e0e;
+    color: #333;
+    line-height: 1.6;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px;
+    background: #484646e8;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    align-items: center;
+}
+
+.controls > div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.controls label {
+    font-size: 0.9em;
+    margin-right: 5px;
+}
+
+.controls button,
+.controls input[type="color"] {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    transition: transform 0.2s ease, background 0.3s ease;
+    font-size: 0.9em;
+    width: auto;
+    height: auto;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; /* Reset appearance for color inputs */
+}
+
+.controls button:hover {
+    background: #5d9cec;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Ensure color input displays correctly */
+.controls input[type="color"] {
+    height: auto;
+    width: auto;
+    padding: 3px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.controls input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+.controls input[type="color"]::-webkit-color-swatch {
+    border: none;
+    border-radius: 0;
+    box-sizing: border-box;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.page {
+    width: 210mm;
+    min-height: 297mm;
+    background: white;
+    padding: 20mm;
+    margin-bottom: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    display: flex; /* Enable flexbox for columns */
+    flex-direction: row; /* Arrange columns side by side */
+}
+
+.left-column {
+    flex: 1; /* Take up 1/3 of the space */
+    padding-right: 15px; /* Add some space between columns */
+}
+
+.right-column {
+    flex: 2; /* Take up 2/3 of the space */
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    background-color: #f8f9fa;
+    color: #343a40;
+    padding: 25px 0;
+    border-bottom: 2px solid #dee2e6;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.header p {
+    font-size: 1.1em;
+    color: #6c757d;
+}
+
+.photo-container {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #e9ecef;
+    margin-right: 20px;
+    cursor: pointer;
+    border: 2px solid #ced4da;
+}
+
+.photo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.section {
+    margin-top: 30px;
+    position: relative;
+}
+
+.section h2 {
+    font-size: 1.8em; /* Slightly smaller for better column fit */
+    font-weight: bold;
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db; /* Thinner border */
+    margin-bottom: 0.8rem; /* Reduced margin */
+    padding-bottom: 0.3rem; /* Reduced padding */
+}
+
+.section p {
+    font-size: 1em; /* Slightly smaller font */
+    line-height: 1.5; /* Reduced line height */
+    color: #495057;
+    margin-bottom: 0.6rem; /* Reduced margin */
+}
+
+.editable[contenteditable="true"] {
+    outline: none;
+}
+
+.delete-btn {
+    display: none;
+    position: absolute;
+    right: 5px; /* Adjusted position */
+    top: 5px; /* Adjusted position */
+    color: red;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+    font-size: 0.8em; /* Smaller delete button */
+    padding: 2px 5px;
+    border-radius: 3px;
+    background-color: #f8d7da; /* Light red background */
+}
+
+.delete-btn:hover {
+    opacity: 1;
+    background-color: #f5c6cb;
+}
+
+.section:hover .delete-btn {
+    display: block;
+}
+
+@media print {
+    .controls {
+        display: none;
+    }
+
+    .page {
+        box-shadow: none;
+        margin: 0;
+        page-break-after: always;
+        display: flex; /* Keep page as flex for printing */
+        flex-direction: row; /* Maintain column layout */
+    }
+    .left-column, .right-column{
+        width: 50%; /* Adjust column width for print if needed */
+        display: block;
+    }
+}
+
+/* Custom styles based on the image */
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem; /* Reduced gap */
+}
+
+.contact-section p {
+    font-size: 0.9em; /* Smaller contact info */
+    color: #495057;
+    margin-bottom: 0;
+}
+
+.experience-item {
+    margin-bottom: 15px; /* Reduced margin */
+}
+
+.experience-item strong {
+    font-size: 1.1em; /* Slightly smaller experience title */
+    color: #2c3e50;
+    margin-bottom: 0.3rem; /* Reduced margin */
+}
+
+.experience-item small {
+    display: block;
+    font-size: 0.8em; /* Smaller date/location */
+    color: #6c757d;
+    margin-bottom: 0.6rem; /* Reduced margin */
+}
+
+.skills-section ul {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px; /* Reduced gap between skills */
+}
+
+.skills-section li {
+    background-color: #0b0b0b;
+    color: #343a40;
+    padding: 5px 10px; /* Smaller padding for skills */
+    border-radius: 12px; /* More rounded */
+    font-size: 0.85em; /* Smaller skill font */
+    font-weight: 500;
+}
+
+.education-section {
+    margin-top: 1.5rem; /* Reduced top margin */
+}
+
+.education-section h3 {
+    font-size: 1em; /* Smaller education title */
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 0.3rem; /* Reduced margin */
+}
+
+.education-section p {
+    font-size: 0.85em; /* Smaller education details */
+    color: #6c757d;
+    margin-bottom: 0;
+}

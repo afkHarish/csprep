@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Resume Builder</title>
+    <style>
+        /* temp3.css - Base Styles */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: #0a0000;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 10px;
+            background: #484646e8;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            align-items: center;
+        }
+
+        .controls > div {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .controls label {
+            font-size: 0.9em;
+            margin-right: 5px;
+        }
+
+        .controls button,
+        .controls input[type="color"] {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            transition: transform 0.2s ease, background 0.3s ease;
+            font-size: 0.9em;
+            width: auto;
+            height: auto;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+
+        /* Modified Button Styles */
+        .controls button {
+            background-color: #007bff;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 1em;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            border: 2px solid #007bff;
+        }
+
+        .controls button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+            border-color: #004080;
+        }
+        /* End Modified Button Styles */
+
+        .controls input[type="color"] {
+            padding: 3px;
+            height: auto;
+            width: auto;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border: 1px solid #ccc;
+        }
+
+        .controls input[type="color"]::-webkit-color-swatch-wrapper {
+            padding: 0;
+            margin: 0;
+        }
+
+        .controls input[type="color"]::-webkit-color-swatch {
+            border: none;
+            border-radius: 0;
+            box-sizing: border-box;
+            width: 100%;
+            height: 100%;
+        }
+        .controls input[type="color"] {
+            width: 40px;  /* Adjust as necessary */
+            height: 30px; /* Adjust as necessary */
+        }
+        /* End Modified Color Input Styles */
+
+        #content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            background: white;
+            padding: 20mm;
+            margin-bottom: 20px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            background-color: #5d9cec;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            gap: 20px;
+        }
+
+        .photo-container {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: white;
+            cursor: pointer;
+        }
+
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .section {
+            margin-top: 30px;
+            position: relative;
+        }
+
+        .section h2 {
+            font-size: 18px;
+            border-bottom: 3px solid #5d9cec;
+            margin-bottom: 10px;
+            padding-bottom: 4px;
+        }
+
+        .section p {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .editable[contenteditable="true"] {
+            outline: none;
+        }
+
+        .delete-btn {
+            display: none;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            color: red;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .section:hover .delete-btn {
+            display: block;
+        }
+
+        @media print {
+            .controls {
+                display: none;
+            }
+
+            .page {
+                box-shadow: none;
+                margin: 0;
+                page-break-after: always;
+            }
+        }
+
+        /* bcom_temp.css - B.Com Template Styles */
+        .bcom-template {
+            font-size: 11pt;
+            line-height: 1.4;
+        }
+
+        .bcom-template .header {
+            padding: 15px 0;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #333;
+        }
+
+        .bcom-template .header h1 {
+            font-size: 2em;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .bcom-template .header .degree {
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        .bcom-template .section {
+            margin-top: 15px;
+        }
+
+        .bcom-template .section h2 {
+            font-size: 1.3em;
+            border-bottom: 1px solid #555;
+            padding-bottom: 3px;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .bcom-template .section p,
+        .bcom-template .section li {
+            font-size: 1em;
+            color: #444;
+            margin-bottom: 5px;
+        }
+
+        .bcom-template .education-item,
+        .bcom-template .project-item,
+        .bcom-template .experience-item {
+            margin-bottom: 10px;
+        }
+
+        .bcom-template .education-item strong,
+        .bcom-template .project-item strong,
+        .bcom-template .experience-item strong {
+            display: block;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 3px;
+        }
+
+        .bcom-template .skills p {
+            margin-bottom: 3px;
+        }
+
+        .bcom-template .delete-btn {
+            top: 2px;
+            right: 2px;
+            font-size: 0.7em;
+            color: #888;
+        }
+
+        .bcom-template .section:hover .delete-btn {
+            display: block;
+        }
+
+        @media print {
+            .bcom-template .header {
+                border-bottom: 1px solid #333;
+                margin-bottom: 15px;
+                padding-bottom: 10px;
+            }
+
+            .bcom-template .section h2 {
+                border-bottom: 1px solid #555;
+                padding-bottom: 2px;
+                margin-bottom: 6px;
+            }
+        }
+
+        /* Modified Color Input Styles */
+        .controls input[type="color"] {
+            padding: 3px;
+            height: auto;
+            width: auto;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border: 1px solid #ccc;
+        }
+
+        .controls input[type="color"]::-webkit-color-swatch-wrapper {
+            padding: 0;
+            margin: 0;
+        }
+
+        .controls input[type="color"]::-webkit-color-swatch {
+            border: none;
+            border-radius: 0;
+            box-sizing: border-box;
+            width: 100%;
+            height: 100%;
+        }
+        .controls input[type="color"] {
+            width: 40px;  /* Adjust as necessary */
+            height: 30px; /* Adjust as necessary */
+        }
+        /* End Modified Color Input Styles */
+
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <div>
+            <label for="headerColor">Header Color:</label>
+            <input type="color" id="headerColor" title="Header Color" />
+        </div>
+        <div>
+            <label for="lineColor">Line Color:</label>
+            <input type="color" id="lineColor" title="Line Color" />
+        </div>
+        <button id="addHeader">Add Header</button>
+        <button id="undoBtn">Undo</button>
+        <button onclick="downloadResume()">Download PDF</button>
+    </div>
+
+    <div id="content">
+        <div class="page bcom-template">
+            <div class="header editable">
+                <div>
+                    <h1 contenteditable="true">Your Name</h1>
+                    <p class="degree" contenteditable="true">Bachelor of Commerce (B.Com)</p>
+                </div>
+            </div>
+
+            <div class="section editable contact-info">
+                <h2 contenteditable="true">Contact</h2>
+                <p contenteditable="true">📞 [Your Phone Number]</p>
+                <p contenteditable="true">📧 [Your Email Address]</p>
+                <p contenteditable="true">📍 [Your Address]</p>
+                <p contenteditable="true">🔗 [Your LinkedIn Profile (Optional)]</p>
+                <span class="delete-btn" onclick="removeLine(this)">✖</span>
+            </div>
+
+            <div class="section editable career-objective">
+                <h2 contenteditable="true">Career Objective</h2>
+                <p contenteditable="true">A highly motivated and detail-oriented Bachelor of Commerce graduate seeking an entry-level position in [mention specific area like Accounting, Finance, Marketing, etc.] to apply my understanding of business principles, financial analysis, and [mention any specific skills]. Eager to learn and contribute to the growth of a dynamic organization.</p>
+                <span class="delete-btn" onclick="removeLine(this)">✖</span>
+            </div>
+
+            <div class="section editable education">
+                <h2 contenteditable="true">Education</h2>
+                <div class="education-item" contenteditable="true">
+                    <strong>Bachelor of Commerce (B.Com)</strong> - [Your Specialization (if any)]
+                    <p>[Name of College/University] ([Year of Passing])</p>
+                    <p>CGPA/Percentage: [Your CGPA/Percentage]</p>
+                    <p>[Mention relevant subjects, projects, or achievements (optional)]</p>
+                </div>
+                <div class="education-item" contenteditable="true">
+                    <strong>[Your Higher Secondary Education]</strong> - [Your Stream]
+                    <p>[Name of School/Board] ([Year of Passing])</p>
+                    <p>Percentage: [Your Percentage]</p>
+                </div>
+                <div class="education-item" contenteditable="true">
+                    <strong>[Your Secondary Education]</strong>
+                    <p>[Name of School/Board] ([Year of Passing])</p>
+                    <p>Percentage/CGPA: [Your Percentage/CGPA]</p>
+                </div>
+                <span class="delete-btn" onclick="removeLine(this)">✖</span>
+            </div>
+
+            <div class="section editable skills">
+                <h2 contenteditable="true">Skills</h2>
+                <p contenteditable="true">📊 Financial Accounting, Management Accounting, [Specific Accounting Software (if any)]</p>
+                <p contenteditable="true">📈 Business Law, Economics, Statistics</p>
+                <p contenteditable="true">💻 MS Office Suite (Word, Excel, PowerPoint), [Other Relevant Software]</p>
+                <p contenteditable="true">🗣️ Communication Skills, Teamwork, Problem-solving, [Other Soft Skills]</p>
+                <span class="delete-btn" onclick="removeLine(this)">✖</span>
+            </div>
+
+            <div class="section editable projects">
+                <h2 contenteditable="true">Projects/Internships (Optional)</h2>
+                <div class="project-item" contenteditable="true">
+                    <strong>[Project Name/Internship Title]</strong> - [Organization/Institution] ([Start Date]–[End Date])
+                    <p>[Brief description of the project or your role and responsibilities]</p>
+                    <p>[Mention key learnings or achievements]</p>
+                </div>
+                <div class="project-item" contenteditable="true">
+                    <strong>[Project Name/Internship Title]</strong> - [Organization/Institution] ([Start Date]–[End Date])
+                    <p>[Brief description of the project or your role and responsibilities]</p>
+                    <p>[Mention key learnings or achievements]</p>
+                </div>
+                <span class="delete-btn" onclick="removeLine(this)">✖</span>
+            </div>
+
+            <div class="section editable extracurricular-activities">
+                <h2 contenteditable="true">Extracurricular Activities (Optional)</h2>
+                <p contenteditable="true">⚽ [Activity 1] - [Your Role/Description]</p>
+                <p contenteditable="true">🏆 [Activity 2] - [Your Role/Description]</p>
+                <span class="delete-btn" onclick="removeLine(this)">✖</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let undoStack = [];
+
+        function saveState() {
+            const contentClone = document.getElementById("content").cloneNode(true);
+            undoStack.push(contentClone);
+            if (undoStack.length > 10) undoStack.shift(); // limit memory
+        }
+
+        function undo() {
+            if (undoStack.length > 0) {
+                const previous = undoStack.pop();
+                document.getElementById("content").replaceWith(previous);
+            }
+        }
+
+        document.getElementById("undoBtn").addEventListener("click", undo);
+
+        document.getElementById("headerColor").addEventListener("input", function (e) {
+            document.querySelectorAll(".header").forEach(header => {
+                header.style.backgroundColor = e.target.value;
+            });
+        });
+
+        document.getElementById("lineColor").addEventListener("input", function (e) {
+            document.querySelectorAll(".section h2").forEach(h2 => {
+                h2.style.borderBottom = `3px solid ${e.target.value}`;
+            });
+        });
+
+        function triggerImageUpload() {
+            document.getElementById("imageUpload").click();
+        }
+
+        document.getElementById("imageUpload").addEventListener("change", function () {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById("profileImage").src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        document.getElementById("addHeader").addEventListener("click", () => {
+            saveState();
+            const newSection = document.createElement("div");
+            newSection.className = "section editable";
+            newSection.innerHTML = `
+                <h2 contenteditable="true">New Header</h2>
+                <p contenteditable="true">New content...</p>
+                <span class="delete-btn" onclick="removeLine(this)">✖</span>
+            `;
+            const lastPage = document.querySelector(".page:last-child");
+            if (isPageOverflowing(lastPage)) {
+                addNewPage();
+                document.querySelector(".page:last-child").appendChild(newSection);
+            } else {
+                lastPage.appendChild(newSection);
+            }
+        });
+
+        function isPageOverflowing(page) {
+            return page.scrollHeight > page.offsetHeight;
+        }
+
+        function addNewPage() {
+            saveState();
+            const page = document.createElement("div");
+            page.className = "page bcom-template"; // Apply bcom-template class to new pages
+            document.getElementById("content").appendChild(page);
+        }
+
+
+
+        function removeLine(btn) {
+            const section = btn.closest(".section");
+            if (section) section.remove();
+        }
+
+        function downloadResume() {
+            window.print();
+        }
+    </script>
+</body>
+</html>

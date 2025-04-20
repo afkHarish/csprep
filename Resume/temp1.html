@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Smart Resume</title>
+    <style>
+        /* temp3.css */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            background-color: #0a0a0a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .toolbar {
+            background-color: #484646e8;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .toolbar button {
+            padding: 8px 15px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .toolbar button:hover {
+            background-color: #0056b3;
+        }
+
+        .toolbar label {
+            font-size: 0.9em;
+            margin-right: 5px;
+        }
+
+        .toolbar input[type="color"] {
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-color: transparent;
+        }
+
+        .toolbar input[type="color"]::-webkit-color-swatch-wrapper {
+            padding: 0;
+        }
+
+        .toolbar input[type="color"]::-webkit-color-swatch {
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .resume {
+            background-color: white;
+            display: flex;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 800px; /* Adjust as needed */
+            max-width: 95%;
+            padding: 30px;
+        }
+
+        .left {
+            width: 30%;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px 0 0 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .upload-label {
+            position: relative;
+            display: inline-block;
+            border-radius: 50%;
+            overflow: hidden;
+            cursor: pointer;
+            margin-bottom: 15px;
+            width: 130px;
+            height: 130px;
+            border: 2px solid #ddd;
+        }
+
+        .upload-label img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .left h2 {
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .left p {
+            color: #555;
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+
+        .right {
+            width: 70%;
+            padding: 20px;
+        }
+
+        .section {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .section h3 {
+            color: #333;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+
+        .section p {
+            color: #444;
+            line-height: 1.6;
+        }
+
+        .section ul {
+            list-style-type: square;
+            padding-left: 20px;
+            color: #444;
+        }
+
+        .section li {
+            margin-bottom: 5px;
+        }
+
+        .editable[contenteditable="true"] {
+            border-bottom: 1px dashed #ccc;
+            padding-right: 5px;
+        }
+
+        .delete-btn {
+            position: absolute;
+            top: 0;
+            right: 0;
+            color: #ff4d4d;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .section:hover .delete-btn {
+            opacity: 1;
+        }
+
+        .job-entry {
+            margin-bottom: 15px;
+        }
+
+        .job-entry strong {
+            display: block;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 3px;
+        }
+
+        .job-entry span {
+            color: #777;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        @media print {
+            body {
+                margin: 0;
+                background-color: white;
+            }
+            .toolbar {
+                display: none;
+            }
+            .resume {
+                width: 100%;
+                max-width: none;
+                border: none;
+                box-shadow: none;
+                padding: 20px;
+                flex-direction: row;
+            }
+            .left {
+                width: 30%;
+                background-color: #f9f9f9 !important;
+                padding: 15px;
+                border-radius: 8px 0 0 8px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .right {
+                width: 70%;
+                padding: 15px;
+            }
+            .editable[contenteditable="true"] {
+                border-bottom: none;
+                padding-right: 0;
+            }
+            .delete-btn {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="toolbar">
+        <button id="downloadBtn">📄 Download PDF</button>
+        <div>
+            <label for="headerColor">Header Color:</label>
+            <input type="color" id="headerColor" title="Header Color" value="#f9f9f9"/>
+        </div>
+        <div>
+            <label for="lineColor">Line Color:</label>
+            <input type="color" id="lineColor" title="Line Color" value="#eee"/>
+        </div>
+        <button id="addHeader">Add Header</button>
+        <button id="undoBtn">Undo</button>
+    </div>
+
+    <div class="resume" id="resume">
+        <div class="left">
+            <label for="uploadPhoto" class="upload-label">
+                <img id="profileImage" src="https://via.placeholder.com/130" alt="Profile" />
+                <input type="file" id="uploadPhoto" accept="image/*" hidden />
+            </label>
+
+            <h2 class="editable" contenteditable="true">Jane Smith</h2>
+            <p class="editable" contenteditable="true">UI/UX Designer</p>
+            <p class="editable" contenteditable="true">jane@example.com</p>
+            <p class="editable" contenteditable="true">+1 555 123 456</p>
+            <p class="editable" contenteditable="true">San Francisco, USA</p>
+        </div>
+        <div class="right">
+            <div class="section header-section">
+                <h3 class="editable" contenteditable="true">Profile</h3>
+                <p class="editable" contenteditable="true">
+                    Creative UX designer with 4+ years of experience in user-centered design, prototyping, and front-end development.
+                </p>
+                <span class="delete-btn" onclick="removeLine(this)">✖</span>
+            </div>
+
+            <div class="section">
+                <h3>Work Experience</h3>
+                <div class="job-entry">
+                    <strong class="editable" contenteditable="true">Senior UX Designer</strong>
+                    <span class="editable" contenteditable="true">2021 - Present</span>
+                    <p class="editable" contenteditable="true">Designify Co.</p>
+                </div>
+                <span class="delete-btn" onclick="removeLine(this)">✖</span>
+            </div>
+
+            <div class="section">
+                <h3>Education</h3>
+                <p class="editable" contenteditable="true"><strong>B.A. in Design</strong> <span class="editable" contenteditable="true">2015 - 2019</span></p>
+                <p class="editable" contenteditable="true">California Arts University</p>
+                <span class="delete-btn" onclick="removeLine(this)">✖</span>
+            </div>
+
+            <div class="section">
+                <h3>Skills</h3>
+                <ul>
+                    <li class="editable" contenteditable="true">Figma, Adobe XD</li>
+                    <li class="editable" contenteditable="true">Wireframing, Prototyping</li>
+                    <li class="editable" contenteditable="true">HTML, CSS</li>
+                </ul>
+                <span class="delete-btn" onclick="removeLine(this)">✖</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const downloadBtn = document.getElementById('downloadBtn');
+            const resumeContainer = document.getElementById('resume');
+            const headerColorInput = document.getElementById('headerColor');
+            const lineColorInput = document.getElementById('lineColor');
+            const uploadPhotoInput = document.getElementById('uploadPhoto');
+            const profileImage = document.getElementById('profileImage');
+            const addHeaderBtn = document.getElementById('addHeader');
+            const undoBtn = document.getElementById('undoBtn');
+            let undoStack = [];
+
+            function saveState() {
+                const currentState = resumeContainer.innerHTML;
+                undoStack.push(currentState);
+                if (undoStack.length > 10) {
+                    undoStack.shift(); // Limit undo history
+                }
+            }
+
+            function undo() {
+                if (undoStack.length > 0) {
+                    resumeContainer.innerHTML = undoStack.pop();
+                    applyColorPreferences(); // Re-apply color preferences after undo
+                }
+            }
+
+            function applyColorPreferences() {
+                const headerColor = headerColorInput.value;
+                const lineColor = lineColorInput.value;
+
+                const leftSide = document.querySelector('.left');
+                if (leftSide) {
+                    leftSide.style.backgroundColor = headerColor;
+                }
+
+                document.querySelectorAll('.section h3').forEach(h3 => {
+                    h3.style.borderBottomColor = lineColor;
+                });
+            }
+
+            downloadBtn.addEventListener('click', () => {
+                window.print();
+            });
+
+            headerColorInput.addEventListener('input', (event) => {
+                const color = event.target.value;
+                const leftSide = document.querySelector('.left');
+                if (leftSide) {
+                    leftSide.style.backgroundColor = color;
+                    saveState();
+                }
+            });
+
+            lineColorInput.addEventListener('input', (event) => {
+                const color = event.target.value;
+                document.querySelectorAll('.section h3').forEach(h3 => {
+                    h3.style.borderBottomColor = color;
+                });
+                saveState();
+            });
+
+            uploadPhotoInput.addEventListener('change', (event) => {
+                const file = event.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        profileImage.src = e.target.result;
+                        saveState();
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+
+            function createNewSection(title = 'New Section', content = 'Enter new content here.') {
+                const newSection = document.createElement('div');
+                newSection.classList.add('section');
+                newSection.innerHTML = `
+                    <h3 class="editable" contenteditable="true">${title}</h3>
+                    <p class="editable" contenteditable="true">${content}</p>
+                    <span class="delete-btn" onclick="removeLine(this)">✖</span>
+                `;
+                return newSection;
+            }
+
+            addHeaderBtn.addEventListener('click', () => {
+                saveState();
+                const newSection = createNewSection('New Section');
+                document.querySelector('.right').insertBefore(newSection, document.querySelector('.right').firstChild);
+            });
+
+            window.removeLine = (btn) => {
+                saveState();
+                const section = btn.parentNode;
+                section.remove();
+            };
+
+            undoBtn.addEventListener('click', undo);
+
+            // Apply initial color preferences
+            applyColorPreferences();
+        });
+    </script>
+</body>
+</html>

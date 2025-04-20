@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Beginner Resume Builder</title>
+    <style>
+        /* temp3.css */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: #0d0000;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 10px;
+            background: #484646e8;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            align-items: center;
+        }
+
+        .controls > div {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .controls label {
+            font-size: 0.9em;
+            margin-right: 5px;
+        }
+
+        .controls button,
+        .controls input[type="color"] {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            transition: transform 0.2s ease, background 0.3s ease;
+            font-size: 0.9em;
+            width: auto;
+            height: auto;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+
+        /* Modified Button Styles */
+        .controls button {
+            background-color: #007bff;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 1em;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            border: 2px solid #007bff;
+        }
+
+        .controls button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+            border-color: #004080;
+        }
+        /* End Modified Button Styles */
+
+        .controls input[type="color"] {
+            padding: 3px;
+            height: auto;
+            width: auto;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border: 1px solid #ccc;
+        }
+
+        .controls input[type="color"]::-webkit-color-swatch-wrapper {
+            padding: 0;
+            margin: 0;
+        }
+
+        .controls input[type="color"]::-webkit-color-swatch {
+            border: none;
+            border-radius: 0;
+            box-sizing: border-box;
+            width: 100%;
+            height: 100%;
+        }
+        .controls input[type="color"] {
+            width: 40px;  /* Adjust as necessary */
+            height: 30px; /* Adjust as necessary */
+        }
+        /* End Modified Color Input Styles */
+
+        #content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            background: white;
+            padding: 20mm;
+            margin-bottom: 20px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            background-color: #5d9cec;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            gap: 20px;
+        }
+
+        .photo-container {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: white;
+            cursor: pointer;
+        }
+
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .section {
+            margin-top: 30px;
+            position: relative;
+        }
+
+        .section h2 {
+            font-size: 18px;
+            border-bottom: 3px solid #5d9cec;
+            margin-bottom: 10px;
+            padding-bottom: 4px;
+        }
+
+        .section p,
+        .section li {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .editable[contenteditable="true"] {
+            outline: none;
+        }
+
+        .delete-btn {
+            display: none;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            color: red;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .section:hover .delete-btn {
+            display: block;
+        }
+
+        @media print {
+            .controls {
+                display: none;
+            }
+
+            .page {
+                box-shadow: none;
+                margin: 0;
+                page-break-after: always;
+            }
+        }
+
+        /* beginner_temp.css */
+        .beginner-template {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .beginner-template .header {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 2px solid #ccc;
+            margin-bottom: 20px;
+        }
+
+        .beginner-template .photo-container {
+            width: 80px;
+            height: 80px;
+            margin-right: 15px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 1px solid #ddd;
+        }
+
+        .beginner-template .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .beginner-template .header h1 {
+            font-size: 2em;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .beginner-template .header .tagline {
+            font-size: 1.1em;
+            color: #777;
+        }
+
+        .beginner-template .section {
+            margin-top: 25px;
+        }
+
+        .beginner-template .section h2 {
+            font-size: 1.5em;
+            border-bottom: 2px solid #bbb;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .beginner-template .section p,
+        .beginner-template .section li {
+            font-size: 1em;
+            color: #444;
+        }
+
+        .beginner-template .education-item,
+        .beginner-template .experience-item,
+        .beginner-template .project-item {
+            margin-bottom: 15px;
+        }
+
+        .beginner-template .education-item strong,
+        .beginner-template .experience-item strong,
+        .beginner-template .project-item strong {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .beginner-template .skills p {
+            margin-bottom: 5px;
+        }
+
+        .beginner-template .delete-btn {
+            top: 5px;
+            right: 5px;
+            font-size: 0.8em;
+            color: #888;
+        }
+
+        .beginner-template .section:hover .delete-btn {
+            display: block;
+        }
+
+        @media print {
+            .beginner-template .header {
+                border-bottom: 1px solid #333;
+                margin-bottom: 15px;
+                padding-bottom: 10px;
+            }
+
+            .beginner-template .section h2 {
+                border-bottom: 1px solid #555;
+                padding-bottom: 3px;
+                margin-bottom: 8px;
+            }
+        }
+
+        /* Modified Color Input Styles */
+        .controls input[type="color"] {
+            padding: 3px;
+            height: auto;
+            width: auto;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border: 1px solid #ccc;
+        }
+
+        .controls input[type="color"]::-webkit-color-swatch-wrapper {
+            padding: 0;
+            margin: 0;
+        }
+
+        .controls input[type="color"]::-webkit-color-swatch {
+            border: none;
+            border-radius: 0;
+            box-sizing: border-box;
+            width: 100%;
+            height: 100%;
+        }
+        .controls input[type="color"] {
+            width: 40px;  /* Adjust as necessary */
+            height: 30px; /* Adjust as necessary */
+        }
+        /* End Modified Color Input Styles */
+
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <div>
+            <label for="headerColor">Header Color:</label>
+            <input type="color" id="headerColor" title="Header Color" />
+        </div>
+        <div>
+            <label for="lineColor">Line Color:</label>
+            <input type="color" id="lineColor" title="Line Color" />
+        </div>
+        <button id="addHeader">Add Header</button>
+        <button id="undoBtn">Undo</button>
+        <button onclick="downloadResume()">Download PDF</button>
+    </div>
+
+    <div id="content">
+        <div class="page beginner-template">
+            <div class="header editable">
+                <div class="photo-container" onclick="triggerImageUpload(event)">
+                    <img id="profileImage" src="" alt="Profile" />
+                    <input type="file" id="imageUpload" accept="image/*" hidden />
+                </div>
+                <div>
+                    <h1 contenteditable="true">Your Name</h1>
+                    <p class="tagline" contenteditable="true">Aspiring [Your Field]</p>
+                </div>
+            </div>
+
+            <div class="section editable contact-info">
+                <h2 contenteditable="true">Contact</h2>
+                <p contenteditable="true">📞 [Your Phone Number]</p>
+                <p contenteditable="true">📧 [Your Email Address]</p>
+                <p contenteditable="true">📍 [Your City, Country]</p>
+                <p contenteditable="true">🔗 [Your LinkedIn Profile (Optional)]</p>
+                <span class="delete-btn" onclick="removeLine(this)">✖</span>
+            </div>
+
+            <div class="section editable summary">
+                <h2 contenteditable="true">Summary</h2>
+                <p contenteditable="true">Enthusiastic and quick-learning individual eager to contribute to [relevant industry/field]. Possessing foundational knowledge in [mention 1-2 key skills or areas of study]. Seeking an entry-level opportunity to gain practical experience and develop professional skills.</p>
+                <span class="delete-btn" onclick="removeLine(this)">✖</span>
+            </div>
+
+            <div class="section editable education">
+                <h2 contenteditable="true">Education</h2>
+                <div class="education-item" contenteditable="true">
+                    <strong>[Your Degree/Diploma]</strong> - [Your Major/Field of Study]
+                    <p>[Name of Institution] ([Start Year]–[End Year/Present])</p>
+                    <p>[Mention relevant coursework or achievements (optional)]</p>
+                </div>
+                <div class="education-item" contenteditable="true">
+                    <strong>[Your High School Diploma/Equivalent]</strong>
+                    <p>[Name of High School] ([Start Year]–[End Year])</p>
+                    <p>[Mention relevant achievements or subjects (optional)]</p>
+                </div>
+                <span class="delete-btn" onclick="removeLine(this)">✖</span>
+            </div>
+
+            <div class="section editable skills">
+                <h2 contenteditable="true">Skills</h2>
+                <p contenteditable="true">✅ [Skill 1], [Skill 2], [Skill 3]</p>
+                <p contenteditable="true">✅ [Software/Tool 1], [Software/Tool 2] (if applicable)</p>
+                <p contenteditable="true">✅ [Soft Skill 1] (e.g., Teamwork, Communication)</p>
+                <span class="delete-btn" onclick="removeLine(this)">✖</span>
+            </div>
+
+            <div class="section editable projects">
+                <h2 contenteditable="true">Projects (Optional)</h2>
+                <div class="project-item" contenteditable="true">
+                    <strong>[Project Name 1]</strong>
+                    <p>[Brief description of the project and your role]</p>
+                    <p>[Mention technologies used (if applicable)]</p>
+                </div>
+                <div class="project-item" contenteditable="true">
+                    <strong>[Project Name 2]</strong>
+                    <p>[Brief description of the project and your role]</p>
+                    <p>[Mention technologies used (if applicable)]</p>
+                </div>
+                <span class="delete-btn" onclick="removeLine(this)">✖</span>
+            </div>
+
+            <div class="section editable experience">
+                <h2 contenteditable="true">Experience (Part-time, Volunteer, Internships - Optional)</h2>
+                <div class="experience-item" contenteditable="true">
+                    <strong>[Job Title/Role]</strong> - [Company/Organization] ([Start Date]–[End Date/Present])
+                    <p>[Briefly describe your responsibilities and achievements]</p>
+                </div>
+                <div class="experience-item" contenteditable="true">
+                    <strong>[Job Title/Role]</strong> - [Company/Organization] ([Start Date]–[End Date/Present])
+                    <p>[Briefly describe your responsibilities and achievements]</p>
+                </div>
+                <span class="delete-btn" onclick="removeLine(this)">✖</span>
+            </div>
+
+            <div class="section editable awards">
+                <h2 contenteditable="true">Awards and Recognition (Optional)</h2>
+                <p contenteditable="true">🏆 [Award Name] - [Issuing Organization] ([Year])</p>
+                <p contenteditable="true">🏆 [Recognition Name] - [Issuing Organization] ([Year])</p>
+                <span class="delete-btn" onclick="removeLine(this)">✖</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let undoStack = [];
+
+        function saveState() {
+            const contentClone = document.getElementById("content").cloneNode(true);
+            undoStack.push(contentClone);
+            if (undoStack.length > 10) undoStack.shift();
+        }
+
+        function undo() {
+            if (undoStack.length > 0) {
+                const previous = undoStack.pop();
+                document.getElementById("content").replaceWith(previous);
+            }
+        }
+
+        document.getElementById("undoBtn").addEventListener("click", undo);
+
+        document.getElementById("headerColor").addEventListener("input", function (e) {
+            document.querySelectorAll(".header").forEach(header => {
+                header.style.backgroundColor = e.target.value;
+            });
+        });
+
+        document.getElementById("lineColor").addEventListener("input", function (e) {
+            document.querySelectorAll(".section h2").forEach(h2 => {
+                h2.style.borderBottom = `3px solid ${e.target.value}`;
+            });
+        });
+
+        function triggerImageUpload() {
+            document.getElementById("imageUpload").click();
+        }
+
+        document.getElementById("imageUpload").addEventListener("change", function () {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById("profileImage").src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        document.getElementById("addHeader").addEventListener("click", () => {
+            saveState();
+            const newSection = document.createElement("div");
+            newSection.className = "section editable";
+            newSection.innerHTML = `
+                <h2 contenteditable="true">New Header</h2>
+                <p contenteditable="true">New content...</p>
+                <span class="delete-btn" onclick="removeLine(this)">✖</span>
+            `;
+            const lastPage = document.querySelector(".page:last-child");
+            if (isPageOverflowing(lastPage)) {
+                addNewPage();
+                document.querySelector(".page:last-child").appendChild(newSection);
+            } else {
+                lastPage.appendChild(newSection);
+            }
+        });
+
+        function isPageOverflowing(page) {
+            return page.scrollHeight > page.offsetHeight;
+        }
+
+        function addNewPage() {
+            saveState();
+            const page = document.createElement("div");
+            page.className = "page beginner-template";
+            document.getElementById("content").appendChild(page);
+        }
+
+
+
+        function removeLine(btn) {
+            const section = btn.closest(".section");
+            if (section) section.remove();
+        }
+    </script>
+</body>
+</html>

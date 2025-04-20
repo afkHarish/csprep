@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="temp6.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="controls">
+        <button id="downloadBtn" onclick="downloadResume()" style="background-color: #007bff; color: white;">Download PDF</button>
+        <div>
+            <label for="headerColor">Header Color:</label>
+            <input type="color" id="headerColor" title="Header Color" value="#f8f9fa" style="height: auto; width: auto; padding: 3px; border: 1px solid #ccc; appearance: none; -webkit-appearance: none; -moz-appearance: none; box-sizing: border-box;"/>
+        </div>
+        <div>
+            <label for="lineColor">Line Color:</label>
+            <input type="color" id="lineColor" title="Line Color" value="#3498db" style="height: auto; width: auto; padding: 3px; border: 1px solid #ccc; appearance: none; -webkit-appearance: none; -moz-appearance: none; box-sizing: border-box;"/>
+        </div>
+        <button id="addHeader"  style="background-color: #007bff; color: white;">Add Header</button>
+        <button id="undoBtn"  style="background-color: #007bff; color: white;">Undo</button>
+    </div>
+    <div id="content">
+        <div class="page">
+            <div class="left-column">
+                <div class="header editable">
+                    <div class="photo-container" onclick="triggerImageUpload(event)">
+                        <img id="profileImage" src="" alt="Profile"/>
+                        <input type="file" id="imageUpload" accept="image/*" hidden/>
+                    </div>
+                    <div>
+                        <h1 contenteditable="true">LAUREN CHEN</h1>
+                        <p contenteditable="true">DIGITAL MARKETING SPECIALIST</p>
+                    </div>
+                </div>
+                <div class="section editable contact-section">
+                    <h2 contenteditable="true">CONTACT</h2>
+                    <p contenteditable="true">Phone: (123) 456-7890</p>
+                    <p contenteditable="true">Email: lauren.chen@mail.com</p>
+                    <p contenteditable="true">Address: 47 W 13th St, New York, NY 10011</p>
+                    <p contenteditable="true">Website: laurenchen.com</p>
+                    <p contenteditable="true">LinkedIn: linkedin.com/in/lauren.chen</p>
+                    <span class="delete-btn" onclick="removeLine(this)">✖</span>
+                </div>
+                <div class="section editable skills-section">
+                    <h2 contenteditable="true">RELEVANT SKILLS</h2>
+                    <ul contenteditable="true">
+                        <li>Digital Data Analytics</li>
+                        <li>Adobe Photoshop</li>
+                        <li>Adobe Illustrator</li>
+                        <li>Adobe InDesign</li>
+                        <li>AutoCAD</li>
+                        <li>Rhinoceros</li>
+                    </ul>
+                    <span class="delete-btn" onclick="removeLine(this)">✖</span>
+                </div>
+                <div class="section editable education-section">
+                    <h2 contenteditable="true">EDUCATION</h2>
+                    <h3 contenteditable="true">Bachelor of Arts, Communications</h3>
+                    <p contenteditable="true">Resume Genius University, New York, NY (Expected Graduation May 20XX)</p>
+                    <p contenteditable="true">Honors: cum laude (GPA: 3.6/4.0)</p>
+                    <p contenteditable="true">Relevant Coursework: Course 1, Course 2</p>
+                    <span class="delete-btn" onclick="removeLine(this)">✖</span>
+                </div>
+            </div>
+            <div class="right-column">
+                <div class="section editable">
+                    <h2 contenteditable="true">SUMMARY</h2>
+                    <p contenteditable="true">
+                        Digital Marketing Specialist with 6+ years of experience in online marketing, branding, and business strategy across music, media, and entertainment industries. Skilled in evaluating financial needs and implementing multi-pronged digital strategies that increase revenue and drive brand growth.
+                    </p>
+                    <span class="delete-btn" onclick="removeLine(this)">✖</span>
+                </div>
+                <div class="section editable">
+                    <h2 contenteditable="true">PROFESSIONAL EXPERIENCE</h2>
+                    <div class="experience-item">
+                        <strong contenteditable="true">Digital Marketing Specialist</strong>
+                        <small contenteditable="true">BCG, New York, NY (January 20XX - Present)</small>
+                        <ul contenteditable="true">
+                            <li>Manage digital sales and streaming accounts to improve brand positioning and growth</li>
+                            <li>Source and develop new strategic partnerships, social engagements, and advertising opportunities that generate new revenue streams</li>
+                            <li>Collaborate with internal departments to execute national advertising campaigns, plan global digital distribution, and re-deploy a 1M+ consumer sales and marketing database</li>
+                        </ul>
+                    </div>
+                    <div class="experience-item">
+                        <strong contenteditable="true">Digital Marketing Associate</strong>
+                        <small contenteditable="true">BCG, New York, NY (May 20XX - January 20XX)</small>
+                        <ul contenteditable="true">
+                            <li>Worked with management to develop and apply digital marketing plans with a focus on driving acquisition and conversion.</li>
+                            <li>Increased conversions by 15% from paid sources (PPC, Grant, Display, and VOD)</li>
+                        </ul>
+                    </div>
+                    <div class="experience-item">
+                        <strong contenteditable="true">Marketing Intern</strong>
+                        <small contenteditable="true">BCG, New York, NY (January 20XX - May 20XX)</small>
+                        <ul contenteditable="true">
+                            <li>Helped research, write, and edit blog posts.</li>
+                            <li>Determined relevant keywords and entities for pages using Semrush, Ahrefs, and Page Optimizer Pro</li>
+                        </ul>
+                    </div>
+                    <span class="delete-btn" onclick="removeLine(this)">✖</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="temp6.js"></script>
+</body>
+</html>
