@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>CSPrep - Resources</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Custom Styles for Resources Page -->
+    <style>
+        .company-card {
+            transition: all 0.3s ease;
+            background-color: #fff;
+            cursor: pointer;
+        }
+        .company-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+            background-color: #06A3DA;
+        }
+        .company-card:hover h5 {
+            color: #fff;
+        }
+        .company-card h5 {
+            color: #06A3DA;
+            transition: all 0.3s ease;
+        }
+        .feature-box {
+            transition: all 0.3s ease;
+            background-color: #fff;
+        }
+        .feature-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        }
+        .feature-box i {
+            color: #06A3DA;
+        }
+        .accordion-button:not(.collapsed) {
+            background-color: #06A3DA;
+            color: #fff;
+        }
+        .accordion-button:focus {
+            box-shadow: none;
+            border-color: rgba(6, 163, 218, 0.5);
+        }
+        .accordion-button::after {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%2306A3DA'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+        }
+        .accordion-button:not(.collapsed)::after {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <img src="img/CSPREP-removebg-preview.png" alt="Loading..." class="custom-spinner">
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <h2 class="m-0 text-dark"><img src="img/CSPREP.png" height="75px">CSPrep</h2>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="quiz.html" class="nav-item nav-link">Quiz</a>
+                <a href="contact.html" class="nav-item nav-link">Code</a>
+                <a href="resources.html" class="nav-item nav-link active">Resources</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Miscallaneous</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="videos.html" class="dropdown-item">Videos</a>
+                        <a href="blogs.html" class="dropdown-item">Blogs</a>
+                        <a href="/Resume/resume.html" class="dropdown-item">Resume Builder</a>
+                    </div>
+                </div>
+                <a href="#" class="nav-item nav-link" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-primary py-5 mb-5 page-header">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1 class="display-3 text-white animated slideInDown">Resources</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- Resources Content Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-12">
+                    <div class="bg-white rounded shadow-sm p-4">
+                        <h2 class="mb-4">Company Specific Aptitude Questions</h2>
+                        <p class="mb-4">Company Specific Aptitude Questions are important for those aiming to excel in company-specific recruitment processes. Our aptitude questions and answers collection provides a deep dive into the types of questions you can expect, helping you prepare thoroughly for your dream company's assessment.</p>
+
+                        <!-- Company Grid -->
+                        <div class="row g-4 mb-5">
+                            <div class="col-lg-3 col-md-4 col-sm-6">
+                                <div class="company-card p-3 border rounded text-center">
+                                    <a href="company-questions/accenture.html" class="text-decoration-none">
+                                        <h5 class="mb-0">Accenture</h5>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6">
+                                <div class="company-card p-3 border rounded text-center">
+                                    <a href="company-questions/amazon.html" class="text-decoration-none">
+                                        <h5 class="mb-0">Amazon</h5>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6">
+                                <div class="company-card p-3 border rounded text-center">
+                                    <a href="company-questions/deloitte.html" class="text-decoration-none">
+                                        <h5 class="mb-0">Deloitte</h5>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6">
+                                <div class="company-card p-3 border rounded text-center">
+                                    <a href="company-questions/tcs.html" class="text-decoration-none">
+                                        <h5 class="mb-0">TCS</h5>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6">
+                                <div class="company-card p-3 border rounded text-center">
+                                    <a href="company-questions/infosys.html" class="text-decoration-none">
+                                        <h5 class="mb-0">Infosys</h5>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6">
+                                <div class="company-card p-3 border rounded text-center">
+                                    <a href="company-questions/wipro.html" class="text-decoration-none">
+                                        <h5 class="mb-0">Wipro</h5>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6">
+                                <div class="company-card p-3 border rounded text-center">
+                                    <a href="company-questions/cognizant.html" class="text-decoration-none">
+                                        <h5 class="mb-0">Cognizant</h5>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6">
+                                <div class="company-card p-3 border rounded text-center">
+                                    <a href="company-questions/capgemini.html" class="text-decoration-none">
+                                        <h5 class="mb-0">Capgemini</h5>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Why Choose Us Section -->
+                        <div class="why-choose-us mb-5">
+                            <h3 class="mb-4">Why Choose Us for Practicing Company Specific Aptitude?</h3>
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="feature-box p-4 border rounded">
+                                        <h5><i class="fas fa-check-circle text-primary me-2"></i>Comprehensive Coverage</h5>
+                                        <p class="mb-0">Our platform offers a wide array of questions that span across various domains and skill sets required by different companies.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="feature-box p-4 border rounded">
+                                        <h5><i class="fas fa-sync text-primary me-2"></i>Up-to-Date Content</h5>
+                                        <p class="mb-0">We regularly update our question bank to reflect the latest patterns and requirements in the recruitment process.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="feature-box p-4 border rounded">
+                                        <h5><i class="fas fa-users text-primary me-2"></i>Curated by Experts</h5>
+                                        <p class="mb-0">Each question is carefully designed by industry experts who understand the nuances of company-specific assessments.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="feature-box p-4 border rounded">
+                                        <h5><i class="fas fa-book text-primary me-2"></i>Detailed Explanations</h5>
+                                        <p class="mb-0">Not only do we provide answers, but each question is accompanied by a detailed explanation to improve your understanding.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQs Section -->
+                        <div class="faq-section">
+                            <h3 class="mb-4">Frequently Asked Questions</h3>
+                            <div class="accordion" id="faqAccordion">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                            Are the aptitude test questions designed following a specific pattern unique to each company?
+                                        </button>
+                                    </h2>
+                                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            Yes, We tailor our questions to reflect the unique patterns and styles specific to each company, ensuring a targeted and effective preparation.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                            How do you benefit from practicing these company specific questions?
+                                        </button>
+                                    </h2>
+                                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            By practicing these questions, you'll get a good grip on the kind of challenges each company throws at you. It's a great way to sharpen your skills and walk into your placement feeling confident.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                            How often is the content updated?
+                                        </button>
+                                    </h2>
+                                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            We regularly update our content to keep pace with the latest industry trends and company requirements, ensuring you receive the most current and relevant preparation material.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Resources Content End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Quick Link</h4>
+                    <a class="btn btn-link" href="">Quiz</a>
+                    <a class="btn btn-link" href="">Code</a>
+                    <a class="btn btn-link" href="">Resources</a>
+                    <a class="btn btn-link" href="">Miscallaneous</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Contact</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>CSPrep HQ, Bangalore.</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 1234567890</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>csprep@gmail.com</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Newsletter</h4>
+                    <p>Sign up for weekly newsletter to get latest IT news, tips and tricks to help you achieve your goal.</p>
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">CSPrep</a>, All Right Reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header d-flex justify-content-center">
+            <div class="btn-group" role="group" aria-label="Login type toggle">
+              <button type="button" id="userBtn" class="btn btn-primary active">User</button>
+              <button type="button" id="adminBtn" class="btn btn-outline-secondary">Admin</button>
+            </div>
+            <button type="button" class="btn-close position-absolute end-0 me-2" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="userLoginForm" class="mb-4">
+              <h6>User Login</h6>
+              <div class="mb-3">
+                <label for="userEmail" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="userEmail" placeholder="Enter email" required>
+              </div>
+              <div class="mb-3">
+                <label for="userPassword" class="form-label">Password</label>
+                <input type="password" class="form-control" id="userPassword" placeholder="Password" required>
+              </div>
+              <button type="submit" class="btn btn-primary w-100">Login as User</button>
+            </form>
+            <form id="adminLoginForm" style="display:none;">
+              <h6>Admin Login</h6>
+              <div class="mb-3">
+                <label for="adminEmail" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="adminEmail" placeholder="Enter email" required>
+              </div>
+              <div class="mb-3">
+                <label for="adminPassword" class="form-label">Password</label>
+                <input type="password" class="form-control" id="adminPassword" placeholder="Password" required>
+              </div>
+              <button type="submit" class="btn btn-secondary w-100">Login as Admin</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+
+</html>

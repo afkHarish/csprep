@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>CSPrep - Accenture Aptitude Questions</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="../img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="../lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="../css/style.css" rel="stylesheet">
+
+    <!-- Custom Styles for Questions Page -->
+    <style>
+        .question-box {
+            transition: all 0.3s ease;
+            background-color: #fff;
+            margin-bottom: 2rem;
+        }
+        .question-box:hover {
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        }
+        .form-check-input:checked {
+            background-color: #06A3DA;
+            border-color: #06A3DA;
+        }
+        .btn-primary {
+            background-color: #06A3DA;
+            border-color: #06A3DA;
+        }
+        .btn-primary:hover {
+            background-color: #0487b3;
+            border-color: #0487b3;
+        }
+        .answer-box {
+            transition: all 0.3s ease;
+        }
+        .pagination .page-item.active .page-link {
+            background-color: #06A3DA;
+            border-color: #06A3DA;
+        }
+        .pagination .page-link {
+            color: #06A3DA;
+        }
+        .pagination .page-link:hover {
+            color: #0487b3;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <img src="../img/CSPREP-removebg-preview.png" alt="Loading..." class="custom-spinner">
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="../index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <h2 class="m-0 text-dark"><img src="../img/CSPREP.png" height="75px">CSPrep</h2>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="../index.html" class="nav-item nav-link">Home</a>
+                <a href="../quiz.html" class="nav-item nav-link">Quiz</a>
+                <a href="../contact.html" class="nav-item nav-link">Code</a>
+                <a href="../resources.html" class="nav-item nav-link active">Resources</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Miscallaneous</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="../videos.html" class="dropdown-item">Videos</a>
+                        <a href="../blogs.html" class="dropdown-item">Blogs</a>
+                        <a href="/Resume/resume.html" class="dropdown-item">Resume Builder</a>
+                    </div>
+                </div>
+                <a href="#" class="nav-item nav-link" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-primary py-5 mb-5 page-header">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1 class="display-3 text-white animated slideInDown">Accenture Aptitude Questions</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- Company Info Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-12">
+                    <div class="bg-white rounded shadow-sm p-4 mb-4">
+                        <div class="d-flex align-items-center mb-4">
+                            <img src="../img/companies/accenture-logo.png" alt="Accenture Logo" class="me-4" style="height: 80px;">
+                            <div>
+                                <h2 class="mb-2">Accenture</h2>
+                                <p class="mb-0">Accenture is a global professional services company with leading capabilities in digital, cloud and security. Combining unmatched experience and specialized skills across more than 40 industries, we offer Strategy and Consulting, Interactive, Technology and Operations services.</p>
+                            </div>
+                        </div>
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-globe text-primary me-3 fa-2x"></i>
+                                    <div>
+                                        <h5 class="mb-1">Global Presence</h5>
+                                        <p class="mb-0">Operating in over 120 countries</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-users text-primary me-3 fa-2x"></i>
+                                    <div>
+                                        <h5 class="mb-1">Workforce</h5>
+                                        <p class="mb-0">Over 738,000 professionals</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-chart-line text-primary me-3 fa-2x"></i>
+                                    <div>
+                                        <h5 class="mb-1">Revenue</h5>
+                                        <p class="mb-0">Over $64 billion annually</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Company Info End -->
+
+    <!-- Questions Content Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-12">
+                    <div class="bg-white rounded shadow-sm p-4">
+                        <!-- Question 1 -->
+                        <div class="question-box p-4 border rounded">
+                            <h4 class="mb-3">Q1. In the following sentence, one part of the sentence has an error. Find out that particular part and select the appropriate option.</h4>
+                            <p>China for its part expressed confidence on (A) / Ms. Lam and her government but said it would (B) / not sit idly by if the unrest threatened (C) / Chinese security and sovereignty (D) / No Error (E)</p>
+                            <div class="options">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1a">
+                                    <label class="form-check-label" for="q1a">A. China for its part expressed confidence on</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1b">
+                                    <label class="form-check-label" for="q1b">B. China for its part expressed confidence in</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1c">
+                                    <label class="form-check-label" for="q1c">C. China for its part expressed confidence at</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1d">
+                                    <label class="form-check-label" for="q1d">D. China for its part expressed confidence by</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-3" onclick="showAnswer(1)">View Answer</button>
+                            <div id="answer1" class="answer-box mt-3" style="display: none;">
+                                <div class="alert alert-success">
+                                    <strong>Answer:</strong> B. China for its part expressed confidence in
+                                    <br>
+                                    <strong>Explanation:</strong> The correct preposition to use with "confidence" is "in". The phrase "expressed confidence on" is grammatically incorrect. The correct form is "expressed confidence in".
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 2 -->
+                        <div class="question-box p-4 border rounded">
+                            <h4 class="mb-3">Q2. As per the given passage, how RISAT-2B satellite will image in the cloudy weather?</h4>
+                            <p>With the successful pre-dawn launch of RISAT-2B satellite, the Indian Space Research Organisation (ISRO) has added another feather to its cap. The satellite will enhance India's capability in crop monitoring during the monsoon season, forestry mapping for forest fires and deforestation, and flood mapping as part of the national disaster management programme. Given that overcast skies are a constant during the monsoon season and during times of flood, the ability to penetrate the cloud cover is essential. While optical remote sensing that relies on visible light for imaging gets obstructed by clouds, RISAT-2B will not. Much like the RISAT-1 satellite that was launched by ISRO in April 2012, RISAT-2B will also use microwave radiation. Unlike visible light, microwaves have longer wavelengths and so will not be susceptible to atmospheric scattering. Microwave radiation can thus easily pass through the cloud cover, haze and dust, and image the ground. Hence, RISAT-2B satellite will be able to image under almost all weather and environmental conditions. Since it does not rely on visible light for imaging, it will be able to image the ground during both day and night. The satellite does not have passive microwave sensors that detect the radiation naturally emitted by the atmosphere or reflected by objects on the ground. Instead, RISAT-2B will be transmitting hundreds of microwave pulses each second towards the ground and receiving the signals reflected by the objects using radar. The moisture and texture of the object will determine the strength of the microwave signal that gets reflected. While the strength of the reflected signal will help determine different targets, the time between the transmitted and reflected signals will help determine the distance to the object.</p>
+                            <div class="options">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q2" id="q2a">
+                                    <label class="form-check-label" for="q2a">A. Only I</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q2" id="q2b">
+                                    <label class="form-check-label" for="q2b">B. Only II</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q2" id="q2c">
+                                    <label class="form-check-label" for="q2c">C. Only II and III</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q2" id="q2d">
+                                    <label class="form-check-label" for="q2d">D. Only I and II</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-3" onclick="showAnswer(2)">View Answer</button>
+                            <div id="answer2" class="answer-box mt-3" style="display: none;">
+                                <div class="alert alert-success">
+                                    <strong>Answer:</strong> A. Only I
+                                    <br>
+                                    <strong>Explanation:</strong> According to the passage, RISAT-2B uses microwave radiation that can pass through cloud cover and dust easily. The other options are incorrect as the satellite does not use visible light or electronic rays for imaging.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 3 -->
+                        <div class="question-box p-4 border rounded">
+                            <h4 class="mb-3">Q3. What is the meaning of the phrase "added another feather to its cap" as used in the passage?</h4>
+                            <div class="options">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q3" id="q3a">
+                                    <label class="form-check-label" for="q3a">A. To achieve something that is not possible</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q3" id="q3b">
+                                    <label class="form-check-label" for="q3b">B. To achieve something that makes one proud</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q3" id="q3c">
+                                    <label class="form-check-label" for="q3c">C. To achieve something that is very difficult</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q3" id="q3d">
+                                    <label class="form-check-label" for="q3d">D. To achieve something that is very easy</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-3" onclick="showAnswer(3)">View Answer</button>
+                            <div id="answer3" class="answer-box mt-3" style="display: none;">
+                                <div class="alert alert-success">
+                                    <strong>Answer:</strong> B. To achieve something that makes one proud
+                                    <br>
+                                    <strong>Explanation:</strong> The phrase "added another feather to its cap" is an idiom that means to achieve something that makes one proud. In the context of the passage, it refers to ISRO's successful launch of the RISAT-2B satellite, which is a significant achievement for the organization.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 4 -->
+                        <div class="question-box p-4 border rounded">
+                            <h4 class="mb-3">Q4. A man can row upstream at 7 kmph and downstream at 10 kmph. Find man's rate in still water and the rate of current.</h4>
+                            <div class="options">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q4" id="q4a">
+                                    <label class="form-check-label" for="q4a">A. 8.5 kmph, 1.5 kmph</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q4" id="q4b">
+                                    <label class="form-check-label" for="q4b">B. 8 kmph, 2 kmph</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q4" id="q4c">
+                                    <label class="form-check-label" for="q4c">C. 7.5 kmph, 2.5 kmph</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q4" id="q4d">
+                                    <label class="form-check-label" for="q4d">D. 9 kmph, 1 kmph</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-3" onclick="showAnswer(4)">View Answer</button>
+                            <div id="answer4" class="answer-box mt-3" style="display: none;">
+                                <div class="alert alert-success">
+                                    <strong>Answer:</strong> A. 8.5 kmph, 1.5 kmph
+                                    <br>
+                                    <strong>Explanation:</strong> Rate in still water = 1/2 (10 + 7) kmph = 8.5 kmph
+                                    <br>
+                                    Rate of current = 1/2 (10 - 7) kmph = 1.5 kmph
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 5 -->
+                        <div class="question-box p-4 border rounded">
+                            <h4 class="mb-3">Q5. A sum of money at compound interest amounts to thrice itself in 3 years. In how many years will it be 9 times itself?</h4>
+                            <div class="options">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q5" id="q5a">
+                                    <label class="form-check-label" for="q5a">A. 6 years</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q5" id="q5b">
+                                    <label class="form-check-label" for="q5b">B. 7 years</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q5" id="q5c">
+                                    <label class="form-check-label" for="q5c">C. 8 years</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q5" id="q5d">
+                                    <label class="form-check-label" for="q5d">D. 9 years</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-3" onclick="showAnswer(5)">View Answer</button>
+                            <div id="answer5" class="answer-box mt-3" style="display: none;">
+                                <div class="alert alert-success">
+                                    <strong>Answer:</strong> A. 6 years
+                                    <br>
+                                    <strong>Explanation:</strong> Let the sum be P and rate be R% p.a.
+                                    <br>
+                                    Then, P(1 + R/100)³ = 3P
+                                    <br>
+                                    (1 + R/100)³ = 3
+                                    <br>
+                                    (1 + R/100)⁶ = 9
+                                    <br>
+                                    Therefore, the sum will be 9 times itself in 6 years
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 6 -->
+                        <div class="question-box p-4 border rounded">
+                            <h4 class="mb-3">Q6. A train 125 m long passes a man, running at 5 km/hr in the same direction in which the train is going, in 10 seconds. The speed of the train is:</h4>
+                            <div class="options">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q6" id="q6a">
+                                    <label class="form-check-label" for="q6a">A. 50 km/hr</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q6" id="q6b">
+                                    <label class="form-check-label" for="q6b">B. 45 km/hr</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q6" id="q6c">
+                                    <label class="form-check-label" for="q6c">C. 55 km/hr</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q6" id="q6d">
+                                    <label class="form-check-label" for="q6d">D. 60 km/hr</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-3" onclick="showAnswer(6)">View Answer</button>
+                            <div id="answer6" class="answer-box mt-3" style="display: none;">
+                                <div class="alert alert-success">
+                                    <strong>Answer:</strong> A. 50 km/hr
+                                    <br>
+                                    <strong>Explanation:</strong> Speed of the train relative to man = (125/10) m/sec = 12.5 m/sec
+                                    <br>
+                                    = (12.5 × 18/5) km/hr = 45 km/hr
+                                    <br>
+                                    Let the speed of the train be x km/hr
+                                    <br>
+                                    Then, relative speed = (x - 5) km/hr
+                                    <br>
+                                    x - 5 = 45
+                                    <br>
+                                    x = 50 km/hr
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 7 -->
+                        <div class="question-box p-4 border rounded">
+                            <h4 class="mb-3">Q7. A sum of money becomes Rs. 13,380 after 3 years and Rs. 20,070 after 6 years on compound interest. The sum is:</h4>
+                            <div class="options">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q7" id="q7a">
+                                    <label class="form-check-label" for="q7a">A. Rs. 8,800</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q7" id="q7b">
+                                    <label class="form-check-label" for="q7b">B. Rs. 8,920</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q7" id="q7c">
+                                    <label class="form-check-label" for="q7c">C. Rs. 8,960</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q7" id="q7d">
+                                    <label class="form-check-label" for="q7d">D. Rs. 9,000</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-3" onclick="showAnswer(7)">View Answer</button>
+                            <div id="answer7" class="answer-box mt-3" style="display: none;">
+                                <div class="alert alert-success">
+                                    <strong>Answer:</strong> B. Rs. 8,920
+                                    <br>
+                                    <strong>Explanation:</strong> Let the sum be P and rate be R% p.a.
+                                    <br>
+                                    Then, P(1 + R/100)³ = 13380 and P(1 + R/100)⁶ = 20070
+                                    <br>
+                                    On dividing, we get (1 + R/100)³ = 20070/13380 = 3/2
+                                    <br>
+                                    P = 13380 × 2/3 = Rs. 8,920
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 8 -->
+                        <div class="question-box p-4 border rounded">
+                            <h4 class="mb-3">Q8. A can do a piece of work in 4 hours; B and C together can do it in 3 hours, while A and C together can do it in 2 hours. How long will B alone take to do it?</h4>
+                            <div class="options">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q8" id="q8a">
+                                    <label class="form-check-label" for="q8a">A. 8 hours</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q8" id="q8b">
+                                    <label class="form-check-label" for="q8b">B. 10 hours</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q8" id="q8c">
+                                    <label class="form-check-label" for="q8c">C. 12 hours</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q8" id="q8d">
+                                    <label class="form-check-label" for="q8d">D. 14 hours</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-3" onclick="showAnswer(8)">View Answer</button>
+                            <div id="answer8" class="answer-box mt-3" style="display: none;">
+                                <div class="alert alert-success">
+                                    <strong>Answer:</strong> C. 12 hours
+                                    <br>
+                                    <strong>Explanation:</strong> A's 1 hour's work = 1/4
+                                    <br>
+                                    (B + C)'s 1 hour's work = 1/3
+                                    <br>
+                                    (A + C)'s 1 hour's work = 1/2
+                                    <br>
+                                    C's 1 hour's work = 1/2 - 1/4 = 1/4
+                                    <br>
+                                    B's 1 hour's work = 1/3 - 1/4 = 1/12
+                                    <br>
+                                    B alone will take 12 hours to do the work
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 9 -->
+                        <div class="question-box p-4 border rounded">
+                            <h4 class="mb-3">Q9. A train passes a station platform in 36 seconds and a man standing on the platform in 20 seconds. If the speed of the train is 54 km/hr, what is the length of the platform?</h4>
+                            <div class="options">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q9" id="q9a">
+                                    <label class="form-check-label" for="q9a">A. 120 m</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q9" id="q9b">
+                                    <label class="form-check-label" for="q9b">B. 240 m</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q9" id="q9c">
+                                    <label class="form-check-label" for="q9c">C. 300 m</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q9" id="q9d">
+                                    <label class="form-check-label" for="q9d">D. 360 m</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-3" onclick="showAnswer(9)">View Answer</button>
+                            <div id="answer9" class="answer-box mt-3" style="display: none;">
+                                <div class="alert alert-success">
+                                    <strong>Answer:</strong> B. 240 m
+                                    <br>
+                                    <strong>Explanation:</strong> Speed = 54 km/hr = (54 × 5/18) m/sec = 15 m/sec
+                                    <br>
+                                    Length of the train = (15 × 20) m = 300 m
+                                    <br>
+                                    Let the length of the platform be x meters
+                                    <br>
+                                    Then, (x + 300)/36 = 15
+                                    <br>
+                                    x + 300 = 540
+                                    <br>
+                                    x = 240 m
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 10 -->
+                        <div class="question-box p-4 border rounded">
+                            <h4 class="mb-3">Q10. A man rows to a place 48 km distant and come back in 14 hours. He finds that he can row 4 km with the stream in the same time as 3 km against the stream. The rate of the stream is:</h4>
+                            <div class="options">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q10" id="q10a">
+                                    <label class="form-check-label" for="q10a">A. 1 km/hr</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q10" id="q10b">
+                                    <label class="form-check-label" for="q10b">B. 1.5 km/hr</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q10" id="q10c">
+                                    <label class="form-check-label" for="q10c">C. 2 km/hr</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q10" id="q10d">
+                                    <label class="form-check-label" for="q10d">D. 2.5 km/hr</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-3" onclick="showAnswer(10)">View Answer</button>
+                            <div id="answer10" class="answer-box mt-3" style="display: none;">
+                                <div class="alert alert-success">
+                                    <strong>Answer:</strong> A. 1 km/hr
+                                    <br>
+                                    <strong>Explanation:</strong> Suppose he moves 4 km downstream in x hours
+                                    <br>
+                                    Then, Speed downstream = 4/x km/hr
+                                    <br>
+                                    Speed upstream = 3/x km/hr
+                                    <br>
+                                    48/(4/x) + 48/(3/x) = 14
+                                    <br>
+                                    x = 1/2
+                                    <br>
+                                    So, Speed downstream = 8 km/hr
+                                    <br>
+                                    Speed upstream = 6 km/hr
+                                    <br>
+                                    Rate of the stream = 1/2 (8 - 6) km/hr = 1 km/hr
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 11 -->
+                        <div class="question-box p-4 border rounded">
+                            <h4 class="mb-3">Q11. A boat takes 90 minutes less to travel 36 miles downstream than to travel the same distance upstream. If the speed of the boat in still water is 10 mph, the speed of the stream is:</h4>
+                            <div class="options">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q11" id="q11a">
+                                    <label class="form-check-label" for="q11a">A. 2 mph</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q11" id="q11b">
+                                    <label class="form-check-label" for="q11b">B. 2.5 mph</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q11" id="q11c">
+                                    <label class="form-check-label" for="q11c">C. 3 mph</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q11" id="q11d">
+                                    <label class="form-check-label" for="q11d">D. 4 mph</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-3" onclick="showAnswer(11)">View Answer</button>
+                            <div id="answer11" class="answer-box mt-3" style="display: none;">
+                                <div class="alert alert-success">
+                                    <strong>Answer:</strong> A. 2 mph
+                                    <br>
+                                    <strong>Explanation:</strong> Let the speed of the stream be x mph
+                                    <br>
+                                    Then, Speed downstream = (10 + x) mph
+                                    <br>
+                                    Speed upstream = (10 - x) mph
+                                    <br>
+                                    36/(10 - x) - 36/(10 + x) = 90/60
+                                    <br>
+                                    x = 2 mph
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 12 -->
+                        <div class="question-box p-4 border rounded">
+                            <h4 class="mb-3">Q12. A man can row at 5 kmph in still water. If the velocity of current is 1 kmph and it takes him 1 hour to row to a place and come back, how far is the place?</h4>
+                            <div class="options">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q12" id="q12a">
+                                    <label class="form-check-label" for="q12a">A. 2.4 km</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q12" id="q12b">
+                                    <label class="form-check-label" for="q12b">B. 2.5 km</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q12" id="q12c">
+                                    <label class="form-check-label" for="q12c">C. 3 km</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q12" id="q12d">
+                                    <label class="form-check-label" for="q12d">D. 3.6 km</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-3" onclick="showAnswer(12)">View Answer</button>
+                            <div id="answer12" class="answer-box mt-3" style="display: none;">
+                                <div class="alert alert-success">
+                                    <strong>Answer:</strong> A. 2.4 km
+                                    <br>
+                                    <strong>Explanation:</strong> Speed downstream = (5 + 1) kmph = 6 kmph
+                                    <br>
+                                    Speed upstream = (5 - 1) kmph = 4 kmph
+                                    <br>
+                                    Let the required distance be x km
+                                    <br>
+                                    Then, x/6 + x/4 = 1
+                                    <br>
+                                    2x + 3x = 12
+                                    <br>
+                                    5x = 12
+                                    <br>
+                                    x = 2.4 km
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 13 -->
+                        <div class="question-box p-4 border rounded">
+                            <h4 class="mb-3">Q13. A boat running upstream takes 8 hours 48 minutes to cover a certain distance, while it takes 4 hours to return to the starting point. What is the ratio between the speed of the boat and speed of the water current respectively?</h4>
+                            <div class="options">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q13" id="q13a">
+                                    <label class="form-check-label" for="q13a">A. 2 : 1</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q13" id="q13b">
+                                    <label class="form-check-label" for="q13b">B. 3 : 2</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q13" id="q13c">
+                                    <label class="form-check-label" for="q13c">C. 8 : 3</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q13" id="q13d">
+                                    <label class="form-check-label" for="q13d">D. Cannot be determined</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-3" onclick="showAnswer(13)">View Answer</button>
+                            <div id="answer13" class="answer-box mt-3" style="display: none;">
+                                <div class="alert alert-success">
+                                    <strong>Answer:</strong> C. 8 : 3
+                                    <br>
+                                    <strong>Explanation:</strong> Let the man's rate upstream be x kmph and that downstream be y kmph
+                                    <br>
+                                    Then, distance covered upstream in 8 hrs 48 min = Distance covered downstream in 4 hrs
+                                    <br>
+                                    x × 8 4/5 = y × 4
+                                    <br>
+                                    44/5 x = 4y
+                                    <br>
+                                    y = 11/5 x
+                                    <br>
+                                    Required ratio = (y + x)/2 : (y - x)/2
+                                    <br>
+                                    = (16x/5 × 1/2) : (6x/5 × 1/2)
+                                    <br>
+                                    = 8/5 : 3/5
+                                    <br>
+                                    = 8 : 3
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 14 -->
+                        <div class="question-box p-4 border rounded">
+                            <h4 class="mb-3">Q14. A motorboat, whose speed in 15 km/hr in still water goes 30 km downstream and comes back in a total of 4 hours 30 minutes. The speed of the stream (in km/hr) is:</h4>
+                            <div class="options">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q14" id="q14a">
+                                    <label class="form-check-label" for="q14a">A. 4</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q14" id="q14b">
+                                    <label class="form-check-label" for="q14b">B. 5</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q14" id="q14c">
+                                    <label class="form-check-label" for="q14c">C. 6</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q14" id="q14d">
+                                    <label class="form-check-label" for="q14d">D. 10</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-3" onclick="showAnswer(14)">View Answer</button>
+                            <div id="answer14" class="answer-box mt-3" style="display: none;">
+                                <div class="alert alert-success">
+                                    <strong>Answer:</strong> B. 5
+                                    <br>
+                                    <strong>Explanation:</strong> Let the speed of the stream be x km/hr
+                                    <br>
+                                    Then, Speed downstream = (15 + x) km/hr
+                                    <br>
+                                    Speed upstream = (15 - x) km/hr
+                                    <br>
+                                    30/(15 + x) + 30/(15 - x) = 4 1/2
+                                    <br>
+                                    30(15 - x) + 30(15 + x) = 9/2(15 + x)(15 - x)
+                                    <br>
+                                    900 = 9/2(225 - x²)
+                                    <br>
+                                    x² = 25
+                                    <br>
+                                    x = 5 km/hr
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 15 -->
+                        <div class="question-box p-4 border rounded">
+                            <h4 class="mb-3">Q15. A boat takes 19 hours for travelling downstream from point A to point B and coming back to a point C midway between A and B. If the velocity of the stream is 4 kmph and the speed of the boat in still water is 14 kmph, what is the distance between A and B?</h4>
+                            <div class="options">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q15" id="q15a">
+                                    <label class="form-check-label" for="q15a">A. 160 km</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q15" id="q15b">
+                                    <label class="form-check-label" for="q15b">B. 180 km</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q15" id="q15c">
+                                    <label class="form-check-label" for="q15c">C. 200 km</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q15" id="q15d">
+                                    <label class="form-check-label" for="q15d">D. 220 km</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-3" onclick="showAnswer(15)">View Answer</button>
+                            <div id="answer15" class="answer-box mt-3" style="display: none;">
+                                <div class="alert alert-success">
+                                    <strong>Answer:</strong> B. 180 km
+                                    <br>
+                                    <strong>Explanation:</strong> Speed downstream = (14 + 4) km/hr = 18 km/hr
+                                    <br>
+                                    Speed upstream = (14 - 4) km/hr = 10 km/hr
+                                    <br>
+                                    Let the distance between A and B be x km
+                                    <br>
+                                    Then, x/18 + (x/2)/10 = 19
+                                    <br>
+                                    x/18 + x/20 = 19
+                                    <br>
+                                    19x/180 = 19
+                                    <br>
+                                    x = 180 km
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Navigation -->
+                        <nav aria-label="Page navigation" class="mt-4">
+                            <ul class="pagination justify-content-center">
+                                <!-- Pagination buttons will be dynamically inserted here -->
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Questions Content End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Quick Link</h4>
+                    <a class="btn btn-link" href="">Quiz</a>
+                    <a class="btn btn-link" href="">Code</a>
+                    <a class="btn btn-link" href="">Resources</a>
+                    <a class="btn btn-link" href="">Miscallaneous</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Contact</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>CSPrep HQ, Bangalore.</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 1234567890</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>csprep@gmail.com</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Newsletter</h4>
+                    <p>Sign up for weekly newsletter to get latest IT news, tips and tricks to help you achieve your goal.</p>
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">CSPrep</a>, All Right Reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/wow/wow.min.js"></script>
+    <script src="../lib/easing/easing.min.js"></script>
+    <script src="../lib/waypoints/waypoints.min.js"></script>
+    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="../js/main.js"></script>
+
+    <!-- Custom JavaScript for Questions Page -->
+    <script>
+        // Function to show/hide answers
+        function showAnswer(questionNumber) {
+            const answerBox = document.getElementById(`answer${questionNumber}`);
+            if (answerBox.style.display === 'none') {
+                answerBox.style.display = 'block';
+            } else {
+                answerBox.style.display = 'none';
+            }
+        }
+
+        // Function to handle pagination
+        function showPage(pageNumber) {
+            const questionsPerPage = 10;
+            const questions = document.querySelectorAll('.question-box');
+            const totalPages = Math.ceil(questions.length / questionsPerPage);
+            
+            // Hide all questions
+            questions.forEach(q => q.style.display = 'none');
+            
+            // Show questions for current page
+            const start = (pageNumber - 1) * questionsPerPage;
+            const end = start + questionsPerPage;
+            for(let i = start; i < end && i < questions.length; i++) {
+                questions[i].style.display = 'block';
+            }
+            
+            // Update pagination buttons
+            updatePaginationButtons(pageNumber, totalPages);
+        }
+
+        // Function to update pagination buttons
+        function updatePaginationButtons(currentPage, totalPages) {
+            const pagination = document.querySelector('.pagination');
+            let html = `
+                <li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
+                    <a class="page-link" href="#" onclick="showPage(${currentPage - 1})" tabindex="-1">Previous</a>
+                </li>
+            `;
+            
+            for(let i = 1; i <= totalPages; i++) {
+                html += `
+                    <li class="page-item ${i === currentPage ? 'active' : ''}">
+                        <a class="page-link" href="#" onclick="showPage(${i})">${i}</a>
+                    </li>
+                `;
+            }
+            
+            html += `
+                <li class="page-item ${currentPage === totalPages ? 'disabled' : ''}">
+                    <a class="page-link" href="#" onclick="showPage(${currentPage + 1})">Next</a>
+                </li>
+            `;
+            
+            pagination.innerHTML = html;
+        }
+
+        // Initialize first page on load
+        document.addEventListener('DOMContentLoaded', function() {
+            showPage(1);
+        });
+    </script>
+</body>
+
+</html> 

@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>CSPrep - TCS Aptitude Questions</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="../img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="../lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="../css/style.css" rel="stylesheet">
+
+    <!-- Custom Styles for Questions Page -->
+    <style>
+        .question-box {
+            transition: all 0.3s ease;
+            background-color: #fff;
+            margin-bottom: 2rem;
+        }
+        .question-box:hover {
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        }
+        .form-check-input:checked {
+            background-color: #06A3DA;
+            border-color: #06A3DA;
+        }
+        .btn-primary {
+            background-color: #06A3DA;
+            border-color: #06A3DA;
+        }
+        .btn-primary:hover {
+            background-color: #0487b3;
+            border-color: #0487b3;
+        }
+        .answer-box {
+            transition: all 0.3s ease;
+        }
+        .pagination .page-item.active .page-link {
+            background-color: #06A3DA;
+            border-color: #06A3DA;
+        }
+        .pagination .page-link {
+            color: #06A3DA;
+        }
+        .pagination .page-link:hover {
+            color: #0487b3;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <img src="../img/CSPREP-removebg-preview.png" alt="Loading..." class="custom-spinner">
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="../index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <h2 class="m-0 text-dark"><img src="../img/CSPREP.png" height="75px">CSPrep</h2>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="../index.html" class="nav-item nav-link">Home</a>
+                <a href="../quiz.html" class="nav-item nav-link">Quiz</a>
+                <a href="../contact.html" class="nav-item nav-link">Code</a>
+                <a href="../resources.html" class="nav-item nav-link active">Resources</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Miscallaneous</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="../videos.html" class="dropdown-item">Videos</a>
+                        <a href="../blogs.html" class="dropdown-item">Blogs</a>
+                        <a href="/Resume/resume.html" class="dropdown-item">Resume Builder</a>
+                    </div>
+                </div>
+                <a href="#" class="nav-item nav-link" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-primary py-5 mb-5 page-header">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1 class="display-3 text-white animated slideInDown">TCS Aptitude Questions</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- Company Info Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-12">
+                    <div class="bg-white rounded shadow-sm p-4 mb-4">
+                        <div class="d-flex align-items-center mb-4">
+                            <img src="../img/companies/tcs-logo.png" alt="TCS Logo" class="me-4" style="height: 80px;">
+                            <div>
+                                <h2 class="mb-2">Tata Consultancy Services (TCS)</h2>
+                                <p class="mb-0">TCS is a global leader in IT services, consulting, and business solutions. It is part of the Tata Group and is one of India's largest IT companies, known for its innovative solutions and strong presence in the technology sector.</p>
+                            </div>
+                        </div>
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-globe text-primary me-3 fa-2x"></i>
+                                    <div>
+                                        <h5 class="mb-1">Global Presence</h5>
+                                        <p class="mb-0">Operating in 46 countries</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-users text-primary me-3 fa-2x"></i>
+                                    <div>
+                                        <h5 class="mb-1">Workforce</h5>
+                                        <p class="mb-0">Over 600,000 employees</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-chart-line text-primary me-3 fa-2x"></i>
+                                    <div>
+                                        <h5 class="mb-1">Revenue</h5>
+                                        <p class="mb-0">Over $25 billion annually</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Company Info End -->
+
+    <!-- Questions Content Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-12">
+                    <div class="bg-white rounded shadow-sm p-4">
+                        <!-- Question 1 -->
+                        <div class="question-box p-4 border rounded">
+                            <h4 class="mb-3">Q1. If (x+10)% of 240 is 60% more than x% of 180, then 15% of (x+20) is what percent less than 25% of x?</h4>
+                            <div class="options">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1a">
+                                    <label class="form-check-label" for="q1a">A. 14</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1b">
+                                    <label class="form-check-label" for="q1b">B. 19 1/21</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1c">
+                                    <label class="form-check-label" for="q1c">C. 15 ½</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1d">
+                                    <label class="form-check-label" for="q1d">D. 16</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-3" onclick="showAnswer(1)">View Answer</button>
+                            <div id="answer1" class="answer-box mt-3" style="display: none;">
+                                <div class="alert alert-success">
+                                    <strong>Answer:</strong> B. 19 1/21
+                                    <br>
+                                    <strong>Explanation:</strong> Let's solve step by step:
+                                    <br>
+                                    (x+10)% of 240 = 1.6 × (x% of 180)
+                                    <br>
+                                    (x+10)/100 × 240 = 1.6 × (x/100 × 180)
+                                    <br>
+                                    2.4(x+10) = 2.88x
+                                    <br>
+                                    2.4x + 24 = 2.88x
+                                    <br>
+                                    0.48x = 24
+                                    <br>
+                                    x = 50
+                                    <br>
+                                    15% of (x+20) = 15% of 70 = 10.5
+                                    <br>
+                                    25% of x = 25% of 50 = 12.5
+                                    <br>
+                                    Required percentage = (12.5 - 10.5)/12.5 × 100 = 16%
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 2 -->
+                        <div class="question-box p-4 border rounded">
+                            <h4 class="mb-3">Q2. The value of 2 + 1/3+1/4+3/2 of 7/11 + (1 1/2 + 2 1/5 ) % 7 2/5 is:</h4>
+                            <div class="options">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q2" id="q2a">
+                                    <label class="form-check-label" for="q2a">A. 4 3/5</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q2" id="q2b">
+                                    <label class="form-check-label" for="q2b">B. 2 7/10</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q2" id="q2c">
+                                    <label class="form-check-label" for="q2c">C. 3 4/9</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q2" id="q2d">
+                                    <label class="form-check-label" for="q2d">D. 4 7/9</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-3" onclick="showAnswer(2)">View Answer</button>
+                            <div id="answer2" class="answer-box mt-3" style="display: none;">
+                                <div class="alert alert-success">
+                                    <strong>Answer:</strong> B. 2 7/10
+                                    <br>
+                                    <strong>Explanation:</strong> Let's solve step by step:
+                                    <br>
+                                    2 + 1/3 + 1/4 + 3/2 of 7/11 + (1.5 + 2.2) % 7.4
+                                    <br>
+                                    = 2 + 1/3 + 1/4 + 21/22 + 3.7 % 7.4
+                                    <br>
+                                    = 2 + 1/3 + 1/4 + 21/22 + 0.5
+                                    <br>
+                                    = 2 + 0.33 + 0.25 + 0.95 + 0.5
+                                    <br>
+                                    = 2.7 = 2 7/10
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 3 -->
+                        <div class="question-box p-4 border rounded">
+                            <h4 class="mb-3">Q3. 6 1/3 + (5 5/6 ÷ 2 1/3 - 2 1/3 of 7 1/2) + 13 ½?</h4>
+                            <div class="options">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q3" id="q3a">
+                                    <label class="form-check-label" for="q3a">A. 6 1/3</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q3" id="q3b">
+                                    <label class="form-check-label" for="q3b">B. 5 1/3</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q3" id="q3c">
+                                    <label class="form-check-label" for="q3c">C. 5 1/2</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q3" id="q3d">
+                                    <label class="form-check-label" for="q3d">D. 4 ⅚</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-3" onclick="showAnswer(3)">View Answer</button>
+                            <div id="answer3" class="answer-box mt-3" style="display: none;">
+                                <div class="alert alert-success">
+                                    <strong>Answer:</strong> A. 6 1/3
+                                    <br>
+                                    <strong>Explanation:</strong> Let's solve step by step:
+                                    <br>
+                                    6 1/3 + (5 5/6 ÷ 2 1/3 - 2 1/3 of 7 1/2) + 13 ½
+                                    <br>
+                                    = 19/3 + (35/6 ÷ 7/3 - 7/3 of 15/2) + 27/2
+                                    <br>
+                                    = 19/3 + (5/2 - 35/2) + 27/2
+                                    <br>
+                                    = 19/3 + (-15) + 27/2
+                                    <br>
+                                    = 19/3 = 6 1/3
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 4 -->
+                        <div class="question-box p-4 border rounded">
+                            <h4 class="mb-3">Q4. 4√2√3√729=p then the value of P^20÷162+5/2?</h4>
+                            <div class="options">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q4" id="q4a">
+                                    <label class="form-check-label" for="q4a">A. 3</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q4" id="q4b">
+                                    <label class="form-check-label" for="q4b">B. 2</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q4" id="q4c">
+                                    <label class="form-check-label" for="q4c">C. 1</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q4" id="q4d">
+                                    <label class="form-check-label" for="q4d">D. 4</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-3" onclick="showAnswer(4)">View Answer</button>
+                            <div id="answer4" class="answer-box mt-3" style="display: none;">
+                                <div class="alert alert-success">
+                                    <strong>Answer:</strong> A. 3
+                                    <br>
+                                    <strong>Explanation:</strong> Let's solve step by step:
+                                    <br>
+                                    4√2√3√729 = p
+                                    <br>
+                                    3√729 = 9
+                                    <br>
+                                    2√9 = 3
+                                    <br>
+                                    4√3 = p
+                                    <br>
+                                    p^20 = 3^5 = 243
+                                    <br>
+                                    243 ÷ 162 + 5/2 = 1.5 + 2.5 = 4
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 5 -->
+                        <div class="question-box p-4 border rounded">
+                            <h4 class="mb-3">Q5. The population of a town is 1,21,000 if it increases at the rate of 10% per annum, what is the difference between the population 3 years hence and that of 2 year ago?</h4>
+                            <div class="options">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q5" id="q5a">
+                                    <label class="form-check-label" for="q5a">A. 62041</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q5" id="q5b">
+                                    <label class="form-check-label" for="q5b">B. 61055</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q5" id="q5c">
+                                    <label class="form-check-label" for="q5c">C. 61251</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q5" id="q5d">
+                                    <label class="form-check-label" for="q5d">D. 61051</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-3" onclick="showAnswer(5)">View Answer</button>
+                            <div id="answer5" class="answer-box mt-3" style="display: none;">
+                                <div class="alert alert-success">
+                                    <strong>Answer:</strong> B. 61055
+                                    <br>
+                                    <strong>Explanation:</strong> Let's solve step by step:
+                                    <br>
+                                    Population 3 years hence = 121000 × (1.1)^3 = 161051
+                                    <br>
+                                    Population 2 years ago = 121000 × (0.9)^2 = 98001
+                                    <br>
+                                    Difference = 161051 - 98001 = 61055
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 6 -->
+                        <div class="question-box p-4 border rounded">
+                            <h4 class="mb-3">Q6. A retailer has fixed the Price of an article at 20% above the cost price. If he offers a discount of Rs 2 for a purchase of Rs 40, what is his gain or loss percentage?</h4>
+                            <div class="options">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q6" id="q6a">
+                                    <label class="form-check-label" for="q6a">A. 12% loss</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q6" id="q6b">
+                                    <label class="form-check-label" for="q6b">B. 14% gain</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q6" id="q6c">
+                                    <label class="form-check-label" for="q6c">C. 8% gain</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q6" id="q6d">
+                                    <label class="form-check-label" for="q6d">D. 10% gain</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-3" onclick="showAnswer(6)">View Answer</button>
+                            <div id="answer6" class="answer-box mt-3" style="display: none;">
+                                <div class="alert alert-success">
+                                    <strong>Answer:</strong> D. 10% gain
+                                    <br>
+                                    <strong>Explanation:</strong> Let's solve step by step:
+                                    <br>
+                                    Let CP = 100
+                                    <br>
+                                    MP = 120 (20% above CP)
+                                    <br>
+                                    Discount = Rs 2 on Rs 40
+                                    <br>
+                                    Discount % = (2/40) × 100 = 5%
+                                    <br>
+                                    SP = 120 × 0.95 = 114
+                                    <br>
+                                    Profit % = (114 - 100)/100 × 100 = 14%
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 7 -->
+                        <div class="question-box p-4 border rounded">
+                            <h4 class="mb-3">Q7. A person gains Rs. 357 on selling a table at 13% gain and a chair at 6% gain. If he sells the table at 15% gain and the chair 8% loss, he gains Rs. 203. What is the actual cost of the chair?</h4>
+                            <div class="options">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q7" id="q7a">
+                                    <label class="form-check-label" for="q7a">A. 2100</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q7" id="q7b">
+                                    <label class="form-check-label" for="q7b">B. 1200</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q7" id="q7c">
+                                    <label class="form-check-label" for="q7c">C. 1400</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q7" id="q7d">
+                                    <label class="form-check-label" for="q7d">D. 3500</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-3" onclick="showAnswer(7)">View Answer</button>
+                            <div id="answer7" class="answer-box mt-3" style="display: none;">
+                                <div class="alert alert-success">
+                                    <strong>Answer:</strong> C. 1400
+                                    <br>
+                                    <strong>Explanation:</strong> Let's solve step by step:
+                                    <br>
+                                    Let cost of table = T and chair = C
+                                    <br>
+                                    0.13T + 0.06C = 357 ...(1)
+                                    <br>
+                                    0.15T - 0.08C = 203 ...(2)
+                                    <br>
+                                    Solving equations (1) and (2):
+                                    <br>
+                                    T = 2100, C = 1400
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 8 -->
+                        <div class="question-box p-4 border rounded">
+                            <h4 class="mb-3">Q8. What sum of money at compound interest will amount to Rs. 6930 in 3 years, if the rate of interest is 5% for the first year, 10% for the second year and 20% for the third year?</h4>
+                            <div class="options">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q8" id="q8a">
+                                    <label class="form-check-label" for="q8a">A. 4500</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q8" id="q8b">
+                                    <label class="form-check-label" for="q8b">B. 5500</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q8" id="q8c">
+                                    <label class="form-check-label" for="q8c">C. 5000</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q8" id="q8d">
+                                    <label class="form-check-label" for="q8d">D. 4000</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-3" onclick="showAnswer(8)">View Answer</button>
+                            <div id="answer8" class="answer-box mt-3" style="display: none;">
+                                <div class="alert alert-success">
+                                    <strong>Answer:</strong> C. 5000
+                                    <br>
+                                    <strong>Explanation:</strong> Let's solve step by step:
+                                    <br>
+                                    Let P be the principal amount
+                                    <br>
+                                    Amount after 3 years = P(1 + 0.05)(1 + 0.10)(1 + 0.20) = 6930
+                                    <br>
+                                    P × 1.05 × 1.10 × 1.20 = 6930
+                                    <br>
+                                    P = 6930/(1.05 × 1.10 × 1.20) = 5000
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 9 -->
+                        <div class="question-box p-4 border rounded">
+                            <h4 class="mb-3">Q9. If two numbers are, respectively, 25% and 40% less than the third number, what is the ratio of these two numbers?</h4>
+                            <div class="options">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q9" id="q9a">
+                                    <label class="form-check-label" for="q9a">A. 3:4</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q9" id="q9b">
+                                    <label class="form-check-label" for="q9b">B. 3:5</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q9" id="q9c">
+                                    <label class="form-check-label" for="q9c">C. 4:5</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q9" id="q9d">
+                                    <label class="form-check-label" for="q9d">D. 5:4</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-3" onclick="showAnswer(9)">View Answer</button>
+                            <div id="answer9" class="answer-box mt-3" style="display: none;">
+                                <div class="alert alert-success">
+                                    <strong>Answer:</strong> D. 5:4
+                                    <br>
+                                    <strong>Explanation:</strong> Let's solve step by step:
+                                    <br>
+                                    Let the third number be 100
+                                    <br>
+                                    First number = 100 - 25% of 100 = 75
+                                    <br>
+                                    Second number = 100 - 40% of 100 = 60
+                                    <br>
+                                    Ratio = 75:60 = 5:4
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 10 -->
+                        <div class="question-box p-4 border rounded">
+                            <h4 class="mb-3">Q10. What is the sum (in Rs) which when divided among A, B, C, D in the proportion 2:3:5:8 provides Rs 8420 less to D the what it provides to him when the proportion is 1/2:1/3:1/5:1/8?</h4>
+                            <div class="options">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q10" id="q10a">
+                                    <label class="form-check-label" for="q10a">A. 12510</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q10" id="q10b">
+                                    <label class="form-check-label" for="q10b">B. 25020</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q10" id="q10c">
+                                    <label class="form-check-label" for="q10c">C. 17540</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q10" id="q10d">
+                                    <label class="form-check-label" for="q10d">D. 35620</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-3" onclick="showAnswer(10)">View Answer</button>
+                            <div id="answer10" class="answer-box mt-3" style="display: none;">
+                                <div class="alert alert-success">
+                                    <strong>Answer:</strong> B. 25020
+                                    <br>
+                                    <strong>Explanation:</strong> Let's solve step by step:
+                                    <br>
+                                    First proportion: 2:3:5:8
+                                    <br>
+                                    Second proportion: 1/2:1/3:1/5:1/8 = 60:40:24:15
+                                    <br>
+                                    Let total amount be x
+                                    <br>
+                                    (8x/18) - (15x/139) = 8420
+                                    <br>
+                                    Solving: x = 25020
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 11 -->
+                        <div class="question-box p-4 border rounded">
+                            <h4 class="mb-3">Q11. A sum of money invested at compound interest amounts to Rs. 800 in 3 years and to Rs. 840 in 4 years. What is the rate of interest per annum?</h4>
+                            <div class="options">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q11" id="q11a">
+                                    <label class="form-check-label" for="q11a">A. 2%</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q11" id="q11b">
+                                    <label class="form-check-label" for="q11b">B. 4%</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q11" id="q11c">
+                                    <label class="form-check-label" for="q11c">C. 5%</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q11" id="q11d">
+                                    <label class="form-check-label" for="q11d">D. 6%</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-3" onclick="showAnswer(11)">View Answer</button>
+                            <div id="answer11" class="answer-box mt-3" style="display: none;">
+                                <div class="alert alert-success">
+                                    <strong>Answer:</strong> C. 5%
+                                    <br>
+                                    <strong>Explanation:</strong> Let's solve step by step:
+                                    <br>
+                                    Interest for 1 year = 840 - 800 = 40
+                                    <br>
+                                    Rate = (40/800) × 100 = 5%
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 12 -->
+                        <div class="question-box p-4 border rounded">
+                            <h4 class="mb-3">Q12. A train running at the speed of 60 km/hr crosses a pole in 9 seconds. What is the length of the train?</h4>
+                            <div class="options">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q12" id="q12a">
+                                    <label class="form-check-label" for="q12a">A. 120 meters</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q12" id="q12b">
+                                    <label class="form-check-label" for="q12b">B. 150 meters</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q12" id="q12c">
+                                    <label class="form-check-label" for="q12c">C. 180 meters</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q12" id="q12d">
+                                    <label class="form-check-label" for="q12d">D. 200 meters</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-3" onclick="showAnswer(12)">View Answer</button>
+                            <div id="answer12" class="answer-box mt-3" style="display: none;">
+                                <div class="alert alert-success">
+                                    <strong>Answer:</strong> B. 150 meters
+                                    <br>
+                                    <strong>Explanation:</strong> Let's solve step by step:
+                                    <br>
+                                    Speed = 60 km/hr = (60 × 1000)/3600 m/s = 50/3 m/s
+                                    <br>
+                                    Time = 9 seconds
+                                    <br>
+                                    Length = Speed × Time = (50/3) × 9 = 150 meters
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 13 -->
+                        <div class="question-box p-4 border rounded">
+                            <h4 class="mb-3">Q13. A boat takes 90 minutes less to travel 36 miles downstream than to travel the same distance upstream. If the speed of the boat in still water is 10 mph, the speed of the stream is:</h4>
+                            <div class="options">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q13" id="q13a">
+                                    <label class="form-check-label" for="q13a">A. 2 mph</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q13" id="q13b">
+                                    <label class="form-check-label" for="q13b">B. 2.5 mph</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q13" id="q13c">
+                                    <label class="form-check-label" for="q13c">C. 3 mph</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q13" id="q13d">
+                                    <label class="form-check-label" for="q13d">D. 4 mph</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-3" onclick="showAnswer(13)">View Answer</button>
+                            <div id="answer13" class="answer-box mt-3" style="display: none;">
+                                <div class="alert alert-success">
+                                    <strong>Answer:</strong> A. 2 mph
+                                    <br>
+                                    <strong>Explanation:</strong> Let's solve step by step:
+                                    <br>
+                                    Let speed of stream be x mph
+                                    <br>
+                                    Downstream speed = (10 + x) mph
+                                    <br>
+                                    Upstream speed = (10 - x) mph
+                                    <br>
+                                    36/(10-x) - 36/(10+x) = 90/60
+                                    <br>
+                                    Solving: x = 2 mph
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 14 -->
+                        <div class="question-box p-4 border rounded">
+                            <h4 class="mb-3">Q14. A man can row 7.5 kmph in still water and he finds that it takes him twice as long to row up as to row down the river. Find the rate of stream.</h4>
+                            <div class="options">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q14" id="q14a">
+                                    <label class="form-check-label" for="q14a">A. 2.5 kmph</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q14" id="q14b">
+                                    <label class="form-check-label" for="q14b">B. 3 kmph</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q14" id="q14c">
+                                    <label class="form-check-label" for="q14c">C. 3.5 kmph</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q14" id="q14d">
+                                    <label class="form-check-label" for="q14d">D. 4 kmph</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-3" onclick="showAnswer(14)">View Answer</button>
+                            <div id="answer14" class="answer-box mt-3" style="display: none;">
+                                <div class="alert alert-success">
+                                    <strong>Answer:</strong> A. 2.5 kmph
+                                    <br>
+                                    <strong>Explanation:</strong> Let's solve step by step:
+                                    <br>
+                                    Let rate of stream be x kmph
+                                    <br>
+                                    Downstream speed = (7.5 + x) kmph
+                                    <br>
+                                    Upstream speed = (7.5 - x) kmph
+                                    <br>
+                                    Time upstream = 2 × Time downstream
+                                    <br>
+                                    d/(7.5-x) = 2 × d/(7.5+x)
+                                    <br>
+                                    Solving: x = 2.5 kmph
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 15 -->
+                        <div class="question-box p-4 border rounded">
+                            <h4 class="mb-3">Q15. A boat takes 19 hours for travelling downstream from point A to point B and coming back to a point C midway between A and B. If the velocity of the stream is 4 kmph and the speed of the boat in still water is 14 kmph, what is the distance between A and B?</h4>
+                            <div class="options">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q15" id="q15a">
+                                    <label class="form-check-label" for="q15a">A. 160 km</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q15" id="q15b">
+                                    <label class="form-check-label" for="q15b">B. 180 km</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q15" id="q15c">
+                                    <label class="form-check-label" for="q15c">C. 200 km</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q15" id="q15d">
+                                    <label class="form-check-label" for="q15d">D. 220 km</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-3" onclick="showAnswer(15)">View Answer</button>
+                            <div id="answer15" class="answer-box mt-3" style="display: none;">
+                                <div class="alert alert-success">
+                                    <strong>Answer:</strong> B. 180 km
+                                    <br>
+                                    <strong>Explanation:</strong> Let's solve step by step:
+                                    <br>
+                                    Downstream speed = 14 + 4 = 18 kmph
+                                    <br>
+                                    Upstream speed = 14 - 4 = 10 kmph
+                                    <br>
+                                    Let distance AB be x km
+                                    <br>
+                                    Time downstream = x/18
+                                    <br>
+                                    Time upstream = x/20
+                                    <br>
+                                    Total time = x/18 + x/20 = 19
+                                    <br>
+                                    Solving: x = 180 km
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 16 -->
+                        <div class="question-box p-4 border rounded">
+                            <h4 class="mb-3">Q16. A boat running downstream covers a distance of 16 km in 2 hours while for covering the same distance upstream, it takes 4 hours. What is the speed of the boat in still water?</h4>
+                            <div class="options">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q16" id="q16a">
+                                    <label class="form-check-label" for="q16a">A. 4 kmph</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q16" id="q16b">
+                                    <label class="form-check-label" for="q16b">B. 6 kmph</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q16" id="q16c">
+                                    <label class="form-check-label" for="q16c">C. 8 kmph</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q16" id="q16d">
+                                    <label class="form-check-label" for="q16d">D. 10 kmph</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-3" onclick="showAnswer(16)">View Answer</button>
+                            <div id="answer16" class="answer-box mt-3" style="display: none;">
+                                <div class="alert alert-success">
+                                    <strong>Answer:</strong> B. 6 kmph
+                                    <br>
+                                    <strong>Explanation:</strong> Let's solve step by step:
+                                    <br>
+                                    Downstream speed = 16/2 = 8 kmph
+                                    <br>
+                                    Upstream speed = 16/4 = 4 kmph
+                                    <br>
+                                    Speed in still water = (8 + 4)/2 = 6 kmph
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 17 -->
+                        <div class="question-box p-4 border rounded">
+                            <h4 class="mb-3">Q17. A boat takes 90 minutes less to travel 36 miles downstream than to travel the same distance upstream. If the speed of the boat in still water is 10 mph, the speed of the stream is:</h4>
+                            <div class="options">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q17" id="q17a">
+                                    <label class="form-check-label" for="q17a">A. 2 mph</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q17" id="q17b">
+                                    <label class="form-check-label" for="q17b">B. 2.5 mph</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q17" id="q17c">
+                                    <label class="form-check-label" for="q17c">C. 3 mph</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q17" id="q17d">
+                                    <label class="form-check-label" for="q17d">D. 4 mph</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-3" onclick="showAnswer(17)">View Answer</button>
+                            <div id="answer17" class="answer-box mt-3" style="display: none;">
+                                <div class="alert alert-success">
+                                    <strong>Answer:</strong> A. 2 mph
+                                    <br>
+                                    <strong>Explanation:</strong> Let's solve step by step:
+                                    <br>
+                                    Let speed of stream be x mph
+                                    <br>
+                                    Downstream speed = (10 + x) mph
+                                    <br>
+                                    Upstream speed = (10 - x) mph
+                                    <br>
+                                    36/(10-x) - 36/(10+x) = 90/60
+                                    <br>
+                                    Solving: x = 2 mph
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 18 -->
+                        <div class="question-box p-4 border rounded">
+                            <h4 class="mb-3">Q18. A man can row 7.5 kmph in still water and he finds that it takes him twice as long to row up as to row down the river. Find the rate of stream.</h4>
+                            <div class="options">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q18" id="q18a">
+                                    <label class="form-check-label" for="q18a">A. 2.5 kmph</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q18" id="q18b">
+                                    <label class="form-check-label" for="q18b">B. 3 kmph</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q18" id="q18c">
+                                    <label class="form-check-label" for="q18c">C. 3.5 kmph</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q18" id="q18d">
+                                    <label class="form-check-label" for="q18d">D. 4 kmph</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-3" onclick="showAnswer(18)">View Answer</button>
+                            <div id="answer18" class="answer-box mt-3" style="display: none;">
+                                <div class="alert alert-success">
+                                    <strong>Answer:</strong> A. 2.5 kmph
+                                    <br>
+                                    <strong>Explanation:</strong> Let's solve step by step:
+                                    <br>
+                                    Let rate of stream be x kmph
+                                    <br>
+                                    Downstream speed = (7.5 + x) kmph
+                                    <br>
+                                    Upstream speed = (7.5 - x) kmph
+                                    <br>
+                                    Time upstream = 2 × Time downstream
+                                    <br>
+                                    d/(7.5-x) = 2 × d/(7.5+x)
+                                    <br>
+                                    Solving: x = 2.5 kmph
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 19 -->
+                        <div class="question-box p-4 border rounded">
+                            <h4 class="mb-3">Q19. A boat takes 19 hours for travelling downstream from point A to point B and coming back to a point C midway between A and B. If the velocity of the stream is 4 kmph and the speed of the boat in still water is 14 kmph, what is the distance between A and B?</h4>
+                            <div class="options">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q19" id="q19a">
+                                    <label class="form-check-label" for="q19a">A. 160 km</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q19" id="q19b">
+                                    <label class="form-check-label" for="q19b">B. 180 km</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q19" id="q19c">
+                                    <label class="form-check-label" for="q19c">C. 200 km</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q19" id="q19d">
+                                    <label class="form-check-label" for="q19d">D. 220 km</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-3" onclick="showAnswer(19)">View Answer</button>
+                            <div id="answer19" class="answer-box mt-3" style="display: none;">
+                                <div class="alert alert-success">
+                                    <strong>Answer:</strong> B. 180 km
+                                    <br>
+                                    <strong>Explanation:</strong> Let's solve step by step:
+                                    <br>
+                                    Downstream speed = 14 + 4 = 18 kmph
+                                    <br>
+                                    Upstream speed = 14 - 4 = 10 kmph
+                                    <br>
+                                    Let distance AB be x km
+                                    <br>
+                                    Time downstream = x/18
+                                    <br>
+                                    Time upstream = x/20
+                                    <br>
+                                    Total time = x/18 + x/20 = 19
+                                    <br>
+                                    Solving: x = 180 km
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 20 -->
+                        <div class="question-box p-4 border rounded">
+                            <h4 class="mb-3">Q20. A boat running downstream covers a distance of 16 km in 2 hours while for covering the same distance upstream, it takes 4 hours. What is the speed of the boat in still water?</h4>
+                            <div class="options">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q20" id="q20a">
+                                    <label class="form-check-label" for="q20a">A. 4 kmph</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q20" id="q20b">
+                                    <label class="form-check-label" for="q20b">B. 6 kmph</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q20" id="q20c">
+                                    <label class="form-check-label" for="q20c">C. 8 kmph</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q20" id="q20d">
+                                    <label class="form-check-label" for="q20d">D. 10 kmph</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-3" onclick="showAnswer(20)">View Answer</button>
+                            <div id="answer20" class="answer-box mt-3" style="display: none;">
+                                <div class="alert alert-success">
+                                    <strong>Answer:</strong> B. 6 kmph
+                                    <br>
+                                    <strong>Explanation:</strong> Let's solve step by step:
+                                    <br>
+                                    Downstream speed = 16/2 = 8 kmph
+                                    <br>
+                                    Upstream speed = 16/4 = 4 kmph
+                                    <br>
+                                    Speed in still water = (8 + 4)/2 = 6 kmph
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 21 -->
+                        <div class="question-box p-4 border rounded">
+                            <h4 class="mb-3">Q21. A boat takes 90 minutes less to travel 36 miles downstream than to travel the same distance upstream. If the speed of the boat in still water is 10 mph, the speed of the stream is:</h4>
+                            <div class="options">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q21" id="q21a">
+                                    <label class="form-check-label" for="q21a">A. 2 mph</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q21" id="q21b">
+                                    <label class="form-check-label" for="q21b">B. 2.5 mph</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q21" id="q21c">
+                                    <label class="form-check-label" for="q21c">C. 3 mph</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q21" id="q21d">
+                                    <label class="form-check-label" for="q21d">D. 4 mph</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-3" onclick="showAnswer(21)">View Answer</button>
+                            <div id="answer21" class="answer-box mt-3" style="display: none;">
+                                <div class="alert alert-success">
+                                    <strong>Answer:</strong> A. 2 mph
+                                    <br>
+                                    <strong>Explanation:</strong> Let's solve step by step:
+                                    <br>
+                                    Let speed of stream be x mph
+                                    <br>
+                                    Downstream speed = (10 + x) mph
+                                    <br>
+                                    Upstream speed = (10 - x) mph
+                                    <br>
+                                    36/(10-x) - 36/(10+x) = 90/60
+                                    <br>
+                                    Solving: x = 2 mph
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 22 -->
+                        <div class="question-box p-4 border rounded">
+                            <h4 class="mb-3">Q22. A man can row 7.5 kmph in still water and he finds that it takes him twice as long to row up as to row down the river. Find the rate of stream.</h4>
+                            <div class="options">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q22" id="q22a">
+                                    <label class="form-check-label" for="q22a">A. 2.5 kmph</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q22" id="q22b">
+                                    <label class="form-check-label" for="q22b">B. 3 kmph</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q22" id="q22c">
+                                    <label class="form-check-label" for="q22c">C. 3.5 kmph</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q22" id="q22d">
+                                    <label class="form-check-label" for="q22d">D. 4 kmph</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-3" onclick="showAnswer(22)">View Answer</button>
+                            <div id="answer22" class="answer-box mt-3" style="display: none;">
+                                <div class="alert alert-success">
+                                    <strong>Answer:</strong> A. 2.5 kmph
+                                    <br>
+                                    <strong>Explanation:</strong> Let's solve step by step:
+                                    <br>
+                                    Let rate of stream be x kmph
+                                    <br>
+                                    Downstream speed = (7.5 + x) kmph
+                                    <br>
+                                    Upstream speed = (7.5 - x) kmph
+                                    <br>
+                                    Time upstream = 2 × Time downstream
+                                    <br>
+                                    d/(7.5-x) = 2 × d/(7.5+x)
+                                    <br>
+                                    Solving: x = 2.5 kmph
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 23 -->
+                        <div class="question-box p-4 border rounded">
+                            <h4 class="mb-3">Q23. A boat takes 19 hours for travelling downstream from point A to point B and coming back to a point C midway between A and B. If the velocity of the stream is 4 kmph and the speed of the boat in still water is 14 kmph, what is the distance between A and B?</h4>
+                            <div class="options">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q23" id="q23a">
+                                    <label class="form-check-label" for="q23a">A. 160 km</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q23" id="q23b">
+                                    <label class="form-check-label" for="q23b">B. 180 km</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q23" id="q23c">
+                                    <label class="form-check-label" for="q23c">C. 200 km</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q23" id="q23d">
+                                    <label class="form-check-label" for="q23d">D. 220 km</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-3" onclick="showAnswer(23)">View Answer</button>
+                            <div id="answer23" class="answer-box mt-3" style="display: none;">
+                                <div class="alert alert-success">
+                                    <strong>Answer:</strong> B. 180 km
+                                    <br>
+                                    <strong>Explanation:</strong> Let's solve step by step:
+                                    <br>
+                                    Downstream speed = 14 + 4 = 18 kmph
+                                    <br>
+                                    Upstream speed = 14 - 4 = 10 kmph
+                                    <br>
+                                    Let distance AB be x km
+                                    <br>
+                                    Time downstream = x/18
+                                    <br>
+                                    Time upstream = x/20
+                                    <br>
+                                    Total time = x/18 + x/20 = 19
+                                    <br>
+                                    Solving: x = 180 km
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 24 -->
+                        <div class="question-box p-4 border rounded">
+                            <h4 class="mb-3">Q24. A boat running downstream covers a distance of 16 km in 2 hours while for covering the same distance upstream, it takes 4 hours. What is the speed of the boat in still water?</h4>
+                            <div class="options">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q24" id="q24a">
+                                    <label class="form-check-label" for="q24a">A. 4 kmph</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q24" id="q24b">
+                                    <label class="form-check-label" for="q24b">B. 6 kmph</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q24" id="q24c">
+                                    <label class="form-check-label" for="q24c">C. 8 kmph</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q24" id="q24d">
+                                    <label class="form-check-label" for="q24d">D. 10 kmph</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-3" onclick="showAnswer(24)">View Answer</button>
+                            <div id="answer24" class="answer-box mt-3" style="display: none;">
+                                <div class="alert alert-success">
+                                    <strong>Answer:</strong> B. 6 kmph
+                                    <br>
+                                    <strong>Explanation:</strong> Let's solve step by step:
+                                    <br>
+                                    Downstream speed = 16/2 = 8 kmph
+                                    <br>
+                                    Upstream speed = 16/4 = 4 kmph
+                                    <br>
+                                    Speed in still water = (8 + 4)/2 = 6 kmph
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 25 -->
+                        <div class="question-box p-4 border rounded">
+                            <h4 class="mb-3">Q25. A boat takes 90 minutes less to travel 36 miles downstream than to travel the same distance upstream. If the speed of the boat in still water is 10 mph, the speed of the stream is:</h4>
+                            <div class="options">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q25" id="q25a">
+                                    <label class="form-check-label" for="q25a">A. 2 mph</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q25" id="q25b">
+                                    <label class="form-check-label" for="q25b">B. 2.5 mph</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q25" id="q25c">
+                                    <label class="form-check-label" for="q25c">C. 3 mph</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q25" id="q25d">
+                                    <label class="form-check-label" for="q25d">D. 4 mph</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-3" onclick="showAnswer(25)">View Answer</button>
+                            <div id="answer25" class="answer-box mt-3" style="display: none;">
+                                <div class="alert alert-success">
+                                    <strong>Answer:</strong> A. 2 mph
+                                    <br>
+                                    <strong>Explanation:</strong> Let's solve step by step:
+                                    <br>
+                                    Let speed of stream be x mph
+                                    <br>
+                                    Downstream speed = (10 + x) mph
+                                    <br>
+                                    Upstream speed = (10 - x) mph
+                                    <br>
+                                    36/(10-x) - 36/(10+x) = 90/60
+                                    <br>
+                                    Solving: x = 2 mph
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 26 -->
+                        <div class="question-box p-4 border rounded">
+                            <h4 class="mb-3">Q26. In a mixture of milk and water, the proportion of water by weight was 30%. If in the 40 litres of mixture, 10 more litres of water is added, what will be the percentage of water in the new mixture?</h4>
+                            <div class="options">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q26" id="q26a">
+                                    <label class="form-check-label" for="q26a">A. 40%</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q26" id="q26b">
+                                    <label class="form-check-label" for="q26b">B. 42%</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q26" id="q26c">
+                                    <label class="form-check-label" for="q26c">C. 44%</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q26" id="q26d">
+                                    <label class="form-check-label" for="q26d">D. 46%</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-3" onclick="showAnswer(26)">View Answer</button>
+                            <div id="answer26" class="answer-box mt-3" style="display: none;">
+                                <div class="alert alert-success">
+                                    <strong>Answer:</strong> C. 44%
+                                    <br>
+                                    <strong>Explanation:</strong> Let's solve step by step:
+                                    <br>
+                                    Initial water = 30% of 40 = 12 litres
+                                    <br>
+                                    Initial milk = 28 litres
+                                    <br>
+                                    After adding 10 litres of water:
+                                    <br>
+                                    New water = 22 litres
+                                    <br>
+                                    Total mixture = 50 litres
+                                    <br>
+                                    New percentage = (22/50) × 100 = 44%
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 27 -->
+                        <div class="question-box p-4 border rounded">
+                            <h4 class="mb-3">Q27. A shopkeeper bought 150 calculators at Rs. 250 each. He spent Rs. 2500 on transportation and marked up the selling price by 25% of the cost price. If he offers a discount of 10% on the marked price, what is his profit percentage?</h4>
+                            <div class="options">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q27" id="q27a">
+                                    <label class="form-check-label" for="q27a">A. 10.5%</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q27" id="q27b">
+                                    <label class="form-check-label" for="q27b">B. 12.5%</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q27" id="q27c">
+                                    <label class="form-check-label" for="q27c">C. 15%</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q27" id="q27d">
+                                    <label class="form-check-label" for="q27d">D. 17.5%</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-3" onclick="showAnswer(27)">View Answer</button>
+                            <div id="answer27" class="answer-box mt-3" style="display: none;">
+                                <div class="alert alert-success">
+                                    <strong>Answer:</strong> B. 12.5%
+                                    <br>
+                                    <strong>Explanation:</strong> Let's solve step by step:
+                                    <br>
+                                    Cost price = (150 × 250) + 2500 = 40,000
+                                    <br>
+                                    Marked price = 40,000 + (25% of 40,000) = 50,000
+                                    <br>
+                                    Selling price after 10% discount = 45,000
+                                    <br>
+                                    Profit = 5,000
+                                    <br>
+                                    Profit percentage = (5,000/40,000) × 100 = 12.5%
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 28 -->
+                        <div class="question-box p-4 border rounded">
+                            <h4 class="mb-3">Q28. If 6 men working 8 hours a day can complete a piece of work in 12 days, in how many days will 8 men working 6 hours a day complete the same work?</h4>
+                            <div class="options">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q28" id="q28a">
+                                    <label class="form-check-label" for="q28a">A. 10 days</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q28" id="q28b">
+                                    <label class="form-check-label" for="q28b">B. 12 days</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q28" id="q28c">
+                                    <label class="form-check-label" for="q28c">C. 14 days</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q28" id="q28d">
+                                    <label class="form-check-label" for="q28d">D. 16 days</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-3" onclick="showAnswer(28)">View Answer</button>
+                            <div id="answer28" class="answer-box mt-3" style="display: none;">
+                                <div class="alert alert-success">
+                                    <strong>Answer:</strong> B. 12 days
+                                    <br>
+                                    <strong>Explanation:</strong> Let's solve step by step:
+                                    <br>
+                                    Using the formula: (M1 × D1 × H1) = (M2 × D2 × H2)
+                                    <br>
+                                    6 × 12 × 8 = 8 × D × 6
+                                    <br>
+                                    576 = 48D
+                                    <br>
+                                    D = 12 days
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 29 -->
+                        <div class="question-box p-4 border rounded">
+                            <h4 class="mb-3">Q29. A train 150 meters long passes a pole in 15 seconds. If it passes a platform 200 meters long in 35 seconds, what is the speed of the train in km/hr?</h4>
+                            <div class="options">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q29" id="q29a">
+                                    <label class="form-check-label" for="q29a">A. 36 km/hr</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q29" id="q29b">
+                                    <label class="form-check-label" for="q29b">B. 40 km/hr</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q29" id="q29c">
+                                    <label class="form-check-label" for="q29c">C. 44 km/hr</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q29" id="q29d">
+                                    <label class="form-check-label" for="q29d">D. 48 km/hr</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-3" onclick="showAnswer(29)">View Answer</button>
+                            <div id="answer29" class="answer-box mt-3" style="display: none;">
+                                <div class="alert alert-success">
+                                    <strong>Answer:</strong> A. 36 km/hr
+                                    <br>
+                                    <strong>Explanation:</strong> Let's solve step by step:
+                                    <br>
+                                    For pole: Speed = 150/15 = 10 m/s
+                                    <br>
+                                    For platform: Speed = (150 + 200)/35 = 10 m/s
+                                    <br>
+                                    Converting to km/hr:
+                                    <br>
+                                    10 m/s = 10 × (18/5) = 36 km/hr
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Question 30 -->
+                        <div class="question-box p-4 border rounded">
+                            <h4 class="mb-3">Q30. The average age of 8 men is increased by 2 years when two men aged 35 and 45 are replaced by two new men. The average age of the new men is:</h4>
+                            <div class="options">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q30" id="q30a">
+                                    <label class="form-check-label" for="q30a">A. 46 years</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q30" id="q30b">
+                                    <label class="form-check-label" for="q30b">B. 48 years</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q30" id="q30c">
+                                    <label class="form-check-label" for="q30c">C. 50 years</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q30" id="q30d">
+                                    <label class="form-check-label" for="q30d">D. 52 years</label>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-3" onclick="showAnswer(30)">View Answer</button>
+                            <div id="answer30" class="answer-box mt-3" style="display: none;">
+                                <div class="alert alert-success">
+                                    <strong>Answer:</strong> C. 50 years
+                                    <br>
+                                    <strong>Explanation:</strong> Let's solve step by step:
+                                    <br>
+                                    Let initial average age be x
+                                    <br>
+                                    8x = Sum of ages of all 8 men
+                                    <br>
+                                    After replacement:
+                                    <br>
+                                    8(x + 2) = (8x - 80) + y (where y is sum of ages of new men)
+                                    <br>
+                                    8x + 16 = 8x - 80 + y
+                                    <br>
+                                    y = 96
+                                    <br>
+                                    Average age of new men = 96/2 = 50 years
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Navigation -->
+                        <nav aria-label="Page navigation" class="mt-4">
+                            <ul class="pagination justify-content-center">
+                                <!-- Pagination buttons will be dynamically inserted here -->
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Questions Content End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Quick Link</h4>
+                    <a class="btn btn-link" href="">Quiz</a>
+                    <a class="btn btn-link" href="">Code</a>
+                    <a class="btn btn-link" href="">Resources</a>
+                    <a class="btn btn-link" href="">Miscallaneous</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Contact</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>CSPrep HQ, Bangalore.</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 1234567890</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>csprep@gmail.com</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Newsletter</h4>
+                    <p>Sign up for weekly newsletter to get latest IT news, tips and tricks to help you achieve your goal.</p>
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">CSPrep</a>, All Right Reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/wow/wow.min.js"></script>
+    <script src="../lib/easing/easing.min.js"></script>
+    <script src="../lib/waypoints/waypoints.min.js"></script>
+    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="../js/main.js"></script>
+
+    <!-- Custom JavaScript for Questions Page -->
+    <script>
+        // Function to show/hide answers
+        function showAnswer(questionNumber) {
+            const answerBox = document.getElementById(`answer${questionNumber}`);
+            if (answerBox.style.display === 'none') {
+                answerBox.style.display = 'block';
+            } else {
+                answerBox.style.display = 'none';
+            }
+        }
+
+        // Function to handle pagination
+        function showPage(pageNumber) {
+            const questionsPerPage = 10;
+            const questions = document.querySelectorAll('.question-box');
+            const totalPages = Math.ceil(questions.length / questionsPerPage);
+            
+            // Hide all questions
+            questions.forEach(q => q.style.display = 'none');
+            
+            // Show questions for current page
+            const start = (pageNumber - 1) * questionsPerPage;
+            const end = start + questionsPerPage;
+            for(let i = start; i < end && i < questions.length; i++) {
+                questions[i].style.display = 'block';
+            }
+            
+            // Update pagination buttons
+            updatePaginationButtons(pageNumber, totalPages);
+        }
+
+        // Function to update pagination buttons
+        function updatePaginationButtons(currentPage, totalPages) {
+            const pagination = document.querySelector('.pagination');
+            let html = `
+                <li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
+                    <a class="page-link" href="#" onclick="showPage(${currentPage - 1})" tabindex="-1">Previous</a>
+                </li>
+            `;
+            
+            for(let i = 1; i <= totalPages; i++) {
+                html += `
+                    <li class="page-item ${i === currentPage ? 'active' : ''}">
+                        <a class="page-link" href="#" onclick="showPage(${i})">${i}</a>
+                    </li>
+                `;
+            }
+            
+            html += `
+                <li class="page-item ${currentPage === totalPages ? 'disabled' : ''}">
+                    <a class="page-link" href="#" onclick="showPage(${currentPage + 1})">Next</a>
+                </li>
+            `;
+            
+            pagination.innerHTML = html;
+        }
+
+        // Initialize first page on load
+        document.addEventListener('DOMContentLoaded', function() {
+            showPage(1);
+        });
+    </script>
+</body>
+
+</html> 
