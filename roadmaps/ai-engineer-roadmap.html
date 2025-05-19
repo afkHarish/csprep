@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>CSPrep - AI Engineer Roadmap</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="../img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="../lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="../css/style.css" rel="stylesheet">
+
+    <style>
+        .roadmap-section {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+        .roadmap-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .roadmap-section h3 {
+            color: #0d6efd;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+        .skill-item {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #0d6efd;
+            transition: all 0.3s ease;
+        }
+        .skill-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .skill-item h4 {
+            color: #1a1a1a;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        .skill-item p {
+            color: #4b5563;
+            margin-bottom: 0.5rem;
+        }
+        .resource-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .resource-link {
+            background: #e9ecef;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            color: #0d6efd;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        .resource-link:hover {
+            background: #0d6efd;
+            color: white;
+        }
+        .progress-section {
+            margin-top: 1rem;
+        }
+        .progress {
+            height: 8px;
+            margin-bottom: 0.5rem;
+        }
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #0d6efd;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.5rem;
+            top: 0.5rem;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background: #0d6efd;
+            border: 2px solid white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <h2 class="m-0 text-dark"><img src="../img/CSPREP.png" height="75px">CSPrep</h2>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="quiz.html" class="nav-item nav-link">Quiz</a>
+                <a href="contact.html" class="nav-item nav-link">Code</a>
+                <a href="courses.html" class="nav-item nav-link">Resources</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Miscallaneous</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="videos.html" class="dropdown-item">Videos</a>
+                        <a href="blogs.html" class="dropdown-item">Blogs</a>
+                        <a href="/Resume/resume.html" class="dropdown-item">Resume Builder</a>
+                    </div>
+                </div>
+                <a href="#" class="nav-item nav-link" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-primary py-5 mb-5 page-header">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1 class="display-3 text-white animated slideInDown">AI Engineer Roadmap</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- Roadmap Content Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <!-- Programming Section -->
+                    <div class="roadmap-section">
+                        <h3><i class="fas fa-code me-2"></i>Programming</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>Python</h4>
+                                    <p>Master Python, the most popular language for AI and machine learning.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://docs.python.org/3/" target="_blank" class="resource-link">Python Documentation</a>
+                                        <a href="https://www.learnpython.org/" target="_blank" class="resource-link">Learn Python</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>Java or C++ (Optional)</h4>
+                                    <p>Knowledge of other languages can be beneficial for performance-critical applications.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://docs.oracle.com/en/java/javase/index.html" target="_blank" class="resource-link">Java Documentation</a>
+                                        <a href="https://cplusplus.com/doc/" target="_blank" class="resource-link">C++ Reference</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mathematics Section -->
+                     <div class="roadmap-section">
+                        <h3><i class="fas fa-calculator me-2"></i>Mathematics</h3>
+                        <div class="timeline">
+                             <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>Linear Algebra</h4>
+                                    <p>Understand vectors, matrices, and linear transformations.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://www.khanacademy.org/math/linear-algebra" target="_blank" class="resource-link">Khan Academy Linear Algebra</a>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>Calculus</h4>
+                                    <p>Learn derivatives and integrals, essential for optimization algorithms.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://www.khanacademy.org/math/calculus" target="_blank" class="resource-link">Khan Academy Calculus</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>Probability & Statistics</h4>
+                                    <p>Understand probability distributions, hypothesis testing, etc.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://www.khanacademy.org/math/statistics-probability" target="_blank" class="resource-link">Khan Academy Statistics & Probability</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Machine Learning Section -->
+                    <div class="roadmap-section">
+                        <h3><i class="fas fa-brain me-2"></i>Machine Learning</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>Supervised Learning</h4>
+                                    <p>Learn algorithms like linear regression, logistic regression, decision trees.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://scikit-learn.org/stable/supervised_learning.html" target="_blank" class="resource-link">Scikit-learn Supervised Learning</a>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>Unsupervised Learning</h4>
+                                    <p>Explore clustering and dimensionality reduction techniques.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://scikit-learn.org/stable/unsupervised_learning.html" target="_blank" class="resource-link">Scikit-learn Unsupervised Learning</a>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>Deep Learning</h4>
+                                    <p>Learn about neural networks, CNNs, RNNs, and popular frameworks.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://www.tensorflow.org/learn" target="_blank" class="resource-link">TensorFlow Guide</a>
+                                        <a href="https://pytorch.org/docs/stable/index.html" target="_blank" class="resource-link">PyTorch Docs</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                     <!-- Data Handling Section -->
+                     <div class="roadmap-section">
+                        <h3><i class="fas fa-database me-2"></i>Data Handling</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>Data Preprocessing & Feature Engineering</h4>
+                                    <p>Techniques for preparing data for AI models.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://towardsdatascience.com/feature-engineering-for-machine-learning-3a5e293a5114" target="_blank" class="resource-link">Feature Engineering Guide</a>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>Databases (SQL & NoSQL)</h4>
+                                    <p>Storing and retrieving data for AI applications.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://www.sqlitetutorial.net/" target="_blank" class="resource-link">SQL Tutorial</a>
+                                        <a href="https://docs.mongodb.com/" target="_blank" class="resource-link">MongoDB Docs</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                     <!-- Deployment & MLOps Section -->
+                     <div class="roadmap-section">
+                        <h3><i class="fas fa-cloud-upload-alt me-2"></i>Deployment & MLOps</h3>
+                        <div class="timeline">
+                             <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>Model Deployment</h4>
+                                    <p>Deploying AI models as APIs or integrated systems.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://www.tensorflow.org/tfx/guide/serving" target="_blank" class="resource-link">TensorFlow Serving</a>
+                                        <a href="https://pytorch.org/serve/" target="_blank" class="resource-link">TorchServe</a>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>MLOps Concepts</h4>
+                                    <p>Understanding the practices for MLOps.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://cloud.google.com/architecture/mlops-continuous-delivery-and-automation-pipelines-in-machine-learning" target="_blank" class="resource-link">MLOps Pipelines (Google Cloud)</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Ideas Section -->
+                    <div class="roadmap-section">
+                        <h3><i class="fas fa-lightbulb me-2"></i>Project Ideas</h3>
+                        <p>Here are some AI Engineer project ideas to help you practice your skills:</p>
+                        <ul>
+                            <li>Build a simple image recognition application</li>
+                            <li>Create a basic natural language processing (NLP) tool</li>
+                            <li>Develop a recommendation engine</li>
+                            <li>Build a predictive maintenance model</li>
+                            <li>Create a chatbot using a deep learning framework</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- Sidebar -->
+                <div class="col-lg-4">
+                    <div class="roadmap-section">
+                        <h3><i class="fas fa-tasks me-2"></i>Progress Tracker</h3>
+                        <div class="skill-item">
+                            <h4>Overall Progress</h4>
+                            <div class="progress-section">
+                                <div class="progress">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 0%"></div>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="skill-item">
+                            <h4>Next Steps</h4>
+                             <p>Start with programming and foundational math concepts.</p>
+                        </div>
+                    </div>
+
+                    <div class="roadmap-section">
+                        <h3><i class="fas fa-star me-2"></i>Recommended Resources</h3>
+                        <div class="skill-item">
+                            <h4>Learning Platforms</h4>
+                            <div class="resource-links">
+                                <a href="https://www.coursera.org/professional-certificates/google-ai" target="_blank" class="resource-link">Google AI Professional Certificate (Coursera)</a>
+                                <a href="https://www.edx.org/professional-certificate/microsoft-introduction-to-making-ai" target="_blank" class="resource-link">Microsoft Professional Program in AI (edX)</a>
+                                <a href="https://www.deeplearning.ai/" target="_blank" class="resource-link">DeepLearning.AI</a>
+                                <a href="https://www.udemy.com/courses/artificial-intelligence/" target="_blank" class="resource-link">Udemy</a>
+                                <a href="https://www.simplilearn.com/artificial-intelligence-masters-program-training" target="_blank" class="resource-link">Simplilearn</a>
+                                <a href="https://online.stanford.edu/courses/cs229-machine-learning" target="_blank" class="resource-link">Stanford Machine Learning (Coursera/edX)</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Roadmap Content End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/wow/wow.min.js"></script>
+    <script src="../lib/easing/easing.min.js"></script>
+    <script src="../lib/waypoints/waypoints.min.js"></script>
+    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="../js/main.js"></script>
+</body>
+
+</html> 

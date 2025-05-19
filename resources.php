@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -86,7 +89,7 @@
 
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+        <a href="index.php" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
             <h2 class="m-0 text-dark"><img src="img/CSPREP.png" height="75px">CSPrep</h2>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -94,19 +97,28 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link">Home</a>
-                <a href="quiz.html" class="nav-item nav-link">Quiz</a>
+                <a href="index.php" class="nav-item nav-link">Home</a>
+                <a href="quiz.php" class="nav-item nav-link">Quiz</a>
                 <a href="roadmaps/roadmap.html" class="nav-item nav-link">Code</a>
-                <a href="resources.html" class="nav-item nav-link active">Resources</a>
+                <a href="resources.php" class="nav-item nav-link active">Resources</a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Miscallaneous</a>
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Miscellaneous</a>
                     <div class="dropdown-menu fade-down m-0">
                         <a href="videos.html" class="dropdown-item">Videos</a>
                         <a href="blogs.html" class="dropdown-item">Blogs</a>
                         <a href="/Resume/resume.html" class="dropdown-item">Resume Builder</a>
                     </div>
                 </div>
-                <a href="#" class="nav-item nav-link" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+                <?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true): ?>
+                    <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
+                        <a href="admin_dashboard.php" class="nav-item nav-link">Admin Dashboard</a>
+                    <?php else: ?>
+                        <a href="user_dashboard.php" class="nav-item nav-link">Dashboard</a>
+                    <?php endif; ?>
+                    <a href="logout.php" class="nav-item nav-link">Logout (<?php echo htmlspecialchars($_SESSION['name']); ?>)</a>
+                <?php else: ?>
+                    <a href="#" class="nav-item nav-link" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+                <?php endif; ?>
             </div>
         </div>
     </nav>
@@ -248,24 +260,82 @@
                                     </h2>
                                     <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                         <div class="accordion-body">
-                                            By practicing these questions, you'll get a good grip on the kind of challenges each company throws at you. It's a great way to sharpen your skills and walk into your placement feeling confident.
+                                            Practicing company-specific questions helps you understand the format, difficulty level, and types of questions asked by your target companies. This targeted preparation significantly boosts your confidence and performance on the actual test.
                                         </div>
                                     </div>
                                 </div>
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
-                                            How often is the content updated?
+                                            Is the content updated regularly?
                                         </button>
                                     </h2>
                                     <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                         <div class="accordion-body">
-                                            We regularly update our content to keep pace with the latest industry trends and company requirements, ensuring you receive the most current and relevant preparation material.
+                                            Yes, we regularly update our question bank to keep pace with the evolving recruitment patterns and industry demands, providing you with the most relevant and current preparation material.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                            Can I access detailed explanations for the answers?
+                                        </button>
+                                    </h2>
+                                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            Absolutely. Each question comes with a detailed explanation to ensure you not only get the correct answer but also understand the reasoning behind it, enhancing your learning experience.
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Other Resource Categories -->
+                        <h2 class="mb-4 mt-5">Other Resources</h2>
+                        <div class="row g-4">
+                            <div class="col-lg-6 col-md-12">
+                                <div class="feature-box p-4 border rounded d-flex align-items-center">
+                                    <i class="fas fa-video fa-3x me-4"></i>
+                                    <div>
+                                        <h5>Video Lectures</h5>
+                                        <p class="mb-0">Access a library of video lectures covering core computer science concepts.</p>
+                                        <a href="videos.html" class="btn btn-link p-0">View Videos <i class="fas fa-arrow-right ms-2"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12">
+                                <div class="feature-box p-4 border rounded d-flex align-items-center">
+                                    <i class="fas fa-blog fa-3x me-4"></i>
+                                    <div>
+                                        <h5>Blogs and Articles</h5>
+                                        <p class="mb-0">Read insightful blogs and articles on various tech topics and interview tips.</p>
+                                        <a href="blogs.html" class="btn btn-link p-0">Read Blogs <i class="fas fa-arrow-right ms-2"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="col-lg-6 col-md-12">
+                                <div class="feature-box p-4 border rounded d-flex align-items-center">
+                                    <i class="fas fa-file-alt fa-3x me-4"></i>
+                                    <div>
+                                        <h5>Study Materials</h5>
+                                        <p class="mb-0">Download curated study materials and notes for comprehensive preparation.</p>
+                                        <a href="#" class="btn btn-link p-0">Get Materials <i class="fas fa-arrow-right ms-2"></i></a> <!-- Placeholder link -->
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="col-lg-6 col-md-12">
+                                <div class="feature-box p-4 border rounded d-flex align-items-center">
+                                    <i class="fas fa-tools fa-3x me-4"></i>
+                                    <div>
+                                        <h5>Useful Tools</h5>
+                                        <p class="mb-0">Explore tools and resources that can aid your learning and preparation.</p>
+                                        <a href="#" class="btn btn-link p-0">Explore Tools <i class="fas fa-arrow-right ms-2"></i></a> <!-- Placeholder link -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -282,7 +352,7 @@
                     <a class="btn btn-link" href="">Quiz</a>
                     <a class="btn btn-link" href="">Code</a>
                     <a class="btn btn-link" href="">Resources</a>
-                    <a class="btn btn-link" href="">Miscallaneous</a>
+                    <a class="btn btn-link" href="">Miscellaneous</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-3">Contact</h4>
@@ -300,20 +370,66 @@
                 </div>
             </div>
         </div>
-        <div class="container">
-            <div class="copyright">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="#">CSPrep</a>, All Right Reserved.
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
     <!-- Footer End -->
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header d-flex justify-content-center">
+                    <div class="btn-group" role="group" aria-label="Login type toggle">
+                        <button type="button" id="userBtn" class="btn btn-primary active">User</button>
+                        <button type="button" id="adminBtn" class="btn btn-outline-secondary">Admin</button>
+                    </div>
+                    <button type="button" class="btn-close position-absolute end-0 me-2" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="userLoginForm" class="mb-4" action="login.php" method="post">
+                        <h6>User Login</h6>
+                        <div class="mb-3">
+                            <label for="userEmail" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="userEmail" name="email" placeholder="Enter email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="userPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="userPassword" name="password" placeholder="Password" required>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="userRememberMe" name="remember_me">
+                            <label class="form-check-label" for="userRememberMe">Remember me</label>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">Login</button>
+                            <a href="register.php" class="btn btn-link">Don't have an account? Register</a>
+                        </div>
+                    </form>
+                    <form id="adminLoginForm" style="display:none;" action="login.php" method="post">
+                        <h6>Admin Login</h6>
+                        <div class="mb-3">
+                            <label for="adminEmail" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="adminEmail" name="email" placeholder="Enter email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="adminPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="adminPassword" name="password" placeholder="Password" required>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="adminRememberMe" name="remember_me">
+                            <label class="form-check-label" for="adminRememberMe">Remember me</label>
+                        </div>
+                        <button type="submit" class="btn btn-secondary w-100">Login as Admin</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -322,53 +438,27 @@
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-    <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script>
+        // Simple script to toggle between user and admin login forms in the modal
+        document.getElementById('userBtn').addEventListener('click', function() {
+            document.getElementById('userLoginForm').style.display = 'block';
+            document.getElementById('adminLoginForm').style.display = 'none';
+            document.getElementById('userBtn').classList.add('active');
+            document.getElementById('adminBtn').classList.remove('active');
+            document.getElementById('adminBtn').classList.add('btn-outline-secondary');
+            document.getElementById('userBtn').classList.remove('btn-outline-secondary');
+        });
 
-    <!-- Login Modal -->
-    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header d-flex justify-content-center">
-            <div class="btn-group" role="group" aria-label="Login type toggle">
-              <button type="button" id="userBtn" class="btn btn-primary active">User</button>
-              <button type="button" id="adminBtn" class="btn btn-outline-secondary">Admin</button>
-            </div>
-            <button type="button" class="btn-close position-absolute end-0 me-2" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <form id="userLoginForm" class="mb-4">
-              <h6>User Login</h6>
-              <div class="mb-3">
-                <label for="userEmail" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="userEmail" placeholder="Enter email" required>
-              </div>
-              <div class="mb-3">
-                <label for="userPassword" class="form-label">Password</label>
-                <input type="password" class="form-control" id="userPassword" placeholder="Password" required>
-              </div>
-              <button type="submit" class="btn btn-primary w-100">Login as User</button>
-            </form>
-            <form id="adminLoginForm" style="display:none;">
-              <h6>Admin Login</h6>
-              <div class="mb-3">
-                <label for="adminEmail" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="adminEmail" placeholder="Enter email" required>
-              </div>
-              <div class="mb-3">
-                <label for="adminPassword" class="form-label">Password</label>
-                <input type="password" class="form-control" id="adminPassword" placeholder="Password" required>
-              </div>
-              <button type="submit" class="btn btn-secondary w-100">Login as Admin</button>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
+        document.getElementById('adminBtn').addEventListener('click', function() {
+            document.getElementById('userLoginForm').style.display = 'none';
+            document.getElementById('adminLoginForm').style.display = 'block';
+            document.getElementById('adminBtn').classList.add('active');
+            document.getElementById('userBtn').classList.remove('active');
+            document.getElementById('userBtn').classList.add('btn-outline-secondary');
+            document.getElementById('adminBtn').classList.remove('btn-outline-secondary');
+        });
+    </script>
 </body>
 
-</html>
+</html> 

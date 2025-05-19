@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>CSPrep - Cybersecurity Roadmap</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="../img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="../lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="../css/style.css" rel="stylesheet">
+
+    <style>
+        .roadmap-section {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+        .roadmap-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .roadmap-section h3 {
+            color: #0d6efd;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+        .skill-item {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #0d6efd;
+            transition: all 0.3s ease;
+        }
+        .skill-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .skill-item h4 {
+            color: #1a1a1a;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        .skill-item p {
+            color: #4b5563;
+            margin-bottom: 0.5rem;
+        }
+        .resource-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .resource-link {
+            background: #e9ecef;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            color: #0d6efd;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        .resource-link:hover {
+            background: #0d6efd;
+            color: white;
+        }
+        .progress-section {
+            margin-top: 1rem;
+        }
+        .progress {
+            height: 8px;
+            margin-bottom: 0.5rem;
+        }
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #0d6efd;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.5rem;
+            top: 0.5rem;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background: #0d6efd;
+            border: 2px solid white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <h2 class="m-0 text-dark"><img src="../img/CSPREP.png" height="75px">CSPrep</h2>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="quiz.html" class="nav-item nav-link">Quiz</a>
+                <a href="contact.html" class="nav-item nav-link">Code</a>
+                <a href="courses.html" class="nav-item nav-link">Resources</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Miscallaneous</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="videos.html" class="dropdown-item">Videos</a>
+                        <a href="blogs.html" class="dropdown-item">Blogs</a>
+                        <a href="/Resume/resume.html" class="dropdown-item">Resume Builder</a>
+                    </div>
+                </div>
+                <a href="#" class="nav-item nav-link" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-primary py-5 mb-5 page-header">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1 class="display-3 text-white animated slideInDown">Cybersecurity Roadmap</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- Roadmap Content Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <!-- Basics Section -->
+                    <div class="roadmap-section">
+                        <h3><i class="fas fa-lock me-2"></i>Basics</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>Networking Fundamentals</h4>
+                                    <p>Understand network protocols, topologies, and devices.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://www.comptia.org/training/certifications/network" target="_blank" class="resource-link">CompTIA Network+ Prep</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>Operating Systems</h4>
+                                    <p>Learn about different operating systems and their security features.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://www.cybrary.it/course/operating-system-security/" target="_blank" class="resource-link">OS Security Course</a>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>Linux Fundamentals</h4>
+                                    <p>Gain proficiency in using Linux for security tasks.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://linuxjourney.com/" target="_blank" class="resource-link">Linux Journey</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Security Concepts Section -->
+                    <div class="roadmap-section">
+                        <h3><i class="fas fa-shield-alt me-2"></i>Security Concepts</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>Cryptography</h4>
+                                    <p>Understand encryption, hashing, and digital signatures.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://cryptography.io/en/latest/" target="_blank" class="resource-link">Cryptography.io Docs</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>Authentication & Authorization</h4>
+                                    <p>Learn about different methods for verifying identity and controlling access.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://auth0.com/intro-to-iam" target="_blank" class="resource-link">Intro to IAM (Auth0)</a>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>Security Models & Frameworks</h4>
+                                    <p>Familiarize yourself with common security models and frameworks (e.g., OSI, NIST).</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://csrc.nist.gov/publications/detail/sp/800-53/rev5/final" target="_blank" class="resource-link">NIST SP 800-53</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                     <!-- Attack and Defense Section -->
+                    <div class="roadmap-section">
+                        <h3><i class="fas fa-crosshairs me-2"></i>Attack & Defense</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>Common Attacks</h4>
+                                    <p>Learn about common attack vectors (e.g., phishing, DDoS, SQL injection).</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://owasp.org/www-project-top-10/" target="_blank" class="resource-link">OWASP Top 10</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>Defensive Techniques</h4>
+                                    <p>Understand firewalls, intrusion detection/prevention systems, and security best practices.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://www.cisecurity.org/controls" target="_blank" class="resource-link">CIS Controls</a>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>Penetration Testing Basics</h4>
+                                    <p>Introduction to ethical hacking and penetration testing methodologies.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://www.offsec.com/courses/pen-100/" target="_blank" class="resource-link">OffSec PEN-100</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tools Section -->
+                    <div class="roadmap-section">
+                        <h3><i class="fas fa-tools me-2"></i>Tools</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>Security Tools</h4>
+                                    <p>Familiarize yourself with tools for scanning, analysis, and defense (e.g., Nmap, Wireshark, Metasploit).</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://nmap.org/" target="_blank" class="resource-link">Nmap Official Site</a>
+                                        <a href="https://www.wireshark.org/" target="_blank" class="resource-link">Wireshark Official Site</a>
+                                        <a href="https://www.metasploit.com/" target="_blank" class="resource-link">Metasploit Official Site</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Ideas Section -->
+                    <div class="roadmap-section">
+                        <h3><i class="fas fa-lightbulb me-2"></i>Project Ideas</h3>
+                        <p>Here are some Cybersecurity project ideas to help you practice your skills:</p>
+                        <ul>
+                            <li>Set up and secure a small home network.</li>
+                            <li>Analyze network traffic using Wireshark.</li>
+                            <li>Practice penetration testing on a virtual lab environment.</li>
+                            <li>Develop a simple script for a security task (e.g., log analysis).</li>
+                            <li>Research and present on a recent cybersecurity threat.</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- Sidebar -->
+                <div class="col-lg-4">
+                    <div class="roadmap-section">
+                        <h3><i class="fas fa-tasks me-2"></i>Progress Tracker</h3>
+                        <div class="skill-item">
+                            <h4>Overall Progress</h4>
+                            <div class="progress-section">
+                                <div class="progress">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 0%"></div>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="skill-item">
+                            <h4>Next Steps</h4>
+                             <p>Start with networking and operating system fundamentals.</p>
+                        </div>
+                    </div>
+
+                    <div class="roadmap-section">
+                        <h3><i class="fas fa-star me-2"></i>Recommended Resources</h3>
+                        <div class="skill-item">
+                            <h4>Learning Platforms & Resources</h4>
+                            <div class="resource-links">
+                                <a href="https://www.cybrary.it/" target="_blank" class="resource-link">Cybrary</a>
+                                <a href="https://www.edx.org/learn/cybersecurity" target="_blank" class="resource-link">edX Cybersecurity Courses</a>
+                                <a href="https://www.coursera.org/browse/computer-science/security" target="_blank" class="resource-link">Coursera Security Courses</a>
+                                <a href="https://www.udemy.com/courses/it-and-software/network-and-security/" target="_blank" class="resource-link">Udemy Network & Security</a>
+                                <a href="https://www.pluralsight.com/browse/it-ops/security" target="_blank" class="resource-link">Pluralsight Security</a>
+                                <a href="https://tryhackme.com/" target="_blank" class="resource-link">TryHackMe</a>
+                                <a href="https://hackthebox.eu/" target="_blank" class="resource-link">Hack The Box</a>
+                                <a href="https://www.sans.org/training/by-topic/cyber-security/" target="_blank" class="resource-link">SANS Training</a>
+                                <a href="https://owasp.org/" target="_blank" class="resource-link">OWASP Foundation</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Roadmap Content End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/wow/wow.min.js"></script>
+    <script src="../lib/easing/easing.min.js"></script>
+    <script src="../lib/waypoints/waypoints.min.js"></script>
+    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="../js/main.js"></script>
+</body>
+
+</html> 

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>CSPrep - Backend Developer Roadmap</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="../img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="../lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="../css/style.css" rel="stylesheet">
+
+    <style>
+        .roadmap-section {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+        .roadmap-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .roadmap-section h3 {
+            color: #0d6efd;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+        .skill-item {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #0d6efd;
+            transition: all 0.3s ease;
+        }
+        .skill-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .skill-item h4 {
+            color: #1a1a1a;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        .skill-item p {
+            color: #4b5563;
+            margin-bottom: 0.5rem;
+        }
+        .resource-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .resource-link {
+            background: #e9ecef;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            color: #0d6efd;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        .resource-link:hover {
+            background: #0d6efd;
+            color: white;
+        }
+        .progress-section {
+            margin-top: 1rem;
+        }
+        .progress {
+            height: 8px;
+            margin-bottom: 0.5rem;
+        }
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #0d6efd;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.5rem;
+            top: 0.5rem;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background: #0d6efd;
+            border: 2px solid white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <h2 class="m-0 text-dark"><img src="../img/CSPREP.png" height="75px">CSPrep</h2>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="quiz.html" class="nav-item nav-link">Quiz</a>
+                <a href="contact.html" class="nav-item nav-link">Code</a>
+                <a href="courses.html" class="nav-item nav-link">Resources</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Miscallaneous</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="videos.html" class="dropdown-item">Videos</a>
+                        <a href="blogs.html" class="dropdown-item">Blogs</a>
+                        <a href="/Resume/resume.html" class="dropdown-item">Resume Builder</a>
+                    </div>
+                </div>
+                <a href="#" class="nav-item nav-link" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-primary py-5 mb-5 page-header">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1 class="display-3 text-white animated slideInDown">Backend Developer Roadmap</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- Roadmap Content Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <!-- Internet Section -->
+                    <div class="roadmap-section">
+                        <h3><i class="fas fa-globe me-2"></i>Internet</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>How the Internet Works</h4>
+                                    <p>Understand the basics of how data travels across the web.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://web.dev/how-websites-work/" target="_blank" class="resource-link">How Websites Work</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>HTTP</h4>
+                                    <p>Learn about the Hypertext Transfer Protocol.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP" target="_blank" class="resource-link">MDN HTTP Docs</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Operating Systems Section -->
+                     <div class="roadmap-section">
+                        <h3><i class="fas fa-desktop me-2"></i>Operating Systems</h3>
+                        <div class="timeline">
+                             <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>Terminal Usage</h4>
+                                    <p>Familiarize yourself with command line interfaces (Linux/Unix).</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://ryanstutorials.net/linuxtutorial/" target="_blank" class="resource-link">Linux Tutorial</a>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>OS Concepts</h4>
+                                    <p>Understand processes, threads, memory management, etc.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://www.geeksforgeeks.org/operating-system-concepts/" target="_blank" class="resource-link">OS Concepts Guide</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Learn a Language Section -->
+                    <div class="roadmap-section">
+                        <h3><i class="fas fa-code me-2"></i>Learn a Language</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>Choose one: JavaScript, Python, Java, C#, Go, Ruby, PHP</h4>
+                                    <p>Select and master at least one backend programming language.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" class="resource-link">JavaScript (Node.js)</a>
+                                        <a href="https://docs.python.org/3/" target="_blank" class="resource-link">Python</a>
+                                         <a href="https://docs.oracle.com/en/java/javase/index.html" target="_blank" class="resource-link">Java</a>
+                                          <a href="https://learn.microsoft.com/en-us/dotnet/csharp/" target="_blank" class="resource-link">C#</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Databases Section -->
+                     <div class="roadmap-section">
+                        <h3><i class="fas fa-database me-2"></i>Databases</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>Relational Databases</h4>
+                                    <p>Learn SQL and working with databases like PostgreSQL, MySQL.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://www.postgresql.org/docs/" target="_blank" class="resource-link">PostgreSQL Docs</a>
+                                         <a href="https://dev.mysql.com/doc/" target="_blank" class="resource-link">MySQL Docs</a>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>NoSQL Databases</h4>
+                                    <p>Explore NoSQL options like MongoDB, Cassandra, Redis.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://docs.mongodb.com/" target="_blank" class="resource-link">MongoDB Docs</a>
+                                         <a href="https://redis.io/docs/" target="_blank" class="resource-link">Redis Docs</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- API Section -->
+                    <div class="roadmap-section">
+                        <h3><i class="fas fa-exchange-alt me-2"></i>APIs</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>RESTful APIs</h4>
+                                    <p>Design and build RESTful services.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://restfulapi.net/" target="_blank" class="resource-link">RESTful API Tutorial</a>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>GraphQL</h4>
+                                    <p>Learn about GraphQL for API development.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://graphql.org/" target="_blank" class="resource-link">GraphQL Official Site</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Ideas Section -->
+                    <div class="roadmap-section">
+                        <h3><i class="fas fa-lightbulb me-2"></i>Project Ideas</h3>
+                        <p>Here are some backend project ideas to help you practice your skills:</p>
+                        <ul>
+                            <li>Build a simple Blog API</li>
+                            <li>Create a Task Management API</li>
+                            <li>Develop a simple E-commerce backend</li>
+                            <li>Build a URL Shortener service</li>
+                            <li>Create a basic Chat application backend</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- Sidebar -->
+                <div class="col-lg-4">
+                    <div class="roadmap-section">
+                        <h3><i class="fas fa-tasks me-2"></i>Progress Tracker</h3>
+                        <div class="skill-item">
+                            <h4>Overall Progress</h4>
+                            <div class="progress-section">
+                                <div class="progress">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 0%"></div>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="skill-item">
+                            <h4>Next Steps</h4>
+                             <p>Start with the Internet basics and choose a programming language.</p>
+                        </div>
+                    </div>
+
+                    <div class="roadmap-section">
+                        <h3><i class="fas fa-star me-2"></i>Recommended Resources</h3>
+                        <div class="skill-item">
+                            <h4>Learning Platforms</h4>
+                            <div class="resource-links">
+                                <a href="https://www.udemy.com/courses/development/backend-development/" target="_blank" class="resource-link">Udemy</a>
+                                <a href="https://www.coursera.org/browse/computer-science/software-development/backend-development" target="_blank" class="resource-link">Coursera</a>
+                                <a href="https://www.edx.org/learn/computer-science/backend-development" target="_blank" class="resource-link">edX</a>
+                                <a href="https://egghead.io/browse/topics/backend" target="_blank" class="resource-link">Egghead.io</a>
+                                <a href="https://www.codecademy.com/learn/paths/back-end-engineer" target="_blank" class="resource-link">Codecademy</a>
+                                <a href="https://www.pluralsight.com/browse/software-development/backend" target="_blank" class="resource-link">Pluralsight</a>
+                                <a href="https://teamtreehouse.com/tracks/backend-web-development" target="_blank" class="resource-link">Treehouse</a>
+                                <a href="https://learntocodewith.me/posts/backend-developer-bootcamps/" target="_blank" class="resource-link">Bootcamps & Resources</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Roadmap Content End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/wow/wow.min.js"></script>
+    <script src="../lib/easing/easing.min.js"></script>
+    <script src="../lib/waypoints/waypoints.min.js"></script>
+    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="../js/main.js"></script>
+</body>
+
+</html> 

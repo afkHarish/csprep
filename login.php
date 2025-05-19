@@ -19,6 +19,9 @@ if ($conn->connect_error) {
 $email = $password = "";
 $email_err = $password_err = $login_err = "";
 
+// Added for remember me
+$remember_me = false;
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate email
     if (empty($_POST["email"])) {
@@ -36,13 +39,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // If no errors, check credentials
     if (empty($email_err) && empty($password_err)) {
-        $stmt = $conn->prepare("SELECT id, name, email, password FROM users WHERE email = ?");
+        $stmt = $conn->prepare("SELECT id, name, email, password, role FROM users WHERE email = ?");
         $stmt->bind_param("s", $email);
         $stmt->execute();
         $stmt->store_result();
 
         if ($stmt->num_rows == 1) {
-            $stmt->bind_result($id, $name, $email_db, $hashed_password);
+            $stmt->bind_result($id, $name, $email_db, $hashed_password, $role);
             $stmt->fetch();
 
             if (password_verify($password, $hashed_password)) {
@@ -52,9 +55,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION["id"] = $id;
                 $_SESSION["name"] = $name;
                 $_SESSION["email"] = $email_db;
+                $_SESSION["role"] = $role; // Store user role in session
 
-                // Redirect to welcome page or dashboard
-                header("Location: index.html");
+                // Handle remember me
+                if (isset($_POST["remember_me"])) {
+                    $remember_me = true;
+                    // Generate a unique token
+                    $token = bin2hex(random_bytes(32));
+                    $hashed_token = password_hash($token, PASSWORD_DEFAULT);
+
+                    // Store token in database
+                    $update_stmt = $conn->prepare("UPDATE users SET remember_token = ? WHERE id = ?");
+                    $update_stmt->bind_param("si", $hashed_token, $id);
+                    $update_stmt->execute();
+                    $update_stmt->close();
+
+                    // Set cookie (valid for 30 days)
+                    setcookie("remember_me", $id . ':' . $token, time() + (86400 * 30), "/");
+                }
+
+                // Redirect based on role
+                if ($role == 'admin') {
+                    header("Location: admin_dashboard.php"); // Redirect admin to admin dashboard
+                } else {
+                    header("Location: user_dashboard.php"); // Redirect regular users to user dashboard
+                }
                 exit();
             } else {
                 $login_err = "Invalid email or password.";
@@ -64,6 +89,46 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         $stmt->close();
     }
+}
+
+// Check for remember me cookie if not logged in
+if (!isset($_SESSION["loggedin"]) && isset($_COOKIE["remember_me"])) {
+    list($user_id, $token) = explode(':', $_COOKIE["remember_me"]);
+
+    $stmt = $conn->prepare("SELECT id, name, email, role, remember_token FROM users WHERE id = ?");
+    $stmt->bind_param("i", $user_id);
+    $stmt->execute();
+    $stmt->store_result();
+
+    if ($stmt->num_rows == 1) {
+        $stmt->bind_result($id, $name, $email_db, $role, $remember_token_hash);
+        $stmt->fetch();
+
+        if (password_verify($token, $remember_token_hash)) {
+            // Token is valid, log in the user
+            session_start();
+            $_SESSION["loggedin"] = true;
+            $_SESSION["id"] = $id;
+            $_SESSION["name"] = $name;
+            $_SESSION["email"] = $email_db;
+            $_SESSION["role"] = $role; // Store user role in session
+
+            // Redirect based on role
+            if ($role == 'admin') {
+                header("Location: admin_dashboard.php"); // Redirect admin
+            } else {
+                header("Location: user_dashboard.php"); // Redirect user
+            }
+            exit();
+        } else {
+            // Invalid token, clear cookie
+            setcookie("remember_me", "", time() - 3600, "/");
+        }
+    } else {
+         // User not found, clear cookie
+        setcookie("remember_me", "", time() - 3600, "/");
+    }
+    $stmt->close();
 }
 
 $conn->close();
@@ -95,6 +160,10 @@ $conn->close();
             <label for="password" class="form-label">Password</label>
             <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" id="password" required>
             <div class="invalid-feedback"><?php echo $password_err; ?></div>
+        </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="remember_me" name="remember_me">
+            <label class="form-check-label" for="remember_me">Remember me</label>
         </div>
         <button type="submit" class="btn btn-primary">Login</button>
         <a href="register.php" class="btn btn-link">Don't have an account? Register</a>

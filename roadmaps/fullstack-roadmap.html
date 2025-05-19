@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>CSPrep - Fullstack Developer Roadmap</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="../img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="../lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="../css/style.css" rel="stylesheet">
+
+    <style>
+        .roadmap-section {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+        .roadmap-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .roadmap-section h3 {
+            color: #0d6efd;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+        .skill-item {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #0d6efd;
+            transition: all 0.3s ease;
+        }
+        .skill-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .skill-item h4 {
+            color: #1a1a1a;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        .skill-item p {
+            color: #4b5563;
+            margin-bottom: 0.5rem;
+        }
+        .resource-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .resource-link {
+            background: #e9ecef;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            color: #0d6efd;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        .resource-link:hover {
+            background: #0d6efd;
+            color: white;
+        }
+        .progress-section {
+            margin-top: 1rem;
+        }
+        .progress {
+            height: 8px;
+            margin-bottom: 0.5rem;
+        }
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #0d6efd;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.5rem;
+            top: 0.5rem;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background: #0d6efd;
+            border: 2px solid white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <h2 class="m-0 text-dark"><img src="../img/CSPREP.png" height="75px">CSPrep</h2>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="quiz.html" class="nav-item nav-link">Quiz</a>
+                <a href="contact.html" class="nav-item nav-link">Code</a>
+                <a href="courses.html" class="nav-item nav-link">Resources</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Miscallaneous</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="videos.html" class="dropdown-item">Videos</a>
+                        <a href="blogs.html" class="dropdown-item">Blogs</a>
+                        <a href="/Resume/resume.html" class="dropdown-item">Resume Builder</a>
+                    </div>
+                </div>
+                <a href="#" class="nav-item nav-link" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-primary py-5 mb-5 page-header">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1 class="display-3 text-white animated slideInDown">Fullstack Developer Roadmap</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- Roadmap Content Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <!-- Frontend Section (Summarized) -->
+                    <div class="roadmap-section">
+                        <h3><i class="fas fa-code me-2"></i>Frontend Development (See Frontend Roadmap)</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>Basics (HTML, CSS, JavaScript)</h4>
+                                    <p>Foundation of web development.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="frontend-roadmap.html" class="resource-link">Frontend Roadmap</a>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>Frameworks (React, Vue, Angular)</h4>
+                                    <p>Learn a modern frontend framework.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="frontend-roadmap.html" class="resource-link">Frontend Roadmap</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Backend Section (Summarized) -->
+                     <div class="roadmap-section">
+                        <h3><i class="fas fa-server me-2"></i>Backend Development (See Backend Roadmap)</h3>
+                        <div class="timeline">
+                             <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>Language & Framework</h4>
+                                    <p>Choose and master a backend language and its framework.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="backend-roadmap.html" class="resource-link">Backend Roadmap</a>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>Databases</h4>
+                                    <p>Work with both relational and NoSQL databases.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="backend-roadmap.html" class="resource-link">Backend Roadmap</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Databases Section (Detailed for Fullstack) -->
+                     <div class="roadmap-section">
+                        <h3><i class="fas fa-database me-2"></i>Databases</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>SQL Databases</h4>
+                                    <p>Advanced SQL concepts and database design.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://www.sqlitetutorial.net/" target="_blank" class="resource-link">SQLite Tutorial</a>
+                                        <a href="https://www.mysql.com/" target="_blank" class="resource-link">MySQL</a>
+                                        <a href="https://www.postgresql.org/" target="_blank" class="resource-link">PostgreSQL</a>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>NoSQL Databases</h4>
+                                    <p>Working with document, key-value, and graph databases.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://www.mongodb.com/docs/" target="_blank" class="resource-link">MongoDB Docs</a>
+                                        <a href="https://redis.io/" target="_blank" class="resource-link">Redis</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                     <!-- API Design Section -->
+                    <div class="roadmap-section">
+                        <h3><i class="fas fa-exchange-alt me-2"></i>API Design and Development</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>REST APIs</h4>
+                                    <p>Designing and implementing RESTful services.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://restfulapi.net/" target="_blank" class="resource-link">RESTful API Tutorial</a>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>GraphQL APIs</h4>
+                                    <p>Building APIs with GraphQL.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://graphql.org/" target="_blank" class="resource-link">GraphQL Official Site</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                     <!-- DevOps Section (Basics) -->
+                     <div class="roadmap-section">
+                        <h3><i class="fas fa-cogs me-2"></i>Basic DevOps</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>Servers & Deployment</h4>
+                                    <p>Deploying applications to servers (e.g., Nginx, Apache).</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://www.nginx.com/resources/" target="_blank" class="resource-link">Nginx Resources</a>
+                                        <a href="https://httpd.apache.org/docs/" target="_blank" class="resource-link">Apache Docs</a>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>Docker</h4>
+                                    <p>Containerizing your applications.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://docs.docker.com/get-started/" target="_blank" class="resource-link">Docker Get Started</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Ideas Section -->
+                    <div class="roadmap-section">
+                        <h3><i class="fas fa-lightbulb me-2"></i>Project Ideas</h3>
+                        <p>Here are some fullstack project ideas to help you practice your skills:</p>
+                        <ul>
+                            <li>Build a social media clone</li>
+                            <li>Create a project management tool</li>
+                            <li>Develop a forum or discussion board</li>
+                            <li>Build a real-time chat application</li>
+                            <li>Create a simple e-commerce platform</li>
+                            <li>Develop a personal blogging platform</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- Sidebar -->
+                <div class="col-lg-4">
+                    <div class="roadmap-section">
+                        <h3><i class="fas fa-tasks me-2"></i>Progress Tracker</h3>
+                        <div class="skill-item">
+                            <h4>Overall Progress</h4>
+                            <div class="progress-section">
+                                <div class="progress">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 0%"></div>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="skill-item">
+                            <h4>Next Steps</h4>
+                             <p>Focus on integrating frontend and backend skills.</p>
+                        </div>
+                    </div>
+
+                    <div class="roadmap-section">
+                        <h3><i class="fas fa-star me-2"></i>Recommended Resources</h3>
+                        <div class="skill-item">
+                            <h4>Learning Platforms</h4>
+                            <div class="resource-links">
+                                <a href="https://www.udemy.com/courses/development/full-stack-web-development/" target="_blank" class="resource-link">Udemy</a>
+                                <a href="https://www.coursera.org/specializations/full-stack-web-development" target="_blank" class="resource-link">Coursera</a>
+                                <a href="https://www.edx.org/learn/computer-science/full-stack-development" target="_blank" class="resource-link">edX</a>
+                                <a href="https://egghead.io/browse/topics/full-stack" target="_blank" class="resource-link">Egghead.io</a>
+                                <a href="https://www.codecademy.com/learn/paths/full-stack-engineer" target="_blank" class="resource-link">Codecademy</a>
+                                <a href="https://www.pluralsight.com/browse/software-development/full-stack" target="_blank" class="resource-link">Pluralsight</a>
+                                <a href="https://teamtreehouse.com/tracks/full-stack-javascript" target="_blank" class="resource-link">Treehouse</a>
+                                <a href="https://www.freecodecamp.org/learn" target="_blank" class="resource-link">FreeCodeCamp</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Roadmap Content End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/wow/wow.min.js"></script>
+    <script src="../lib/easing/easing.min.js"></script>
+    <script src="../lib/waypoints/waypoints.min.js"></script>
+    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="../js/main.js"></script>
+</body>
+
+</html> 

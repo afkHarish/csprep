@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>CSPrep - Data Scientist Roadmap</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="../img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="../lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="../css/style.css" rel="stylesheet">
+
+    <style>
+        .roadmap-section {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+        .roadmap-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .roadmap-section h3 {
+            color: #0d6efd;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+        .skill-item {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #0d6efd;
+            transition: all 0.3s ease;
+        }
+        .skill-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .skill-item h4 {
+            color: #1a1a1a;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        .skill-item p {
+            color: #4b5563;
+            margin-bottom: 0.5rem;
+        }
+        .resource-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .resource-link {
+            background: #e9ecef;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            color: #0d6efd;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        .resource-link:hover {
+            background: #0d6efd;
+            color: white;
+        }
+        .progress-section {
+            margin-top: 1rem;
+        }
+        .progress {
+            height: 8px;
+            margin-bottom: 0.5rem;
+        }
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #0d6efd;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.5rem;
+            top: 0.5rem;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background: #0d6efd;
+            border: 2px solid white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <h2 class="m-0 text-dark"><img src="../img/CSPREP.png" height="75px">CSPrep</h2>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="quiz.html" class="nav-item nav-link">Quiz</a>
+                <a href="contact.html" class="nav-item nav-link">Code</a>
+                <a href="courses.html" class="nav-item nav-link">Resources</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Miscallaneous</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="videos.html" class="dropdown-item">Videos</a>
+                        <a href="blogs.html" class="dropdown-item">Blogs</a>
+                        <a href="/Resume/resume.html" class="dropdown-item">Resume Builder</a>
+                    </div>
+                </div>
+                <a href="#" class="nav-item nav-link" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-primary py-5 mb-5 page-header">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1 class="display-3 text-white animated slideInDown">Data Scientist Roadmap</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- Roadmap Content Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <!-- Prerequisites Section -->
+                    <div class="roadmap-section">
+                        <h3><i class="fas fa-check me-2"></i>Prerequisites</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>Mathematics & Statistics</h4>
+                                    <p>Understanding linear algebra, calculus, probability, and statistics.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://www.khanacademy.org/math" target="_blank" class="resource-link">Khan Academy Math</a>
+                                        <a href="https://www.khanacademy.org/math/statistics-probability" target="_blank" class="resource-link">Khan Academy Statistics</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>Programming Basics</h4>
+                                    <p>Familiarity with programming concepts, preferably in Python or R.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://docs.python.org/3/" target="_blank" class="resource-link">Python Docs</a>
+                                        <a href="https://cran.r-project.org/manuals.html" target="_blank" class="resource-link">R Manuals</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Core Data Science Skills Section -->
+                     <div class="roadmap-section">
+                        <h3><i class="fas fa-brain me-2"></i>Core Data Science Skills</h3>
+                        <div class="timeline">
+                             <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>Data Wrangling & Preprocessing</h4>
+                                    <p>Cleaning, transforming, and preparing data for analysis.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://pandas.pydata.org/docs/" target="_blank" class="resource-link">Pandas Documentation (Python)</a>
+                                        <a href="https://dplyr.tidyverse.org/" target="_blank" class="resource-link">dplyr Documentation (R)</a>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>Data Visualization</h4>
+                                    <p>Creating informative plots and charts to explore data.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://matplotlib.org/stable/contents/index.html" target="_blank" class="resource-link">Matplotlib Docs (Python)</a>
+                                        <a href="https://seaborn.pydata.org/documentation.html" target="_blank" class="resource-link">Seaborn Docs (Python)</a>
+                                        <a href="https://ggplot2.tidyverse.org/" target="_blank" class="resource-link">ggplot2 Documentation (R)</a>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>Machine Learning</h4>
+                                    <p>Understanding and implementing various ML algorithms.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://scikit-learn.org/stable/documentation.html" target="_blank" class="resource-link">Scikit-learn Docs (Python)</a>
+                                        <a href="https://www.tensorflow.org/learn" target="_blank" class="resource-link">TensorFlow Guide</a>
+                                        <a href="https://pytorch.org/docs/stable/index.html" target="_blank" class="resource-link">PyTorch Docs</a>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>Experimentation & Evaluation</h4>
+                                    <p>Designing experiments and evaluating model performance.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://developers.google.com/machine-learning/guides/rules-of-ml" target="_blank" class="resource-link">Rules of ML (Google)</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Big Data Section -->
+                     <div class="roadmap-section">
+                        <h3><i class="fas fa-layer-group me-2"></i>Big Data Technologies</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>Distributed Computing</h4>
+                                    <p>Introduction to frameworks like Spark and Hadoop.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://spark.apache.org/docs/latest/" target="_blank" class="resource-link">Apache Spark Docs</a>
+                                        <a href="https://hadoop.apache.org/docs/stable/" target="_blank" class="resource-link">Apache Hadoop Docs</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Deployment Section -->
+                     <div class="roadmap-section">
+                        <h3><i class="fas fa-cloud-upload-alt me-2"></i>Deployment</h3>
+                        <div class="timeline">
+                             <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>Putting Models into Production</h4>
+                                    <p>Learn how to deploy machine learning models.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://cloud.google.com/architecture/ml-pipeline-architecture" target="_blank" class="resource-link">ML Pipeline Architecture (Google Cloud)</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Ideas Section -->
+                    <div class="roadmap-section">
+                        <h3><i class="fas fa-lightbulb me-2"></i>Project Ideas</h3>
+                        <p>Here are some Data Scientist project ideas to help you practice your skills:</p>
+                        <ul>
+                            <li>Analyze a public dataset (e.g., from Kaggle)</li>
+                            <li>Build a movie recommendation system</li>
+                            <li>Develop a sentiment analysis tool</li>
+                            <li>Predict stock prices using time series analysis</li>
+                            <li>Build an image classification model</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- Sidebar -->
+                <div class="col-lg-4">
+                    <div class="roadmap-section">
+                        <h3><i class="fas fa-tasks me-2"></i>Progress Tracker</h3>
+                        <div class="skill-item">
+                            <h4>Overall Progress</h4>
+                            <div class="progress-section">
+                                <div class="progress">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 0%"></div>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="skill-item">
+                            <h4>Next Steps</h4>
+                             <p>Start with the prerequisites and explore core data science skills.</p>
+                        </div>
+                    </div>
+
+                    <div class="roadmap-section">
+                        <h3><i class="fas fa-star me-2"></i>Recommended Resources</h3>
+                        <div class="skill-item">
+                            <h4>Learning Platforms</h4>
+                            <div class="resource-links">
+                                <a href="https://www.kaggle.com/learn" target="_blank" class="resource-link">Kaggle Learn</a>
+                                <a href="https://www.coursera.org/browse/data-science" target="_blank" class="resource-link">Coursera Data Science</a>
+                                <a href="https://www.edx.org/learn/data-science" target="_blank" class="resource-link">edX Data Science</a>
+                                <a href="https://www.udemy.com/courses/data-science/" target="_blank" class="resource-link">Udemy</a>
+                                <a href="https://towardsdatascience.com/" target="_blank" class="resource-link">Towards Data Science (Blog)</a>
+                                <a href="https://www.datacamp.com/" target="_blank" class="resource-link">DataCamp</a>
+                                <a href="https://www.simplilearn.com/big-data-and-analytics/data-scientist-masters-program-training" target="_blank" class="resource-link">Simplilearn</a>
+                                <a href="https://www.linkedin.com/learning/topics/data-science" target="_blank" class="resource-link">LinkedIn Learning</a>
+                                <a href="https://www.khanacademy.org/science/probability" target="_blank" class="resource-link">Khan Academy (Stats & Probability)</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Roadmap Content End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/wow/wow.min.js"></script>
+    <script src="../lib/easing/easing.min.js"></script>
+    <script src="../lib/waypoints/waypoints.min.js"></script>
+    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="../js/main.js"></script>
+</body>
+
+</html> 

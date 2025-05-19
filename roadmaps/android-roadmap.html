@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>CSPrep - Android Developer Roadmap</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="../img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="../lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="../css/style.css" rel="stylesheet">
+
+    <style>
+        .roadmap-section {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+        .roadmap-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .roadmap-section h3 {
+            color: #0d6efd;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+        .skill-item {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #0d6efd;
+            transition: all 0.3s ease;
+        }
+        .skill-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .skill-item h4 {
+            color: #1a1a1a;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        .skill-item p {
+            color: #4b5563;
+            margin-bottom: 0.5rem;
+        }
+        .resource-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .resource-link {
+            background: #e9ecef;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            color: #0d6efd;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        .resource-link:hover {
+            background: #0d6efd;
+            color: white;
+        }
+        .progress-section {
+            margin-top: 1rem;
+        }
+        .progress {
+            height: 8px;
+            margin-bottom: 0.5rem;
+        }
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #0d6efd;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.5rem;
+            top: 0.5rem;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background: #0d6efd;
+            border: 2px solid white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <h2 class="m-0 text-dark"><img src="../img/CSPREP.png" height="75px">CSPrep</h2>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="quiz.html" class="nav-item nav-link">Quiz</a>
+                <a href="contact.html" class="nav-item nav-link">Code</a>
+                <a href="courses.html" class="nav-item nav-link">Resources</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Miscallaneous</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="videos.html" class="dropdown-item">Videos</a>
+                        <a href="blogs.html" class="dropdown-item">Blogs</a>
+                        <a href="/Resume/resume.html" class="dropdown-item">Resume Builder</a>
+                    </div>
+                </div>
+                <a href="#" class="nav-item nav-link" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-primary py-5 mb-5 page-header">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1 class="display-3 text-white animated slideInDown">Android Developer Roadmap</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- Roadmap Content Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <!-- Programming Language Section -->
+                    <div class="roadmap-section">
+                        <h3><i class="fas fa-code me-2"></i>Programming Language</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>Kotlin</h4>
+                                    <p>Learn Kotlin, the preferred language for Android development.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://developer.android.com/kotlin" target="_blank" class="resource-link">Kotlin for Android</a>
+                                        <a href="https://kotlinlang.org/docs/reference/" target="_blank" class="resource-link">Kotlin Documentation</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>Java (Optional)</h4>
+                                    <p>Familiarity with Java can be helpful due to the existing Android ecosystem.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://docs.oracle.com/en/java/javase/index.html" target="_blank" class="resource-link">Java Documentation</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Android Fundamentals Section -->
+                     <div class="roadmap-section">
+                        <h3><i class="fas fa-mobile-alt me-2"></i>Android Fundamentals</h3>
+                        <div class="timeline">
+                             <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>Activities & Fragments</h4>
+                                    <p>Understand the basic building blocks of Android applications.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://developer.android.com/guide/components/activities/" target="_blank" class="resource-link">Activities Guide</a>
+                                        <a href="https://developer.android.com/guide/components/fragments/" target="_blank" class="resource-link">Fragments Guide</a>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>UI Design (Layouts & Views)</h4>
+                                    <p>Learn to create user interfaces using XML layouts and various View components.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://developer.android.com/guide/topics/ui/layouts/" target="_blank" class="resource-link">Layouts Guide</a>
+                                        <a href="https://developer.android.com/reference/android/view/View" target="_blank" class="resource-link">View Class Overview</a>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>Intents & Inter-Component Communication</h4>
+                                    <p>Understand how components interact with each other.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://developer.android.com/guide/components/intents-filters" target="_blank" class="resource-link">Intents and Intent Filters</a>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>Background Processing</h4>
+                                    <p>Learn to perform tasks in the background using services, WorkManager, etc.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://developer.android.com/guide/background/" target="_blank" class="resource-link">Background Processing Guide</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Data Storage Section -->
+                     <div class="roadmap-section">
+                        <h3><i class="fas fa-database me-2"></i>Data Storage</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>SQLite Databases</h4>
+                                    <p>Work with local databases on Android.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://developer.android.com/training/data-storage/sqlite" target="_blank" class="resource-link">Save Data in a Local Database</a>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>Room Persistence Library</h4>
+                                    <p>An abstraction layer over SQLite.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://developer.android.com/topic/libraries/architecture/room" target="_blank" class="resource-link">Room Guide</a>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>Shared Preferences & Files</h4>
+                                    <p>Learn other options for local data storage.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://developer.android.com/training/data-storage/shared-preferences" target="_blank" class="resource-link">Save Key-Value Data</a>
+                                        <a href="https://developer.android.com/training/data-storage/files" target="_blank" class="resource-link">Save Files</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Networking Section -->
+                     <div class="roadmap-section">
+                        <h3><i class="fas fa-network-wired me-2"></i>Networking</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>Connecting to the Internet</h4>
+                                    <p>Perform network operations in your app.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://developer.android.com/training/basics/network-ops/" target="_blank" class="resource-link">Connect to the Network</a>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="timeline-item">
+                                <div class="skill-item">
+                                    <h4>Libraries (Retrofit, Volley)</h4>
+                                    <p>Use popular libraries for making network requests.</p>
+                                     <div class="resource-links mt-3">
+                                        <a href="https://square.github.io/retrofit/" target="_blank" class="resource-link">Retrofit</a>
+                                        <a href="https://developer.android.com/training/volley/" target="_blank" class="resource-link">Volley Guide</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Ideas Section -->
+                    <div class="roadmap-section">
+                        <h3><i class="fas fa-lightbulb me-2"></i>Project Ideas</h3>
+                        <p>Here are some Android Developer project ideas to help you practice your skills:</p>
+                        <ul>
+                            <li>Build a simple Calculator app</li>
+                            <li>Create a To-Do List app with persistence</li>
+                            <li>Develop a Weather app using a public API</li>
+                            <li>Build a Quiz app</li>
+                            <li>Create a basic Notes app with saving functionality</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- Sidebar -->
+                <div class="col-lg-4">
+                    <div class="roadmap-section">
+                        <h3><i class="fas fa-tasks me-2"></i>Progress Tracker</h3>
+                        <div class="skill-item">
+                            <h4>Overall Progress</h4>
+                            <div class="progress-section">
+                                <div class="progress">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 0%"></div>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="skill-item">
+                            <h4>Next Steps</h4>
+                             <p>Start with Kotlin fundamentals and Android basics.</p>
+                        </div>
+                    </div>
+
+                    <div class="roadmap-section">
+                        <h3><i class="fas fa-star me-2"></i>Recommended Resources</h3>
+                        <div class="skill-item">
+                            <h4>Learning Platforms</h4>
+                            <div class="resource-links">
+                                <a href="https://developer.android.com/courses" target="_blank" class="resource-link">Android Developer Training</a>
+                                <a href="https://www.udacity.com/courses/android" target="_blank" class="resource-link">Udacity Android Courses</a>
+                                <a href="https://www.udemy.com/courses/development/mobile-apps/android/" target="_blank" class="resource-link">Udemy</a>
+                                <a href="https://www.coursera.org/browse/computer-science/mobile-and-web-development/android-development" target="_blank" class="resource-link">Coursera</a>
+                                <a href="https://www.edx.org/learn/computer-science/android-development" target="_blank" class="resource-link">edX</a>
+                                <a href="https://www.pluralsight.com/browse/mobile/android" target="_blank" class="resource-link">Pluralsight</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Roadmap Content End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/wow/wow.min.js"></script>
+    <script src="../lib/easing/easing.min.js"></script>
+    <script src="../lib/waypoints/waypoints.min.js"></script>
+    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="../js/main.js"></script>
+</body>
+
+</html> 
