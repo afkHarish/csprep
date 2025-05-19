@@ -53,7 +53,7 @@ session_start();
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="index.php" class="nav-item nav-link active">Home</a>
                 <a href="quiz.html" class="nav-item nav-link">Quiz</a>
-                <a href="roadmaps/roadmap.html" class="nav-item nav-link">Code</a>
+                <a href="roadmaps/roadmap.html" class="nav-item nav-link">ROADMAP</a>
                 <a href="resources.html" class="nav-item nav-link">Resources</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Miscellaneous</a>
@@ -237,7 +237,7 @@ session_start();
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-3">Quick Link</h4>
                     <a class="btn btn-link" href="">Quiz</a>
-                    <a class="btn btn-link" href="">Code</a>
+                    <a class="btn btn-link" href="">ROADMAP</a>
                     <a class="btn btn-link" href="">Resources</a>
                     <a class="btn btn-link" href="">Miscellaneous</a>
                 </div>

@@ -138,7 +138,7 @@ $conn->close();
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="index.php" class="nav-item nav-link">Home</a>
                 <a href="quiz.html" class="nav-item nav-link">Quiz</a>
-                <a href="roadmaps/roadmap.html" class="nav-item nav-link">Code</a>
+                <a href="roadmaps/roadmap.html" class="nav-item nav-link">ROADMAP</a>
                 <a href="resources.html" class="nav-item nav-link">Resources</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Miscellaneous</a>
