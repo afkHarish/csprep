@@ -96,17 +96,28 @@
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="index.html" class="nav-item nav-link">Home</a>
                 <a href="quiz.html" class="nav-item nav-link">Quiz</a>
-                <a href="roadmaps/roadmap.html" class="nav-item nav-link">Code</a>
+                <a href="roadmaps/roadmap.html" class="nav-item nav-link">ROADMAP</a>
                 <a href="resources.html" class="nav-item nav-link active">Resources</a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Miscallaneous</a>
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Miscallenous</a>
                     <div class="dropdown-menu fade-down m-0">
                         <a href="videos.html" class="dropdown-item">Videos</a>
                         <a href="blogs.html" class="dropdown-item">Blogs</a>
-                        <a href="/Resume/resume.html" class="dropdown-item">Resume Builder</a>
+                        <a href="Resume/resume.html" class="dropdown-item">Resume Builder</a>
                     </div>
                 </div>
-                <a href="#" class="nav-item nav-link" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+                <!-- Profile Dropdown (replaces userInfo and logoutBtn) -->
+                <div class="nav-item dropdown" id="profileDropdownContainer" style="display:none;">
+                    <a href="#" class="nav-link dropdown-toggle" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa fa-user-circle fa-lg"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                        <li><span class="dropdown-item-text" id="profileEmail" style="font-weight:500;"></span></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item text-danger" href="#" id="profileLogout">Logout</a></li>
+                    </ul>
+                </div>
+                <button id="loginBtn" class="nav-item nav-link btn btn-link" data-bs-toggle="modal" data-bs-target="#authModal">Login</button>
             </div>
         </div>
     </nav>
@@ -282,7 +293,7 @@
                     <a class="btn btn-link" href="">Quiz</a>
                     <a class="btn btn-link" href="">Code</a>
                     <a class="btn btn-link" href="">Resources</a>
-                    <a class="btn btn-link" href="">Miscallaneous</a>
+                    <a class="btn btn-link" href="">Miscallenous</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-3">Contact</h4>

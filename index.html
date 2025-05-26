@@ -29,6 +29,8 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <!-- Auth Stylesheet -->
+    <link href="auth/auth.css" rel="stylesheet">
 </head>
 
 <body>
@@ -53,14 +55,25 @@
                 <a href="roadmaps/roadmap.html" class="nav-item nav-link">ROADMAP</a>
                 <a href="resources.html" class="nav-item nav-link">Resources</a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Miscallaneous</a>
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Miscellaneous</a>
                     <div class="dropdown-menu fade-down m-0">
                         <a href="videos.html" class="dropdown-item">Videos</a>
                         <a href="blogs.html" class="dropdown-item">Blogs</a>
-                        <a href="/Resume/resume.html" class="dropdown-item">Resume Builder</a>
+                        <a href="Resume/resume.html" class="dropdown-item">Resume Builder</a>
                     </div>
                 </div>
-                <a href="#" class="nav-item nav-link" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+                <!-- Profile Dropdown (replaces userInfo and logoutBtn) -->
+                <div class="nav-item dropdown" id="profileDropdownContainer" style="display:none;">
+                    <a href="#" class="nav-link dropdown-toggle" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa fa-user-circle fa-lg"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                        <li><span class="dropdown-item-text" id="profileEmail" style="font-weight:500;"></span></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item text-danger" href="#" id="profileLogout">Logout</a></li>
+                    </ul>
+                </div>
+                <button id="loginBtn" class="nav-item nav-link btn btn-link" data-bs-toggle="modal" data-bs-target="#authModal">Login</button>
             </div>
         </div>
     </nav>
@@ -210,7 +223,7 @@
                             </div>
                         </div>
                         <div class="text-center p-4">
-                            <h5 class="mb-0">Miscallaneous</h5>
+                            <h5 class="mb-0">Miscallenous</h5>
                             <small>This section is completely exciting. Try it for yourself!</small>
                         </div>
                     </div>
@@ -229,7 +242,7 @@
                     <a class="btn btn-link" href="">Quiz</a>
                     <a class="btn btn-link" href="">ROADMAP</a>
                     <a class="btn btn-link" href="">Resources</a>
-                    <a class="btn btn-link" href="">Miscallaneous</a>
+                    <a class="btn btn-link" href="">Miscallenous</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-3">Contact</h4>
@@ -273,50 +286,72 @@
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
+    <!-- Firebase SDKs (must be first) -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+
+    <!-- Firebase Config (must be after SDKs) -->
+    <script src="auth/firebase-config.js"></script>
+
+    <!-- Auth Javascript (must be after config) -->
+    <script src="auth/auth.js"></script>
+
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-    <!-- Login Modal -->
-    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header d-flex justify-content-center">
-            <div class="btn-group" role="group" aria-label="Login type toggle">
-              <button type="button" id="userBtn" class="btn btn-primary active">User</button>
-              <button type="button" id="adminBtn" class="btn btn-outline-secondary">Admin</button>
+
+    <!-- Auth Modal -->
+    <div class="modal fade auth-modal" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="authModalLabel">Welcome to CSPrep</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul class="nav nav-tabs" id="authTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="loginTab" data-bs-toggle="tab" data-bs-target="#login" type="button" role="tab" aria-controls="login" aria-selected="true">Login</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="registerTab" data-bs-toggle="tab" data-bs-target="#register" type="button" role="tab" aria-controls="register" aria-selected="false">Register</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="authTabContent">
+                        <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="loginTab">
+                            <form id="loginForm">
+                                <div class="mb-3">
+                                    <label for="loginEmail" class="form-label">Email address</label>
+                                    <input type="email" class="form-control" id="loginEmail" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="loginPassword" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="loginPassword" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Login</button>
+                            </form>
+                        </div>
+                        <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="registerTab">
+                            <form id="registerForm">
+                                <div class="mb-3">
+                                    <label for="registerEmail" class="form-label">Email address</label>
+                                    <input type="email" class="form-control" id="registerEmail" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="registerPassword" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="registerPassword" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                    <input type="password" class="form-control" id="confirmPassword" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Register</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <button type="button" class="btn-close position-absolute end-0 me-2" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <form id="userLoginForm" class="mb-4">
-              <h6>User Login</h6>
-              <div class="mb-3">
-                <label for="userEmail" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="userEmail" placeholder="Enter email" required>
-              </div>
-              <div class="mb-3">
-                <label for="userPassword" class="form-label">Password</label>
-                <input type="password" class="form-control" id="userPassword" placeholder="Password" required>
-              </div>
-              <button type="submit" class="btn btn-primary w-100">Login as User</button>
-            </form>
-            <form id="adminLoginForm" style="display:none;">
-              <h6>Admin Login</h6>
-              <div class="mb-3">
-                <label for="adminEmail" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="adminEmail" placeholder="Enter email" required>
-              </div>
-              <div class="mb-3">
-                <label for="adminPassword" class="form-label">Password</label>
-                <input type="password" class="form-control" id="adminPassword" placeholder="Password" required>
-              </div>
-              <button type="submit" class="btn btn-secondary w-100">Login as Admin</button>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
-          </div>
         </div>
-      </div>
     </div>
 </body>
 

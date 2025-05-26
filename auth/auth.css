@@ -1,0 +1,146 @@
+.auth-modal .modal-content {
+    border-radius: 15px;
+    border: none;
+}
+
+.auth-modal .modal-header {
+    border-bottom: none;
+    padding: 1.5rem 1.5rem 0.5rem;
+}
+
+.auth-modal .modal-body {
+    padding: 1.5rem;
+}
+
+.auth-modal .nav-tabs {
+    border: none;
+    margin-bottom: 1.5rem;
+}
+
+.auth-modal .nav-tabs .nav-link {
+    border: none;
+    color: #6c757d;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    margin-right: 0.5rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.auth-modal .nav-tabs .nav-link:hover {
+    background-color: #f8f9fa;
+}
+
+.auth-modal .nav-tabs .nav-link.active {
+    color: #06A3DA;
+    background-color: #e8f4f8;
+}
+
+.auth-modal .form-control {
+    border-radius: 5px;
+    padding: 0.75rem 1rem;
+    border: 1px solid #dee2e6;
+    margin-bottom: 1rem;
+}
+
+.auth-modal .form-control:focus {
+    border-color: #06A3DA;
+    box-shadow: 0 0 0 0.2rem rgba(6, 163, 218, 0.25);
+}
+
+.auth-modal .btn-primary {
+    background-color: #06A3DA;
+    border-color: #06A3DA;
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.auth-modal .btn-primary:hover {
+    background-color: #0596c5;
+    border-color: #0596c5;
+}
+
+.auth-modal .form-text {
+    color: #6c757d;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+}
+
+.auth-modal .alert {
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+#userInfo {
+    display: none;
+    color: #06A3DA;
+    font-weight: 500;
+    margin-right: 1rem;
+}
+
+#logoutBtn {
+    display: none;
+    color: #dc3545;
+    background: none;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+#logoutBtn:hover {
+    color: #c82333;
+}
+
+/* Profile icon spacing and alignment */
+#profileDropdownContainer {
+    margin-left: 1rem;
+}
+
+#profileDropdown i {
+    font-size: 1.6rem;
+    vertical-align: middle;
+}
+
+/* Prevent horizontal scrollbars on all screens */
+html, body {
+    overflow-x: hidden;
+}
+
+/* Responsive navbar tweaks for profile dropdown */
+@media (max-width: 1200px) {
+    .navbar-nav {
+        flex-wrap: wrap;
+    }
+    #profileDropdownContainer {
+        margin-left: 0.5rem;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .navbar-nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    #profileDropdownContainer {
+        margin-left: 0;
+        width: 100%;
+    }
+    #profileDropdownContainer .dropdown-menu {
+        left: auto;
+        right: 0;
+        min-width: 180px;
+    }
+}
+
+/* Ensure dropdown menu doesn't overflow the viewport */
+#profileDropdownContainer .dropdown-menu {
+    right: 0;
+    left: auto;
+    min-width: 220px;
+    max-width: 90vw;
+    word-break: break-all;
+} 

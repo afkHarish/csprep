@@ -221,7 +221,7 @@ session_start();
                 <a href="roadmaps/roadmap.html" class="nav-item nav-link">ROADMAP</a>
                 <a href="resources.php" class="nav-item nav-link">Resources</a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Miscellaneous</a>
+                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Miscallenous</a>
                     <div class="dropdown-menu fade-down m-0">
                         <a href="videos.php" class="dropdown-item active">Videos</a>
                         <a href="blogs.html" class="dropdown-item">Blogs</a>

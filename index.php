@@ -52,15 +52,15 @@ session_start();
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="index.php" class="nav-item nav-link active">Home</a>
-                <a href="quiz.html" class="nav-item nav-link">Quiz</a>
+                <a href="quiz.php" class="nav-item nav-link">Quiz</a>
                 <a href="roadmaps/roadmap.html" class="nav-item nav-link">ROADMAP</a>
-                <a href="resources.html" class="nav-item nav-link">Resources</a>
+                <a href="resources.php" class="nav-item nav-link">Resources</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Miscellaneous</a>
                     <div class="dropdown-menu fade-down m-0">
-                        <a href="videos.html" class="dropdown-item">Videos</a>
-                        <a href="blogs.html" class="dropdown-item">Blogs</a>
-                        <a href="/Resume/resume.html" class="dropdown-item">Resume Builder</a>
+                        <a href="videos.php" class="dropdown-item">Videos</a>
+                        <a href="blogs.php" class="dropdown-item">Blogs</a>
+                        <a href="Resume/resume.html" class="dropdown-item">Resume Builder</a>
                     </div>
                 </div>
                 <?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true): ?>
@@ -220,7 +220,7 @@ session_start();
                             </div>
                         </div>
                         <div class="text-center p-4">
-                            <h5 class="mb-0">Miscellaneous</h5>
+                            <h5 class="mb-0">Miscallenous</h5>
                             <small>This section is completely exciting. Try it for yourself!</small>
                         </div>
                     </div>

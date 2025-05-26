@@ -48,19 +48,18 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="../index.html" class="nav-item nav-link active">Home</a>
+                <a href="../index.html" class="nav-item nav-link">Home</a>
                 <a href="../quiz.html" class="nav-item nav-link">Quiz</a>
-                <a href="../roadmaps/roadmap.html" class="nav-item nav-link">Code</a>
+                <a href="../roadmaps/roadmap.html" class="nav-item nav-link">ROADMAP</a>
                 <a href="../resources.html" class="nav-item nav-link">Resources</a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Miscallaneous</a>
+                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Miscellaneous</a>
                     <div class="dropdown-menu fade-down m-0">
                         <a href="../videos.html" class="dropdown-item">Videos</a>
                         <a href="../blogs.html" class="dropdown-item">Blogs</a>
-                        <a href="resume.html" class="dropdown-item">Resume</a>
+                        <a href="resume.html" class="dropdown-item active">Resume Builder</a>
                     </div>
                 </div>
-                <a href="#" class="nav-item nav-link" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
             </div>
         </div>
     </nav>
@@ -155,52 +154,6 @@
 
     <!-- Template Javascript -->
     <script src="../js/main.js"></script>
-
-    <!-- Login Modal -->
-    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header d-flex justify-content-center">
-            <div class="btn-group" role="group" aria-label="Login type toggle">
-              <button type="button" id="userBtn" class="btn btn-primary active">User</button>
-              <button type="button" id="adminBtn" class="btn btn-outline-secondary">Admin</button>
-            </div>
-            <button type="button" class="btn-close position-absolute end-0 me-2" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <form id="userLoginForm" class="mb-4">
-              <h6>User Login</h6>
-              <div class="mb-3">
-                <label for="userEmail" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="userEmail" placeholder="Enter email" required>
-              </div>
-              <div class="mb-3">
-                <label for="userPassword" class="form-label">Password</label>
-                <input type="password" class="form-control" id="userPassword" placeholder="Password" required>
-              </div>
-              <button type="submit" class="btn btn-primary w-100">Login as User</button>
-            </form>
-            <form id="adminLoginForm" style="display:none;">
-              <h6>Admin Login</h6>
-              <div class="mb-3">
-                <label for="adminEmail" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="adminEmail" placeholder="Enter email" required>
-              </div>
-              <div class="mb-3">
-                <label for="adminPassword" class="form-label">Password</label>
-                <input type="password" class="form-control" id="adminPassword" placeholder="Password" required>
-              </div>
-              <button type="submit" class="btn btn-secondary w-100">Login as Admin</button>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    
 </body>
 
 </html>
